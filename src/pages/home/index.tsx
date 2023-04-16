@@ -1,7 +1,6 @@
+import { Layout } from "@/common/layout";
 import { Brands } from "./components/Brands";
 import { CreateAcount } from "./components/CreateAcount";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
 import { MostWantedProducts } from "./components/MostWantedProducts";
 import { NewProducts } from "./components/NewProducts/NewProducts";
 import { OffersDiscounst } from "./components/OffersDiscounts";
@@ -10,8 +9,7 @@ import { UsefulTips } from "./components/UsefulTips";
 
 const index = () => {
   return (
-    <>
-      <Header />
+    <Layout title="Home">
       <Sliders />
       <OffersDiscounst />
       <MostWantedProducts />
@@ -19,8 +17,7 @@ const index = () => {
       <CreateAcount />
       <UsefulTips />
       <Brands />
-      <Footer />
-    </>
+    </Layout>
   );
 };
 
