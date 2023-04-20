@@ -10,9 +10,10 @@ const Recommended = () => {
         marginTop: "32px",
         background: "#E8E8E8",
         display: "flex",
+        justifyContent: "space-between",
       }}
     >
-      <Text h3 size={24} color="#172D5E" weight="semibold">
+      <Text h3 size={38} color="#172D5E" weight="semibold">
         Complementa tu compra con estas opciones
       </Text>
 
@@ -21,7 +22,6 @@ const Recommended = () => {
           style={{
             display: "flex",
             flexDirection: "row",
-            height: "362px",
             gap: "4px",
             alignItems: "center",
             padding: "10px 20px 10px 20px",
@@ -33,8 +33,8 @@ const Recommended = () => {
             css={{
               display: "flex",
               flexDirection: "column",
-              width: "478px",
-              height: "362px",
+              width: "270px",
+              height: "390px",
             }}
           >
             <Card.Body>
@@ -119,8 +119,8 @@ const Recommended = () => {
             css={{
               display: "flex",
               flexDirection: "column",
-              width: "478px",
-              height: "362px",
+              width: "270px",
+              height: "390px",
             }}
           >
             <Card.Body>
@@ -205,8 +205,8 @@ const Recommended = () => {
             css={{
               display: "flex",
               flexDirection: "column",
-              width: "478px",
-              height: "362px",
+              width: "270px",
+              height: "390px",
             }}
           >
             <Card.Body>

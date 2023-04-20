@@ -9,25 +9,52 @@ export const SlideProduct = () => {
       style={{
         display: "flex",
         flexDirection: "row",
+        background: "#CECECE",
+        justifyContent: "space-around",
+        marginTop: "64px",
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "385px",
+          width: "414px",
+          padding: "37px 24px",
+          backgroundColor: "#FAFAFA",
+          borderRadius: "8px",
+          marginBottom: "38px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            height: "100%",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "28px",
+              width: "414px",
+              height: "385px",
+            }}
+          >
             <Card
               isHoverable
               isPressable
               css={{
+                width: "85px",
+                height: "85px",
                 display: "flex",
-                flexDirection: "column",
                 background: "#FAFAFA",
+                flexDirection: "column",
               }}
             >
               <Card.Body>
-                <Card.Image
-                  src="/assets/images/productSearch.png"
-                  css={{ width: "85px", height: "85px" }}
-                />
+                <Card.Image src="/assets/images/productSearch.png" />
               </Card.Body>
             </Card>
 
@@ -35,16 +62,15 @@ export const SlideProduct = () => {
               isHoverable
               isPressable
               css={{
+                width: "85px",
+                height: "85px",
                 display: "flex",
                 flexDirection: "column",
                 background: "#FAFAFA",
               }}
             >
               <Card.Body>
-                <Card.Image
-                  src="/assets/images/productSearch.png"
-                  css={{ width: "85px", height: "85px" }}
-                />
+                <Card.Image src="/assets/images/productSearch.png" />
               </Card.Body>
             </Card>
 
@@ -52,38 +78,33 @@ export const SlideProduct = () => {
               isHoverable
               isPressable
               css={{
+                width: "85px",
+                height: "85px",
                 display: "flex",
                 flexDirection: "column",
                 background: "#FAFAFA",
               }}
             >
               <Card.Body>
-                <Card.Image
-                  src="/assets/images/productSearch.png"
-                  css={{ width: "85px", height: "85px" }}
-                />
+                <Card.Image src="/assets/images/productSearch.png" />
               </Card.Body>
             </Card>
           </div>
 
           <div>
             <Card
-              isHoverable
-              isPressable
               css={{
                 display: "flex",
                 flexDirection: "column",
-                width: "414px",
-                height: "385px",
+                width: "264px",
+                height: "263px",
                 background: "#FAFAFA",
                 borderRadius: "8px",
+                justifySelf: "center",
               }}
             >
               <Card.Body>
-                <Card.Image
-                  src="/assets/images/productSearch.png"
-                  style={{ width: "264px", height: "263px" }}
-                />
+                <Card.Image src="/assets/images/productSearch.png" />
               </Card.Body>
             </Card>
           </div>
@@ -96,17 +117,18 @@ export const SlideProduct = () => {
           flexDirection: "row",
           width: "414px",
           height: "385px",
-          padding: "24px 28px 18px 24px",
+          padding: "24px 58px 18px 24px",
           borderRadius: "8px",
+          background: "#FAFAFA",
         }}
       >
-        <Card
-          css={{
+        <div
+          style={{
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <Card.Body>
+          <div>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <Text
                 css={{
@@ -269,8 +291,8 @@ export const SlideProduct = () => {
                 Agregar al carrito
               </Button>
             </div>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );
