@@ -1,36 +1,32 @@
 import React, { Component } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { useState } from "react";
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 1 };
-    this.decrementCount = this.decrementCount.bind(this);
-    this.incrementCount = this.incrementCount.bind(this);
-  }
+const Counter = () => {
+  const [count, setCount] = useState(1);
 
-  decrementCount() {
-    this.setState({ count: this.state.count - 1 });
-  }
+  const decrementCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
 
-  incrementCount() {
-    this.setState({ count: this.state.count + 1 });
-  }
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
 
-  render() {
-    return (
-      <div className="counter">
-        <button className="counter-button" onClick={this.decrementCount}>
-          <FaMinus />
-        </button>
-        <h1 className="counter-number">{this.state.count}</h1>
+  return (
+    <div className="counter">
+      <button className="counter-button" onClick={decrementCount}>
+        <FaMinus />
+      </button>
+      <h1 className="counter-number">{count}</h1>
 
-        <button className="counter-button" onClick={this.incrementCount}>
-          <FaPlus />
-        </button>
-      </div>
-    );
-  }
-}
+      <button className="counter-button" onClick={incrementCount}>
+        <FaPlus />
+      </button>
+    </div>
+  );
+};
 
 export default Counter;
