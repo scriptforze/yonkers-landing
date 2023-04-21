@@ -1,7 +1,7 @@
 import { HeartFilled, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { Card, Grid, Text } from "@nextui-org/react";
 import { Button } from "antd";
-import Counter from "../counter/counter";
+import { Counter } from "../Counter";
 
 export const SlideProduct = () => {
   return (
