@@ -1,8 +1,9 @@
 import { Layout } from "@/common/layout";
-import React from "react";
-import { SlideProduct } from "./components/slideProduct";
-import Information from "./components/information/Information";
-import { Recommended } from "./components/recommended";
+import {
+  Information,
+  Recommended,
+  SlideProduct,
+} from "@/common/pages/product-detail/components";
 
 const ProductDetail = () => {
   return (
