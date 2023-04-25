@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useState } from "react";
+import { CounterButton, CounterContainer, CounterNumber } from "./styled";
 
 const Counter = () => {
   const [count, setCount] = useState(1);
@@ -16,16 +17,16 @@ const Counter = () => {
   };
 
   return (
-    <div className="counter">
-      <button className="counter-button" onClick={decrementCount}>
+    <CounterContainer>
+      <CounterButton onClick={decrementCount}>
         <FaMinus />
-      </button>
-      <h1 className="counter-number">{count}</h1>
+      </CounterButton>
+      <CounterNumber>{count}</CounterNumber>
 
-      <button className="counter-button" onClick={incrementCount}>
+      <CounterButton onClick={incrementCount}>
         <FaPlus />
-      </button>
-    </div>
+      </CounterButton>
+    </CounterContainer>
   );
 };
 

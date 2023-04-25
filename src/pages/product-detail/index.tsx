@@ -3,7 +3,7 @@ import {
   Information,
   Recommended,
   SlideProduct,
-} from "@/common/pages/product-detail/components";
+} from "@/components/product-detail";
 
 const ProductDetail = () => {
   return (
