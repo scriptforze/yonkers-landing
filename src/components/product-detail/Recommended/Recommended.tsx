@@ -39,7 +39,7 @@ const Recommended = () => {
           >
             <Card.Body>
               <Card.Image
-                src="/static/images/productSearch.png"
+                src="/assets/images/productSearch.png"
                 width={237}
                 height={362}
                 css={{ borderRadius: "8px" }}
@@ -125,7 +125,7 @@ const Recommended = () => {
           >
             <Card.Body>
               <Card.Image
-                src="/static/images/productSearch.png"
+                src="/assets/images/productSearch.png"
                 width={237}
                 height={362}
                 css={{ borderRadius: "8px" }}
@@ -211,7 +211,7 @@ const Recommended = () => {
           >
             <Card.Body>
               <Card.Image
-                src="/static/images/productSearch.png"
+                src="/assets/images/productSearch.png"
                 width={237}
                 height={362}
                 css={{ borderRadius: "8px" }}

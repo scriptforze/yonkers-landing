@@ -1,4 +1,9 @@
-import { Text, Image } from "@nextui-org/react";
+import Image from "next/image";
+import { Text } from "@nextui-org/react";
+
+import Ford from "@/common/assets/images/ford.png";
+import Toyota from "@/common/assets/images/toyota.png";
+import Chevrolet from "@/common/assets/images/chevrolet.png";
 
 const Brands = () => {
   return (
@@ -21,19 +26,34 @@ const Brands = () => {
         }}
       >
         <Image
-          src="/static/images/chevrolet.png"
+          src={Chevrolet}
           alt="chevrolet image"
-          css={{ mixBlendMode: "luminosity" }}
+          style={{
+            mixBlendMode: "luminosity",
+            width: "73px",
+            height: "auto",
+            objectFit: "contain",
+          }}
         />
         <Image
-          src="/static/images/ford.png"
+          src={Ford}
           alt="ford image"
-          css={{ mixBlendMode: "luminosity" }}
+          style={{
+            mixBlendMode: "luminosity",
+            width: "73px",
+            height: "auto",
+            objectFit: "contain",
+          }}
         />
         <Image
-          src="/static/images/toyota.png"
+          src={Toyota}
           alt="toyota image"
-          css={{ mixBlendMode: "luminosity" }}
+          style={{
+            mixBlendMode: "luminosity",
+            width: "73px",
+            height: "auto",
+            objectFit: "contain",
+          }}
         />
       </div>
     </div>

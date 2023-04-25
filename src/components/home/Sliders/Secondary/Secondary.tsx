@@ -1,4 +1,8 @@
-import { Grid, Image, Text } from "@nextui-org/react";
+import { Grid, Text } from "@nextui-org/react";
+
+import Image from "next/image";
+import ShipCar from "@/common/assets/images/shipCar.png";
+
 export const SecondarySlider = () => {
   return (
     <Grid.Container
@@ -21,11 +25,7 @@ export const SecondarySlider = () => {
           padding: "16px 0 10px 0",
         }}
       >
-        <Image
-          src="/static/images/shipCar.png"
-          alt="ship car image"
-          width={59}
-        />
+        <Image alt="ship car image" src={ShipCar} width={59} />
       </Grid>
 
       <Grid

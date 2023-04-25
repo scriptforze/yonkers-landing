@@ -1,4 +1,6 @@
-import { Button, Grid, Image, Text } from "@nextui-org/react";
+import { Button, Grid, Text } from "@nextui-org/react";
+import Image from "next/image";
+import UsefulTipsImg from "@/common/assets/images/usefulTipsImage.png";
 
 const UsefulTips = () => {
   return (
@@ -25,17 +27,19 @@ const UsefulTips = () => {
 
       <Grid
         css={{
-          position: "relative",
-          marginBottom: "12px",
           height: "226px",
           display: "flex",
+          position: "relative",
+          marginBottom: "12px",
           flexDirection: "row",
         }}
       >
         <Image
-          src="/static/images/usefulTipsImage.png"
+          src={UsefulTipsImg}
           alt="useful tips image"
-          containerCss={{
+          style={{
+            width: "100%",
+            height: "inherit",
             position: "absolute",
             borderRadius: "8px",
           }}
@@ -96,9 +100,14 @@ const UsefulTips = () => {
         }}
       >
         <Image
-          src="/static/images/usefulTipsImage2.png"
-          alt="useful tips image 2"
-          containerCss={{ position: "absolute", borderRadius: "8px" }}
+          src={UsefulTipsImg}
+          alt="useful tips image"
+          style={{
+            width: "100%",
+            height: "inherit",
+            position: "absolute",
+            borderRadius: "8px",
+          }}
         />
 
         <div
@@ -156,9 +165,11 @@ const UsefulTips = () => {
         }}
       >
         <Image
-          src="/static/images/usefulTipsImage.png"
+          src={UsefulTipsImg}
           alt="useful tips image"
-          containerCss={{
+          style={{
+            width: "100%",
+            height: "inherit",
             position: "absolute",
             borderRadius: "8px",
           }}

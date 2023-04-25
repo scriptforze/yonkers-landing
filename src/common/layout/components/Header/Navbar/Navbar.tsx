@@ -15,6 +15,8 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 
+import Logo from "@/common/assets/images/logo.png";
+
 const Navbar = () => {
   return (
     <NavbarContainer>
@@ -24,12 +26,7 @@ const Navbar = () => {
             className="menu-button"
             icon={<MenuOutlined />}
           />
-          <CustomImage
-            width={99}
-            height={24}
-            alt="logo icon"
-            src="/static/images/logo.png"
-          />
+          <CustomImage width={99} height={24} alt="logo icon" src={Logo} />
         </MenuLogoContainer>
 
         <NavbarControlsContainer>

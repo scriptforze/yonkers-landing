@@ -1,4 +1,6 @@
-import { Grid, Text, Image, Button } from "@nextui-org/react";
+import { Grid, Text, Button } from "@nextui-org/react";
+import Image from "next/image";
+import DiscountImage from "@/common/assets/images/discountImage.png";
 
 const OffersDiscounst = () => {
   return (
@@ -41,9 +43,16 @@ const OffersDiscounst = () => {
         }}
       >
         <Image
-          src="/static/images/discountImage.png"
+          width={100}
+          height={100}
+          src={DiscountImage}
           alt="discount image"
-          containerCss={{ position: "absolute", borderRadius: "8px" }}
+          style={{
+            position: "absolute",
+            borderRadius: "8px",
+            width: "100%",
+            height: "auto",
+          }}
         />
 
         <div
@@ -117,9 +126,16 @@ const OffersDiscounst = () => {
         }}
       >
         <Image
-          src="/static/images/discountImage.png"
+          width={100}
+          height={100}
+          src={DiscountImage}
           alt="discount image"
-          containerCss={{ position: "absolute", borderRadius: "8px" }}
+          style={{
+            position: "absolute",
+            borderRadius: "8px",
+            width: "100%",
+            height: "auto",
+          }}
         />
 
         <div
@@ -192,11 +208,15 @@ const OffersDiscounst = () => {
         }}
       >
         <Image
-          src="/static/images/discountImage.png"
+          width={100}
+          height={100}
+          src={DiscountImage}
           alt="discount image"
-          containerCss={{
+          style={{
             position: "absolute",
             borderRadius: "8px",
+            width: "100%",
+            height: "auto",
           }}
         />
 
