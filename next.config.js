@@ -7,6 +7,9 @@ const nextConfig = {
       displayName: true,
     },
   },
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;
