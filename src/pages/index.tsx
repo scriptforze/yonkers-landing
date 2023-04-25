@@ -7,7 +7,7 @@ import {
   CreateAcount,
   OffersDiscounst,
   MostWantedProducts,
-} from "@/common/pages/home/components";
+} from "@/components/home";
 
 export default function Home() {
   return (
