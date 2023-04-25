@@ -1,4 +1,8 @@
-import { Text, Button, Image, Card } from "@nextui-org/react";
+import { Text, Button, Card } from "@nextui-org/react";
+
+import Image from "next/image";
+import Max from "@/common/assets/images/max.png";
+import ProductSearch from "@/common/assets/images/productSearch.png";
 
 export const NewProducts = () => {
   return (
@@ -27,10 +31,14 @@ export const NewProducts = () => {
           }}
         >
           <Image
-            css={{
+            width={17}
+            height={17}
+            src={Max}
+            style={{
               width: "17px",
+              height: "auto",
+              objectFit: "contain",
             }}
-            src="/static/images/max.png"
             alt="max products image"
           />
           Ver todos
@@ -57,11 +65,15 @@ export const NewProducts = () => {
             }}
           >
             <Card.Body>
-              <Card.Image
-                src="/static/images/productSearch.png"
-                width={237}
-                height={362}
-                css={{ borderRadius: "8px" }}
+              <Image
+                src={ProductSearch}
+                alt="product image"
+                style={{
+                  width: "auto",
+                  height: "131px",
+                  borderRadius: "8px",
+                  objectFit: "contain",
+                }}
               />
 
               <div
@@ -141,11 +153,15 @@ export const NewProducts = () => {
             }}
           >
             <Card.Body>
-              <Card.Image
-                src="/static/images/productSearch.png"
-                width={237}
-                height={362}
-                css={{ borderRadius: "8px" }}
+              <Image
+                src={ProductSearch}
+                alt="product image"
+                style={{
+                  width: "auto",
+                  height: "131px",
+                  borderRadius: "8px",
+                  objectFit: "contain",
+                }}
               />
 
               <div

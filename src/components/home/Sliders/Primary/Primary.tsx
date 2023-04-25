@@ -1,4 +1,7 @@
-import { Grid, Image, Text, Button } from "@nextui-org/react";
+import { Grid, Text, Button } from "@nextui-org/react";
+
+import Image from "next/image";
+import Banner from "@/common/assets/images/banner.png";
 
 const PrimarySlider = () => {
   return (
@@ -21,10 +24,14 @@ const PrimarySlider = () => {
         }}
       >
         <Image
-          css={{ padding: "32px 16px 32px 16px" }}
-          src="/static/images/banner.png"
+          style={{
+            padding: "32px 16px 32px 16px",
+            width: "375px",
+            height: "auto",
+          }}
           alt="banner image"
-          containerCss={{ width: "375px" }}
+          src={Banner}
+          priority
         />
       </Grid>
 
