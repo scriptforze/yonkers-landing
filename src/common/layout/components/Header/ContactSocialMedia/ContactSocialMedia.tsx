@@ -14,7 +14,7 @@ const ContactSocialMedia = () => {
           width={16}
           height={16}
           alt="contact social media"
-          src="/assets/images/contact-icon.png"
+          src="/static/images/contact-icon.png"
         />
         <Text size={15} color="#FAFAFA" weight="bold">
           Cali: (602) 325-8569
@@ -26,35 +26,35 @@ const ContactSocialMedia = () => {
           width={16}
           height={16}
           alt="facebook social media"
-          src="/assets/images/facebook.png"
+          src="/static/images/facebook.png"
         />
 
         <Image
           width={16}
           height={16}
           alt="twitter social media"
-          src="/assets/images/twitter.png"
+          src="/static/images/twitter.png"
         />
 
         <Image
           width={16}
           height={16}
           alt="instagram social media"
-          src="/assets/images/instagram.png"
+          src="/static/images/instagram.png"
         />
 
         <Image
           width={16}
           height={16}
           alt="pinterest social media"
-          src="/assets/images/pinterest.png"
+          src="/static/images/pinterest.png"
         />
 
         <Image
           width={16}
           height={16}
           alt="linkedin social media"
-          src="/assets/images/linkedin.png"
+          src="/static/images/linkedin.png"
         />
       </SocialMedia>
     </ContactSocialMediaContainer>

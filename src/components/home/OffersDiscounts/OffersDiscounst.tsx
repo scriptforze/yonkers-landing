@@ -41,7 +41,7 @@ const OffersDiscounst = () => {
         }}
       >
         <Image
-          src="/assets/images/discountImage.png"
+          src="/static/images/discountImage.png"
           alt="discount image"
           containerCss={{ position: "absolute", borderRadius: "8px" }}
         />
@@ -117,7 +117,7 @@ const OffersDiscounst = () => {
         }}
       >
         <Image
-          src="/assets/images/discountImage.png"
+          src="/static/images/discountImage.png"
           alt="discount image"
           containerCss={{ position: "absolute", borderRadius: "8px" }}
         />
@@ -192,7 +192,7 @@ const OffersDiscounst = () => {
         }}
       >
         <Image
-          src="/assets/images/discountImage.png"
+          src="/static/images/discountImage.png"
           alt="discount image"
           containerCss={{
             position: "absolute",

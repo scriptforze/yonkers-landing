@@ -21,17 +21,17 @@ const Brands = () => {
         }}
       >
         <Image
-          src="/assets/images/chevrolet.png"
+          src="/static/images/chevrolet.png"
           alt="chevrolet image"
           css={{ mixBlendMode: "luminosity" }}
         />
         <Image
-          src="/assets/images/ford.png"
+          src="/static/images/ford.png"
           alt="ford image"
           css={{ mixBlendMode: "luminosity" }}
         />
         <Image
-          src="/assets/images/toyota.png"
+          src="/static/images/toyota.png"
           alt="toyota image"
           css={{ mixBlendMode: "luminosity" }}
         />

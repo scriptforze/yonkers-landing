@@ -22,7 +22,7 @@ export const SecondarySlider = () => {
         }}
       >
         <Image
-          src="/assets/images/shipCar.png"
+          src="/static/images/shipCar.png"
           alt="ship car image"
           width={59}
         />
