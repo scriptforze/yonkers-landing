@@ -54,7 +54,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
+                <Card.Image src="/static/images/productSearch.png" />
               </Card.Body>
             </Card>
 
@@ -70,7 +70,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
+                <Card.Image src="/static/images/productSearch.png" />
               </Card.Body>
             </Card>
 
@@ -86,7 +86,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
+                <Card.Image src="/static/images/productSearch.png" />
               </Card.Body>
             </Card>
           </div>
@@ -104,7 +104,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
+                <Card.Image src="/static/images/productSearch.png" />
               </Card.Body>
             </Card>
           </div>

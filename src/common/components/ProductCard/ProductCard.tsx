@@ -7,7 +7,7 @@ const ProductCard = ({ imageURL, title }: ProductCardProps) => {
   return (
     <CustomCard>
       <CustomCard.Body>
-        <CustomCardImage src="/assets/images/productSearch.png" />
+        <CustomCardImage src="/static/images/productSearch.png" />
 
         <div
           style={{

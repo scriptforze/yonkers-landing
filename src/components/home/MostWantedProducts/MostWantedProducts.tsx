@@ -31,7 +31,7 @@ export const MostWantedProducts = () => {
             css={{
               width: "17px",
             }}
-            src="/assets/images/max.png"
+            src="/static/images/max.png"
             alt="max products image"
           />
           Ver todos
@@ -51,7 +51,7 @@ export const MostWantedProducts = () => {
             >
               <Card.Body>
                 <Card.Image
-                  src="/assets/images/productSearch.png"
+                  src="/static/images/productSearch.png"
                   width={237}
                   height={362}
                   css={{ borderRadius: "8px" }}
@@ -136,7 +136,7 @@ export const MostWantedProducts = () => {
             >
               <Card.Body>
                 <Card.Image
-                  src="/assets/images/productSearch.png"
+                  src="/static/images/productSearch.png"
                   width={237}
                   height={362}
                   css={{ borderRadius: "8px" }}
@@ -235,7 +235,7 @@ export const MostWantedProducts = () => {
           >
             <Card.Body>
               <Card.Image
-                src="/assets/images/productSearch.png"
+                src="/static/images/productSearch.png"
                 width={237}
                 height={362}
                 css={{ borderRadius: "8px" }}
@@ -319,7 +319,7 @@ export const MostWantedProducts = () => {
           >
             <Card.Body>
               <Card.Image
-                src="/assets/images/productSearch.png"
+                src="/static/images/productSearch.png"
                 width={237}
                 height={362}
                 css={{ borderRadius: "8px" }}

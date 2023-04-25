@@ -22,7 +22,7 @@ const PrimarySlider = () => {
       >
         <Image
           css={{ padding: "32px 16px 32px 16px" }}
-          src="/assets/images/banner.png"
+          src="/static/images/banner.png"
           alt="banner image"
           containerCss={{ width: "375px" }}
         />

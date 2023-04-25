@@ -33,7 +33,7 @@ const UsefulTips = () => {
         }}
       >
         <Image
-          src="/assets/images/usefulTipsImage.png"
+          src="/static/images/usefulTipsImage.png"
           alt="useful tips image"
           containerCss={{
             position: "absolute",
@@ -96,7 +96,7 @@ const UsefulTips = () => {
         }}
       >
         <Image
-          src="/assets/images/usefulTipsImage2.png"
+          src="/static/images/usefulTipsImage2.png"
           alt="useful tips image 2"
           containerCss={{ position: "absolute", borderRadius: "8px" }}
         />
@@ -156,7 +156,7 @@ const UsefulTips = () => {
         }}
       >
         <Image
-          src="/assets/images/usefulTipsImage.png"
+          src="/static/images/usefulTipsImage.png"
           alt="useful tips image"
           containerCss={{
             position: "absolute",
