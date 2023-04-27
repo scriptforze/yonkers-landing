@@ -26,7 +26,7 @@ const Navbar = () => {
             className="menu-button"
             icon={<MenuOutlined />}
           />
-          <CustomImage width={99} height={24} alt="logo icon" src={Logo} />
+          <CustomImage alt="logo icon" src={Logo} priority />
         </MenuLogoContainer>
 
         <NavbarControlsContainer>

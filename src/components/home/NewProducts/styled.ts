@@ -1,13 +1,13 @@
 import { Button, Typography } from "antd";
 import styled from "styled-components";
 
-export const MostWantedProductsContainer = styled.div`
+export const NewProductsContainer = styled.div`
   display: flex;
   margin: 105px 0px;
   flex-direction: column;
 `;
 
-export const MostWantedProductsTitle = styled(Typography.Title).attrs(() => ({
+export const NewProductsTitle = styled(Typography.Title).attrs(() => ({
   level: 3,
 }))`
   color: #172d5e !important;
@@ -15,7 +15,7 @@ export const MostWantedProductsTitle = styled(Typography.Title).attrs(() => ({
   font-weight: 600 !important;
 `;
 
-export const MostWantedProductsCTAButton = styled(Button).attrs(() => ({
+export const NewProductsCTAButton = styled(Button).attrs(() => ({
   type: "link",
 }))`
   display: flex;
@@ -30,7 +30,7 @@ export const MostWantedProductsCTAButton = styled(Button).attrs(() => ({
   }
 `;
 
-export const MostWantedProductsHeader = styled.div`
+export const NewProductsHeader = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;

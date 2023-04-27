@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export const CustomImage = styled(Image)`
-  width: 100%;
+  width: 151px;
   height: auto;
 `;
 

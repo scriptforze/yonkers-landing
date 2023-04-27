@@ -1,287 +1,98 @@
-import { Grid, Text, Button } from "@nextui-org/react";
-import Image from "next/image";
 import DiscountImage from "@/common/assets/images/discountImage.png";
+import {
+  OffersDiscountsCard,
+  OffersDiscountsCardImage,
+  OffersDiscountsContainer,
+  OffersDiscountsTextTitle,
+  OffersDiscountsCardTextTitle,
+  OffersDiscountsTextContainer,
+  OffersDiscountsCardsContainer,
+  OffersDiscountsTextDescription,
+  OffersDiscountsCardTextSubtitle,
+  OffersDiscountsCardTextCTAButton,
+  OffersDiscountsCardTextContainer,
+  OffersDiscountsCardTextDescription,
+} from "./styled";
 
 const OffersDiscounst = () => {
   return (
-    <Grid.Container css={{ justifyContent: "center", background: "#E8E8E8" }}>
-      <Grid
-        css={{
-          alignItems: "center",
-          textAlign: "center",
-        }}
-      >
-        <Text
-          h1
-          size={24}
-          color="#000000"
-          weight="semibold"
-          css={{ padding: "32px 52px 16px 52px", marginBottom: "0" }}
-        >
+    <OffersDiscountsContainer>
+      <OffersDiscountsTextContainer>
+        <OffersDiscountsTextTitle>
           Ofertas y Descuentos 2023
-        </Text>
+        </OffersDiscountsTextTitle>
 
-        <Text
-          h1
-          size={18}
-          color="#000000"
-          weight="light"
-          css={{ padding: "0 19px 62px 19px" }}
-        >
+        <OffersDiscountsTextDescription>
           ¡Grandes ofertas en repuestos y accesorios para autos! Mejora y mantén
           tu vehículo a precios imbatibles. ¡No te lo pierdas, oferta por tiempo
           limitado!
-        </Text>
-      </Grid>
+        </OffersDiscountsTextDescription>
+      </OffersDiscountsTextContainer>
 
-      <Grid
-        css={{
-          position: "relative",
-          width: "343px",
-          height: "302px",
-          marginBottom: "12px",
-        }}
-      >
-        <Image
-          width={100}
-          height={100}
-          src={DiscountImage}
-          alt="discount image"
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            width: "100%",
-            height: "auto",
-          }}
-        />
+      <OffersDiscountsCardsContainer>
+        <OffersDiscountsCard>
+          <OffersDiscountsCardImage src={DiscountImage} alt="Discount Image" />
 
-        <div
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            height: "302px",
-            background: "rgba(28, 37, 54, 0.8)",
-            padding: "16px",
-            flexDirection: "column",
-            display: "flex",
-          }}
-        >
-          <Text
-            size={24}
-            color="#E6E6E6"
-            weight="bold"
-            css={{ marginBottom: "24px" }}
-          >
-            30% Off
-          </Text>
+          <OffersDiscountsCardTextContainer>
+            <OffersDiscountsCardTextTitle>30% Off</OffersDiscountsCardTextTitle>
 
-          <Text
-            size={22}
-            color="#E6E6E6"
-            weight="semibold"
-            css={{
-              marginBottom: "10px",
-            }}
-          >
-            Unidad de control del motor
-          </Text>
+            <OffersDiscountsCardTextSubtitle>
+              Unidad de control del motor
+            </OffersDiscountsCardTextSubtitle>
 
-          <Text
-            size={16}
-            color="#E6E6E6"
-            weight="normal"
-            css={{
-              marginBottom: "40px",
-            }}
-          >
-            controla y regula diversas funciones del motor, incluido el
-            rendimiento y la emisión de gases.
-          </Text>
+            <OffersDiscountsCardTextDescription>
+              controla y regula diversas funciones del motor, incluido el
+              rendimiento y la emisión de gases.
+            </OffersDiscountsCardTextDescription>
 
-          <Button
-            css={{
-              backgroundColor: "rgba(232, 232, 232, 1)",
-              borderRadius: "4px",
-              color: "#252525",
-              padding: "11px 52px",
-              width: "177px",
-              alignSelf: "center",
-              flexDirection: "column",
-              display: "flex",
-              fontSize: "18px",
-              fontWeight: "bold",
-            }}
-          >
-            Ver Referencias
-          </Button>
-        </div>
-      </Grid>
+            <OffersDiscountsCardTextCTAButton>
+              Ver referencias
+            </OffersDiscountsCardTextCTAButton>
+          </OffersDiscountsCardTextContainer>
+        </OffersDiscountsCard>
 
-      <Grid
-        css={{
-          position: "relative",
-          width: "343px",
-          height: "302px",
-          marginBottom: "12px",
-        }}
-      >
-        <Image
-          width={100}
-          height={100}
-          src={DiscountImage}
-          alt="discount image"
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            width: "100%",
-            height: "auto",
-          }}
-        />
+        <OffersDiscountsCard>
+          <OffersDiscountsCardImage src={DiscountImage} alt="Discount Image" />
 
-        <div
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            height: "302px",
-            background: "rgba(28, 37, 54, 0.8)",
-            padding: "16px",
-            flexDirection: "column",
-            display: "flex",
-          }}
-        >
-          <Text
-            size={24}
-            color="#E6E6E6"
-            weight="bold"
-            css={{ marginBottom: "27px" }}
-          >
-            30% Off
-          </Text>
+          <OffersDiscountsCardTextContainer>
+            <OffersDiscountsCardTextTitle>30% Off</OffersDiscountsCardTextTitle>
 
-          <Text
-            size={22}
-            color="#E6E6E6"
-            weight="semibold"
-            css={{
-              marginBottom: "16px",
-            }}
-          >
-            Módulo de control del transmisor
-          </Text>
+            <OffersDiscountsCardTextSubtitle>
+              Módulo de control del transmisor
+            </OffersDiscountsCardTextSubtitle>
 
-          <Text
-            size={16}
-            color="#E6E6E6"
-            weight="normal"
-            css={{
-              marginBottom: "31px",
-            }}
-          >
-            Controla y regula la transmisión automática del automóvil.
-          </Text>
+            <OffersDiscountsCardTextDescription>
+              Controla y regula la transmisión automática del automóvil.
+            </OffersDiscountsCardTextDescription>
 
-          <Button
-            css={{
-              backgroundColor: "rgba(232, 232, 232, 1)",
-              borderRadius: "4px",
-              color: "#252525",
-              padding: "11px 52px",
-              width: "177px",
-              alignSelf: "center",
-              flexDirection: "column",
-              display: "flex",
-              fontSize: "18px",
-              fontWeight: "bold",
-            }}
-          >
-            Ver Referencias
-          </Button>
-        </div>
-      </Grid>
+            <OffersDiscountsCardTextCTAButton>
+              Ver referencias
+            </OffersDiscountsCardTextCTAButton>
+          </OffersDiscountsCardTextContainer>
+        </OffersDiscountsCard>
 
-      <Grid
-        css={{
-          position: "relative",
-          width: "343px",
-          height: "302px",
-          marginBottom: "12px",
-        }}
-      >
-        <Image
-          width={100}
-          height={100}
-          src={DiscountImage}
-          alt="discount image"
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            width: "100%",
-            height: "auto",
-          }}
-        />
+        <OffersDiscountsCard>
+          <OffersDiscountsCardImage src={DiscountImage} alt="Discount Image" />
 
-        <div
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            height: "302px",
-            background: "rgba(28, 37, 54, 0.8)",
-            padding: "16px",
-            flexDirection: "column",
-            display: "flex",
-          }}
-        >
-          <Text
-            size={24}
-            color="#E6E6E6"
-            weight="bold"
-            css={{ marginBottom: "12px" }}
-          >
-            30% Off
-          </Text>
+          <OffersDiscountsCardTextContainer>
+            <OffersDiscountsCardTextTitle>30% Off</OffersDiscountsCardTextTitle>
 
-          <Text
-            size={22}
-            color="#E6E6E6"
-            weight="semibold"
-            css={{
-              marginBottom: "10px",
-            }}
-          >
-            Módulo de control de la batería
-          </Text>
+            <OffersDiscountsCardTextSubtitle>
+              Módulo de control de la batería
+            </OffersDiscountsCardTextSubtitle>
 
-          <Text
-            size={16}
-            color="#E6E6E6"
-            weight="normal"
-            css={{
-              marginBottom: "30px",
-            }}
-          >
-            Controla y regula la carga y descarga de la batería del automóvil,
-            así como diversas funciones eléctricas.
-          </Text>
+            <OffersDiscountsCardTextDescription>
+              Controla y regula la carga y descarga de la batería del automóvil,
+              así como diversas funciones eléctricas.
+            </OffersDiscountsCardTextDescription>
 
-          <Button
-            css={{
-              backgroundColor: "rgba(232, 232, 232, 1)",
-              borderRadius: "4px",
-              color: "#252525",
-              padding: "11px 52px",
-              width: "177px",
-              alignSelf: "center",
-              flexDirection: "column",
-              display: "flex",
-              fontSize: "18px",
-              fontWeight: "bold",
-            }}
-          >
-            Ver Referencias
-          </Button>
-        </div>
-      </Grid>
-    </Grid.Container>
+            <OffersDiscountsCardTextCTAButton>
+              Ver referencias
+            </OffersDiscountsCardTextCTAButton>
+          </OffersDiscountsCardTextContainer>
+        </OffersDiscountsCard>
+      </OffersDiscountsCardsContainer>
+    </OffersDiscountsContainer>
   );
 };
 
