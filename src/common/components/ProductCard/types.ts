@@ -8,7 +8,7 @@ type StaticImport = StaticRequire | StaticImageData;
 export interface ProductCardProps {
   title: string;
   price: number;
-  brand: string;
+  brand?: string;
   lastPrice?: number;
   imageURL: string | StaticImport;
 }

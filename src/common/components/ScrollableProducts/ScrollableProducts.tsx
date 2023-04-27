@@ -11,7 +11,7 @@ const Container = ({
   children,
   numProducts,
 }: {
-  children: React.ReactElement[];
+  children: React.ReactElement | React.ReactElement[];
   numProducts: number;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -58,7 +58,8 @@ const Container = ({
     setCurrentPosition((currentPosition) => {
       let newPosition = currentPosition - productWidth;
       const maxPosition =
-        -(productWidth + productMargin) * (children?.length - numProducts);
+        -(productWidth + productMargin) *
+        (Array.isArray(children) ? children.length : 1 - numProducts);
 
       if (newPosition < maxPosition) {
         newPosition = maxPosition;
