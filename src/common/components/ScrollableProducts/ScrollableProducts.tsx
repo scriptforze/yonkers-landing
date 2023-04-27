@@ -1,10 +1,10 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import {
-  Button,
-  ControlsContainer,
-  ProductContainer,
-  ProductsContainer,
-  ProductsHorizontalContainer,
+  StyledButton,
+  StyledControlsContainer,
+  StyledProductContainer,
+  StyledProductsContainer,
+  StyledProductsHorizontalContainer,
 } from "./styled";
 
 const Container = ({
@@ -69,36 +69,36 @@ const Container = ({
   };
 
   return (
-    <ProductsHorizontalContainer ref={containerRef}>
-      <ProductsContainer
+    <StyledProductsHorizontalContainer ref={containerRef}>
+      <StyledProductsContainer
         className="products"
         style={{ transform: `translateX(${currentPosition}px)` }}
       >
         {children}
-      </ProductsContainer>
-      <ControlsContainer>
-        <Button className="left" onClick={handleScrollLeft}>
+      </StyledProductsContainer>
+      <StyledControlsContainer>
+        <StyledButton className="left" onClick={handleScrollLeft}>
           &lt;
-        </Button>
-        <Button className="right" onClick={handleScrollRight}>
+        </StyledButton>
+        <StyledButton className="right" onClick={handleScrollRight}>
           &gt;
-        </Button>
-      </ControlsContainer>
-    </ProductsHorizontalContainer>
+        </StyledButton>
+      </StyledControlsContainer>
+    </StyledProductsHorizontalContainer>
   );
 };
 
-const Product = ({ children }: { children: ReactNode }) => {
+const ProductContainer = ({ children }: { children: ReactNode }) => {
   return (
-    <ProductContainer>
+    <StyledProductContainer>
       <div className="product">{children}</div>
-    </ProductContainer>
+    </StyledProductContainer>
   );
 };
 
 const ScrollableProducts = {
-  Product: Product,
   Container: Container,
+  ProductContainer: ProductContainer,
 };
 
 export default ScrollableProducts;

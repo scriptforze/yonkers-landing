@@ -1,226 +1,74 @@
-import { Button, Grid, Text } from "@nextui-org/react";
-import Image from "next/image";
 import UsefulTipsImg from "@/common/assets/images/usefulTipsImage.png";
+import {
+  UsefulTipCard,
+  UsefulTipsTitle,
+  UsefulTipCardImage,
+  UsefulTipsContainer,
+  UsefulTipCardTextTitle,
+  UsefulTipsCardsContainer,
+  UsefulTipCardTextContainer,
+  UsefulTipCardTextCTAButton,
+  UsefulTipCardTextDescription,
+} from "./styled";
 
 const UsefulTips = () => {
   return (
-    <div
-      style={{
-        marginTop: "37px",
-        padding: "32px  16px ",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <Text
-        h1
-        size={24}
-        color="#172D5E"
-        weight="semibold"
-        css={{
-          textAlign: "left",
-          marginBottom: "24px",
-        }}
-      >
-        Consejos útiles
-      </Text>
+    <UsefulTipsContainer>
+      <UsefulTipsTitle>Consejos útiles</UsefulTipsTitle>
 
-      <Grid
-        css={{
-          height: "226px",
-          display: "flex",
-          position: "relative",
-          marginBottom: "12px",
-          flexDirection: "row",
-        }}
-      >
-        <Image
-          src={UsefulTipsImg}
-          alt="useful tips image"
-          style={{
-            width: "100%",
-            height: "inherit",
-            position: "absolute",
-            borderRadius: "8px",
-          }}
-        />
+      <UsefulTipsCardsContainer>
+        <UsefulTipCard>
+          <UsefulTipCardImage src={UsefulTipsImg} alt="useful tip image" />
 
-        <div
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            background: "rgba(28, 37, 54, 0.8)",
-            padding: "16px",
-            flexDirection: "column",
-            display: "flex",
-            height: "226px",
-          }}
-        >
-          <Text
-            size={22}
-            color="#E6E6E6"
-            weight="semibold"
-            css={{ marginBottom: "24px" }}
-          >
-            Unidad de control del motor (ECU)
-          </Text>
+          <UsefulTipCardTextContainer>
+            <UsefulTipCardTextTitle>
+              Unidad de control del motor (ECU)
+            </UsefulTipCardTextTitle>
 
-          <Text
-            size={16}
-            color="#E6E6E6"
-            weight="normal"
-            css={{
-              marginBottom: "10px",
-            }}
-          >
-            mantener el motor en buen estado y asegurarse de que esté
-            funcionando de sen ...
-          </Text>
+            <UsefulTipCardTextDescription>
+              mantener el motor en buen estado y asegurarse de que esté
+              funcionando de sen ...
+            </UsefulTipCardTextDescription>
 
-          <Button
-            light
-            style={{
-              color: "#E6E6E6",
-              fontSize: "20px",
-              alignSelf: "flex-end",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            Leer más...
-          </Button>
-        </div>
-      </Grid>
+            <UsefulTipCardTextCTAButton>Leer más...</UsefulTipCardTextCTAButton>
+          </UsefulTipCardTextContainer>
+        </UsefulTipCard>
 
-      <Grid
-        css={{
-          position: "relative",
-          marginBottom: "12px",
-          height: "226px",
-        }}
-      >
-        <Image
-          src={UsefulTipsImg}
-          alt="useful tips image"
-          style={{
-            width: "100%",
-            height: "inherit",
-            position: "absolute",
-            borderRadius: "8px",
-          }}
-        />
+        <UsefulTipCard>
+          <UsefulTipCardImage src={UsefulTipsImg} alt="useful tip image" />
 
-        <div
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            background: "rgba(28, 37, 54, 0.8)",
-            padding: "16px",
-            flexDirection: "column",
-            display: "flex",
-            height: "226px",
-          }}
-        >
-          <Text
-            size={22}
-            color="#E6E6E6"
-            weight="semibold"
-            css={{ marginBottom: "27px" }}
-          >
-            Módulo de control del transmisor (TCM)
-          </Text>
+          <UsefulTipCardTextContainer>
+            <UsefulTipCardTextTitle>
+              Módulo de control del transmisor (TCM)
+            </UsefulTipCardTextTitle>
 
-          <Text
-            size={16}
-            color="#E6E6E6"
-            weight="normal"
-            css={{
-              marginBottom: "16px",
-            }}
-          >
-            Asegurarse de realizar un mantenimiento adecuado de la
-            transmisión...
-          </Text>
+            <UsefulTipCardTextDescription>
+              Asegurarse de realizar un mantenimiento adecuado de la
+              transmisión...
+            </UsefulTipCardTextDescription>
 
-          <Button
-            light
-            style={{
-              color: "#E6E6E6",
-              fontSize: "20px",
-              alignSelf: "flex-end",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            Leer más...
-          </Button>
-        </div>
-      </Grid>
+            <UsefulTipCardTextCTAButton>Leer más...</UsefulTipCardTextCTAButton>
+          </UsefulTipCardTextContainer>
+        </UsefulTipCard>
 
-      <Grid
-        css={{
-          position: "relative",
-          marginBottom: "12px",
-          height: "226px",
-        }}
-      >
-        <Image
-          src={UsefulTipsImg}
-          alt="useful tips image"
-          style={{
-            width: "100%",
-            height: "inherit",
-            position: "absolute",
-            borderRadius: "8px",
-          }}
-        />
+        <UsefulTipCard>
+          <UsefulTipCardImage src={UsefulTipsImg} alt="useful tip image" />
 
-        <div
-          style={{
-            position: "absolute",
-            borderRadius: "8px",
-            background: "rgba(28, 37, 54, 0.8)",
-            padding: "16px",
-            flexDirection: "column",
-            display: "flex",
-            height: "226px",
-          }}
-        >
-          <Text
-            size={22}
-            color="#E6E6E6"
-            weight="bold"
-            css={{ marginBottom: "12px" }}
-          >
-            Módulo de control de la batería (BCM)
-          </Text>
+          <UsefulTipCardTextContainer>
+            <UsefulTipCardTextTitle>
+              Módulo de control de la batería (BCM)
+            </UsefulTipCardTextTitle>
 
-          <Text
-            size={16}
-            color="#E6E6E6"
-            weight="normal"
-            css={{
-              marginBottom: "10px",
-            }}
-          >
-            Mantener la batería cargada y protegerla de las fluctuaciones de ...
-          </Text>
+            <UsefulTipCardTextDescription>
+              Mantener la batería cargada y protegerla de las fluctuaciones
+              de...
+            </UsefulTipCardTextDescription>
 
-          <Button
-            light
-            style={{
-              color: "#E6E6E6",
-              fontSize: "20px",
-              alignSelf: "flex-end",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            Leer más...
-          </Button>
-        </div>
-      </Grid>
-    </div>
+            <UsefulTipCardTextCTAButton>Leer más...</UsefulTipCardTextCTAButton>
+          </UsefulTipCardTextContainer>
+        </UsefulTipCard>
+      </UsefulTipsCardsContainer>
+    </UsefulTipsContainer>
   );
 };
 

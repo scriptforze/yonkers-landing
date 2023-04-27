@@ -1,13 +1,19 @@
-import { Button, Text } from "@nextui-org/react";
-import { CustomCard, CustomCardImage } from "./styled";
 import React from "react";
 import { ProductCardProps } from "./types";
+import { Button, Text } from "@nextui-org/react";
+import { CustomCard, CustomCardImage } from "./styled";
 
-const ProductCard = ({ imageURL, title }: ProductCardProps) => {
+const ProductCard = ({
+  title,
+  brand,
+  price,
+  imageURL,
+  lastPrice,
+}: ProductCardProps) => {
   return (
     <CustomCard>
       <CustomCard.Body>
-        <CustomCardImage src="/static/images/productSearch.png" />
+        <CustomCardImage src={imageURL} alt="Product Image" />
 
         <div
           style={{
@@ -22,7 +28,7 @@ const ProductCard = ({ imageURL, title }: ProductCardProps) => {
               marginRight: "10px",
             }}
           >
-            $570.000
+            {price}
           </Text>
           <Text
             css={{
@@ -31,7 +37,7 @@ const ProductCard = ({ imageURL, title }: ProductCardProps) => {
               textDecorationLine: "line-through",
             }}
           >
-            $690.000
+            {lastPrice}
           </Text>
         </div>
         <Text
@@ -42,7 +48,7 @@ const ProductCard = ({ imageURL, title }: ProductCardProps) => {
             width: "189px",
           }}
         >
-          Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L SOHC
+          {title}
         </Text>
         <Text
           css={{
@@ -52,7 +58,7 @@ const ProductCard = ({ imageURL, title }: ProductCardProps) => {
             marginBottom: "26px",
           }}
         >
-          HYUNDAI
+          {brand}
         </Text>
         <Button
           auto

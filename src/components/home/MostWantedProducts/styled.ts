@@ -1,35 +1,37 @@
+import { Button, Typography } from "antd";
 import styled from "styled-components";
 
-export const ProductsHorizontalContainer = styled.div`
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+export const MostWantedProductsContainer = styled.div`
+  display: flex;
+  margin-top: 32px;
+  flex-direction: column;
 `;
 
-export const ProductsContainer = styled.div`
-  display: flex;
-  overflow-x: auto;
-  flex-wrap: nowrap;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
+export const MostWantedProductsTitle = styled(Typography.Title).attrs(() => ({
+  level: 3,
+}))`
+  color: #172d5e !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+`;
 
-  &::-webkit-scrollbar {
-    display: none;
+export const MostWantedProductsCTAButton = styled(Button).attrs(() => ({
+  type: "link",
+}))`
+  display: flex;
+  color: #000000;
+  font-size: 16px;
+  flex-direction: row;
+  margin-bottom: 18px;
+  align-items: center;
+
+  & > .anticon {
+    color: #3e79f7;
   }
 `;
 
-export const ControlsContainer = styled.div`
-  top: 50%;
-  z-index: 1;
-  width: 100%;
+export const MostWantedProductsHeader = styled.div`
   display: flex;
-  position: absolute;
-  transform: translateY(-50%);
-  justify-content: space-between;
-`;
-
-export const ProductContainer = styled.div`
-  margin-right: 1rem;
+  align-items: center;
+  flex-direction: column;
 `;

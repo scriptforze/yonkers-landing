@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const ProductsHorizontalContainer = styled.div`
+export const StyledProductsHorizontalContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
 `;
 
-export const ProductsContainer = styled.div`
+export const StyledProductsContainer = styled.div`
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
@@ -21,7 +21,7 @@ export const ProductsContainer = styled.div`
   }
 `;
 
-export const ControlsContainer = styled.div`
+export const StyledControlsContainer = styled.div`
   top: 50%;
   z-index: 1;
   width: 100%;
@@ -31,7 +31,7 @@ export const ControlsContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
@@ -40,7 +40,7 @@ export const Button = styled.button`
   padding: 0 1rem;
 `;
 
-export const ProductContainer = styled.div`
+export const StyledProductContainer = styled.div`
   &:not(:last-child) {
     margin-right: 1rem;
   }
