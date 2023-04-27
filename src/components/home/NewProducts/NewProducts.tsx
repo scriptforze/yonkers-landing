@@ -4,7 +4,11 @@ import Image from "next/image";
 import Max from "@/common/assets/images/max.png";
 import ProductSearch from "@/common/assets/images/productSearch.png";
 
+import { useGetAllProductsQuery } from "@/services/products";
+
 export const NewProducts = () => {
+  const { data: products } = useGetAllProductsQuery({});
+
   return (
     <div
       style={{
