@@ -1,17 +1,14 @@
 import {
   CustomImage,
-  MenuItemButton,
   SuperiorNavbar,
   NavbarContainer,
   MenuLogoContainer,
-  MenuItemsContainer,
   CustomControlButton,
   NavbarControlsContainer,
 } from "./styled";
 import {
   UserOutlined,
   MenuOutlined,
-  SearchOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 
@@ -30,17 +27,10 @@ const Navbar = () => {
         </MenuLogoContainer>
 
         <NavbarControlsContainer>
-          <CustomControlButton icon={<SearchOutlined />} />
           <CustomControlButton icon={<UserOutlined />} />
           <CustomControlButton icon={<ShoppingCartOutlined />} />
         </NavbarControlsContainer>
       </SuperiorNavbar>
-
-      <MenuItemsContainer>
-        <MenuItemButton>INICIO</MenuItemButton>
-        <MenuItemButton>MARKETPLACE</MenuItemButton>
-        <MenuItemButton>CONTACTO</MenuItemButton>
-      </MenuItemsContainer>
     </NavbarContainer>
   );
 };

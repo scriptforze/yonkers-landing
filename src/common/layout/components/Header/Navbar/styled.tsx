@@ -26,12 +26,6 @@ export const NavbarContainer = styled.section`
 `;
 
 export const SuperiorNavbar = styled.div`
-  background: linear-gradient(
-    180deg,
-    rgba(62, 121, 247, 0.65) 0%,
-    #3e79f7 53.12%,
-    #3e79f7 100%
-  );
   width: 100%;
   height: 60px;
   display: flex;
@@ -39,6 +33,7 @@ export const SuperiorNavbar = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  background: ${({ theme }) => theme.custom?.colors?.primary};
 `;
 
 export const MenuLogoContainer = styled.div`
@@ -58,24 +53,4 @@ export const NavbarControlsContainer = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-`;
-
-export const MenuItemsContainer = styled.nav`
-  display: flex;
-  font-size: 16px;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #d4d7da;
-`;
-
-export const MenuItemButton = styled(Button).attrs(() => ({
-  ghost: true,
-}))`
-  border: none;
-  font-size: 16px;
-  font-weight: normal;
-  & > span {
-    color: #464646;
-    letter-spacing: 0.04em;
-  }
 `;

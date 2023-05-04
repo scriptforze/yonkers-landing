@@ -1,11 +1,16 @@
-import { ContactSocialMedia } from "./ContactSocialMedia";
 import { Navbar } from "./Navbar";
+import { SearchBar } from "./SearchBar";
+import { HeaderContainer } from "./styled";
+import { Responsive } from "@/common/components";
+
 const Header = () => {
   return (
-    <header>
-      <ContactSocialMedia />
+    <HeaderContainer>
       <Navbar />
-    </header>
+      <Responsive xs>
+        <SearchBar />
+      </Responsive>
+    </HeaderContainer>
   );
 };
 

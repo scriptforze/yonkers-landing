@@ -1,3 +1,4 @@
+import { ContactSocialMedia } from "./ContactSocialMedia";
 import { NewLetters } from "./NewsLetters";
 import { SiteMap } from "./SiteMap";
 
@@ -6,6 +7,7 @@ const Footer = () => {
     <div>
       <SiteMap />
       <NewLetters />
+      <ContactSocialMedia />
     </div>
   );
 };
