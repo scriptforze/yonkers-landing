@@ -33,7 +33,7 @@ export const OffersDiscountsCardsContainer = styled.div`
   padding: 0px 25px;
   justify-items: center;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 343px), 343px));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 343px), 1fr));
 `;
 
 export const OffersDiscountsCard = styled.div`
@@ -47,12 +47,13 @@ export const OffersDiscountsCardImage = styled(Image).attrs(() => ({
   height: 100,
 }))`
   width: 100%;
-  height: auto;
+  height: inherit;
   position: absolute;
   border-radius: 8px;
 `;
 
 export const OffersDiscountsCardTextContainer = styled.div`
+  width: 100%;
   height: 302px;
   padding: 16px;
   display: flex;
