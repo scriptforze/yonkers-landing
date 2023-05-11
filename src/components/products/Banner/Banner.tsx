@@ -1,0 +1,14 @@
+import React from "react";
+import ProductsBannerImg from "@/common/assets/images/products-banner.jpg";
+import { BannerContainer, BannerImage, BannerText } from "./styled";
+
+export const ProductsBanner = () => {
+  return (
+    <BannerContainer>
+      <BannerImage src={ProductsBannerImg} alt="products Image" />
+      <BannerText>Products</BannerText>
+    </BannerContainer>
+  );
+};
+
+export default ProductsBanner;
