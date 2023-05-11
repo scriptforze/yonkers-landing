@@ -1,4 +1,3 @@
-export * from "./Brands";
 export * from "./CreateAcount";
 export * from "./MostWantedProducts";
 export * from "./NewProducts";

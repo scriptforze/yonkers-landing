@@ -1,3 +1,4 @@
+import { Menu } from "./Menu";
 import { Navbar } from "./Navbar";
 import { SearchBar } from "./SearchBar";
 import { HeaderContainer } from "./styled";
@@ -5,12 +6,17 @@ import { Responsive } from "@/common/components";
 
 const Header = () => {
   return (
-    <HeaderContainer>
-      <Navbar />
-      <Responsive xs>
-        <SearchBar />
+    <>
+      <HeaderContainer>
+        <Navbar />
+        <Responsive xs>
+          <SearchBar />
+        </Responsive>
+      </HeaderContainer>
+      <Responsive sm md lg xl xxl>
+        <Menu />
       </Responsive>
-    </HeaderContainer>
+    </>
   );
 };
 

@@ -22,7 +22,6 @@ export const Layout: FC<LayoutProps> = ({ children, title }) => {
       <Header />
 
       <main>{children}</main>
-
       <Footer />
     </>
   );

@@ -1,7 +1,10 @@
 import { Breakpoints, Colors, CustomThemeConfig } from "./types";
 
 const colors: Colors = {
+  white: "#FFFFFF",
+  footer: "#091D47",
   primary: "#3E79F7",
+  secondary: "#FE7062",
 };
 
 const breakpoints: Breakpoints = {

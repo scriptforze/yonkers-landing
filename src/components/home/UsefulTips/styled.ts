@@ -12,10 +12,10 @@ export const UsefulTipsContainer = styled.section`
 export const UsefulTipsTitle = styled(Typography.Title).attrs(() => ({
   level: 3,
 }))`
-  text-align: left;
-  margin-bottom: 24px;
+  text-align: center;
   color: #172d5e !important;
   font-weight: 600 !important;
+  margin-bottom: 24px !important;
 `;
 
 export const UsefulTipsCardsContainer = styled.div`
@@ -24,7 +24,7 @@ export const UsefulTipsCardsContainer = styled.div`
   padding: 0px 25px;
   justify-items: center;
   grid-template-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 343px), 343px));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 343px), 1fr));
 `;
 
 export const UsefulTipCard = styled.div`

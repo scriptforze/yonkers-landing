@@ -1,6 +1,5 @@
 import { Layout } from "@/common/layout";
 import {
-  Brands,
   Sliders,
   UsefulTips,
   NewProducts,
@@ -18,7 +17,6 @@ export default function Home() {
       <NewProducts />
       <CreateAcount />
       <UsefulTips />
-      <Brands />
     </Layout>
   );
 }
