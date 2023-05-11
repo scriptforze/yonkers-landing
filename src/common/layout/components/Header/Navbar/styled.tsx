@@ -5,6 +5,12 @@ import styled from "styled-components";
 export const CustomImage = styled(Image)`
   width: 151px;
   height: auto;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.sm &&
+    `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
+    width: 240px;
+  }
 `;
 
 export const CustomControlButton = styled(Button).attrs(() => ({
@@ -26,14 +32,20 @@ export const NavbarContainer = styled.section`
 `;
 
 export const SuperiorNavbar = styled.div`
+  gap: 12px;
   width: 100%;
   height: 60px;
   display: flex;
-  padding: 0px 16px;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   background: ${({ theme }) => theme.custom?.colors?.primary};
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.lg &&
+    `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
+    gap: 50px;
+  }
 `;
 
 export const MenuLogoContainer = styled.div`

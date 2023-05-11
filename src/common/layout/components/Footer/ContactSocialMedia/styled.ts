@@ -1,28 +1,27 @@
+import { Typography } from "antd";
 import styled from "styled-components";
 
 export const ContactSocialMediaContainer = styled.section`
-  height: 60px;
+  gap: 22px;
   display: flex;
   padding: 0px 14px;
-  flex-direction: row;
+  padding-top: 34px;
+  text-align: center;
   align-items: center;
-  background-color: #091d47;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid #172d5e;
 `;
 
-export const ContactPhone = styled.div`
+export const CopyRightText = styled(Typography.Text)`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  img {
-    margin-right: 6px;
-  }
+  font-size: 12px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.custom?.colors?.white};
 `;
 
 export const SocialMedia = styled.div`
-  gap: 10px;
+  gap: 19px;
   display: flex;
   direction: row;
   justify-content: space-around;
