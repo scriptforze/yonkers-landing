@@ -1,7 +1,12 @@
 import React from "react";
+import { SearchInput, SearchInputContainer } from "./styled";
 
 const SearchBar = () => {
-  return <div>SearchBar</div>;
+  return (
+    <SearchInputContainer>
+      <SearchInput />
+    </SearchInputContainer>
+  );
 };
 
 export default SearchBar;

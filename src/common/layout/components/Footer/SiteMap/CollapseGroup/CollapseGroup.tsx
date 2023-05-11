@@ -1,14 +1,8 @@
-import { Collapse, CollapseGroupProps } from "@nextui-org/react";
+import { CollapseProps } from "antd";
+import { CollapseGroupContainer } from "./styled";
 
-const CollapseCard = (props: CollapseGroupProps) => {
-  return (
-    <Collapse.Group
-      {...props}
-      bordered
-      borderWeight={"extrabold"}
-      css={{ color: "#FAFAFA" }}
-    />
-  );
+const CollapseGroup = (props: CollapseProps) => {
+  return <CollapseGroupContainer bordered={false} {...props} />;
 };
 
-export default CollapseCard;
+export default CollapseGroup;

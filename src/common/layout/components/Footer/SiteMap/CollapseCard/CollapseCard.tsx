@@ -1,34 +1,39 @@
-import { Collapse, CollapseProps, CSS, Text } from "@nextui-org/react";
-import { ReactNode, useState } from "react";
-import { CollapseIcon } from "./CollapseIcon";
-import { CollapsedIcon } from "./CollapsedIcon";
+import { Typography } from "antd";
+import { CollapseCardProps } from "./types";
+import { useEffect, useRef, useState } from "react";
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import { CollapseCardContainer, CollapseCardTitle } from "./styled";
 
-const CollapseCard = (props: {
-  title: string;
-  children: ReactNode;
-  style?: CSS;
-}) => {
-  const [collapsed, setCollapsed] = useState(false);
+const CollapseCard = ({
+  key,
+  title,
+  children,
+  activedKey,
+  ...props
+}: CollapseCardProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [collapsed, setCollapsed] = useState<boolean>(false);
 
-  const handleCollapse = (value: boolean) => {
-    setCollapsed(value);
-  };
+  useEffect(() => {
+    if (ref.current) {
+      const { dataset } = ref.current;
+      dataset.key === activedKey ? setCollapsed(true) : setCollapsed(false);
+    }
+  }, [activedKey]);
 
-  const CollapseIconToShow = collapsed ? CollapsedIcon : CollapseIcon;
+  const CollapseIconToShow = collapsed ? MinusOutlined : PlusOutlined;
 
   return (
-    <Collapse
-      arrowIcon={<CollapseIconToShow />}
-      onChange={(ev, idx, value) => handleCollapse(!!value)}
-      title={<Text css={{ color: "#FAFAFA" }}>{props.title}</Text>}
-      css={{
-        background: "#091D47 !important",
-        borderColor: "#FAFAFA",
-        ...props.style,
-      }}
+    <CollapseCardContainer
+      {...props}
+      key={key}
+      ref={ref}
+      showArrow={false}
+      extra={<CollapseIconToShow />}
+      header={<CollapseCardTitle>{title}</CollapseCardTitle>}
     >
-      {props.children}
-    </Collapse>
+      {children}
+    </CollapseCardContainer>
   );
 };
 

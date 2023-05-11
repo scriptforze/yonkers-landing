@@ -1,29 +1,67 @@
-import { Text } from "@nextui-org/react";
-import { CollapseGroup } from "./CollapseGroup";
+import { useState } from "react";
 import { CollapseCard } from "./CollapseCard";
+import { CollapseGroup } from "./CollapseGroup";
+import {
+  CardContentText,
+  ListItem,
+  SiteMapContainer,
+  UnorderedList,
+} from "./styled";
 
 const SiteMap = () => {
-  return (
-    <div style={{ background: "#091D47" }}>
-      <CollapseGroup>
-        <CollapseCard title="CATEGORÍAS">
-          <Text style={{ color: "#FAFAFA" }}>Accesorios</Text>
-        </CollapseCard>
+  const [collapsedKey, setCollapsedKey] = useState<string>("information");
 
-        <CollapseCard title="MARKETPLACE">
-          <Text style={{ color: "#FAFAFA" }}>Accesorios</Text>
+  const onCollapsePanel = (key?: string | string[]) => {
+    if (Array.isArray(key)) {
+      const [activeKey] = key;
+      setCollapsedKey(activeKey);
+    } else if (typeof key === "string") {
+      setCollapsedKey(key);
+    }
+  };
+
+  return (
+    <SiteMapContainer>
+      <CollapseGroup
+        accordion
+        onChange={onCollapsePanel}
+        defaultActiveKey={[collapsedKey]}
+      >
+        <CollapseCard
+          key="contact"
+          title="Contacto"
+          data-key="contact"
+          activedKey={collapsedKey}
+        >
+          <CardContentText>Accesorios</CardContentText>
         </CollapseCard>
 
         <CollapseCard
-          title="AYUDA"
-          style={{ borderBottom: "1px solid  #FAFAFA" }}
+          key="customer-service"
+          activedKey={collapsedKey}
+          data-key="customer-service"
+          title="Atención al cliente"
         >
-          <Text style={{ color: "#FAFAFA" }}>PQRS</Text>
-          <Text style={{ color: "#FAFAFA" }}>PREGUNTAS FRECUENTES</Text>
-          <Text style={{ color: "#FAFAFA" }}>MANUALES TUTORIALES</Text>
+          <CardContentText>Accesorios</CardContentText>
+        </CollapseCard>
+
+        <CollapseCard
+          key="information"
+          data-key="information"
+          activedKey={collapsedKey}
+          title="Información Importante"
+        >
+          <UnorderedList>
+            <ListItem>
+              <CardContentText>Política de Privacidad</CardContentText>
+            </ListItem>
+            <ListItem>
+              <CardContentText>Términos y Condiciones</CardContentText>
+            </ListItem>
+          </UnorderedList>
         </CollapseCard>
       </CollapseGroup>
-    </div>
+    </SiteMapContainer>
   );
 };
 

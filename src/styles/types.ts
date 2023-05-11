@@ -6,8 +6,10 @@ type Breakpoint = {
 };
 
 export type Colors = {
+  white?: string;
   primary?: string;
   secondary?: string;
+  footer?: string;
 };
 
 export type Breakpoints = {
