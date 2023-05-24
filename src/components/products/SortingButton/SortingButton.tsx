@@ -11,15 +11,15 @@ const handleMenuClick = (e: any) => {
 
 const items = [
   {
-    label: "Futbol",
+    label: "Más popular",
     key: "1",
   },
   {
-    label: "Tenis",
+    label: "Menor precio",
     key: "2",
   },
   {
-    label: "Basquetbol",
+    label: "Mayor precio",
     key: "3",
   },
 ];

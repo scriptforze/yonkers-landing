@@ -4,9 +4,14 @@ import styled from "styled-components";
 
 export const UsefulTipsContainer = styled.section`
   display: flex;
-  margin-top: 37px;
-  padding: 32px 16px;
   flex-direction: column;
+  padding: 32px 16px 78px;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xxl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xxl?.min})`} {
+    padding: 32px 120px 78px;
+  }
 `;
 
 export const UsefulTipsTitle = styled(Typography.Title).attrs(() => ({
@@ -25,6 +30,13 @@ export const UsefulTipsCardsContainer = styled.div`
   justify-items: center;
   grid-template-rows: auto;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 343px), 1fr));
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xl?.min})`} {
+    justify-content: center;
+    grid-template-columns: 343px 343px;
+  }
 `;
 
 export const UsefulTipCard = styled.div`

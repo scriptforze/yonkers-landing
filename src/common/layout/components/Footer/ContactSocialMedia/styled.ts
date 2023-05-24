@@ -11,6 +11,13 @@ export const ContactSocialMediaContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   border-top: 1px solid #172d5e;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xl?.min})`} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const CopyRightText = styled(Typography.Text)`

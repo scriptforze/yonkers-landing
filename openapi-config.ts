@@ -12,6 +12,9 @@ const config: ConfigFile = {
     "./src/services/products.ts": {
       filterEndpoints: ["getAllProducts"],
     },
+    "./src/services/categories.ts": {
+      filterEndpoints: ["getAllCategories"],
+    },
   },
   hooks: true,
   tag: true,

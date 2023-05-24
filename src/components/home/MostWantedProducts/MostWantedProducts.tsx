@@ -1,6 +1,4 @@
 import { ProductCard } from "@/common/components/ProductCard";
-import ProductSearch from "@/common/assets/images/productSearch.png";
-import { ScrollableProducts } from "@/common/components/ScrollableProducts";
 
 import {
   MostWantedProductsTitle,
@@ -10,40 +8,58 @@ import {
 } from "./styled";
 
 import { PlusCircleOutlined } from "@ant-design/icons";
+import { HeaderDivider, ItemsCarousel, Responsive } from "@/common/components";
+import { useResponsive } from "@/common/hooks";
+import { useGetAllProductsQuery } from "@/services/products";
 
 export const MostWantedProducts = () => {
-  return (
+  const { shouldRender } = useResponsive({
+    md: true,
+    lg: true,
+    xl: true,
+    xxl: true,
+  });
+  const { data: products } = useGetAllProductsQuery({
+    include: "images,category",
+  });
+
+  return products?.data?.length ? (
     <MostWantedProductsContainer>
       <MostWantedProductsHeader>
-        <MostWantedProductsTitle>
-          Productos más buscados
-        </MostWantedProductsTitle>
+        <Responsive md lg xl xxl>
+          <HeaderDivider>
+            <MostWantedProductsTitle>
+              Productos Mas Buscados
+            </MostWantedProductsTitle>
+          </HeaderDivider>
+        </Responsive>
+        <Responsive xs sm>
+          <MostWantedProductsTitle>
+            Productos Mas Buscados
+          </MostWantedProductsTitle>
+        </Responsive>
+
         <MostWantedProductsCTAButton icon={<PlusCircleOutlined />}>
-          Ver todos
+          {shouldRender ? "Ver todos los productos" : "Ver todos"}
         </MostWantedProductsCTAButton>
       </MostWantedProductsHeader>
-      <ScrollableProducts.Container numProducts={1}>
-        <ScrollableProducts.ProductContainer>
+
+      <ItemsCarousel
+        keyBoardControl={true}
+        removeArrowOnDeviceType={["xs", "sm", "md"]}
+      >
+        {products?.data?.map((product) => (
           <ProductCard
-            price={570000}
-            brand="Hyundai"
-            lastPrice={690000}
-            imageURL={ProductSearch}
-            title="Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L SOHC"
+            brand={product?.category?.name || ""}
+            key={product.id}
+            title={product.name}
+            price={product.price}
+            imageURL={product?.images?.[0]?.urls.original || ""}
           />
-        </ScrollableProducts.ProductContainer>
-        <ScrollableProducts.ProductContainer>
-          <ProductCard
-            price={570000}
-            brand="Hyundai"
-            lastPrice={690000}
-            imageURL={ProductSearch}
-            title="Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L SOHC"
-          />
-        </ScrollableProducts.ProductContainer>
-      </ScrollableProducts.Container>
+        ))}
+      </ItemsCarousel>
     </MostWantedProductsContainer>
-  );
+  ) : null;
 };
 
 export default MostWantedProducts;

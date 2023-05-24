@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
 import { GlobalStyles } from "@/styles/GlobalStyles";
 import { GlobalThemeProvider } from "@/common/components";
+import "react-multi-carousel/lib/styles.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

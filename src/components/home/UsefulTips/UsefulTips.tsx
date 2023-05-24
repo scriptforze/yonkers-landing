@@ -10,11 +10,14 @@ import {
   UsefulTipCardTextCTAButton,
   UsefulTipCardTextDescription,
 } from "./styled";
+import { HeaderDivider } from "@/common/components";
 
 const UsefulTips = () => {
   return (
     <UsefulTipsContainer>
-      <UsefulTipsTitle>Consejos útiles</UsefulTipsTitle>
+      <HeaderDivider>
+        <UsefulTipsTitle>Consejos útiles</UsefulTipsTitle>
+      </HeaderDivider>
 
       <UsefulTipsCardsContainer>
         <UsefulTipCard>

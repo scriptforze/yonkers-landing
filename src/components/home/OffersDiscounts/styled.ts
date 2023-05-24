@@ -5,6 +5,12 @@ import styled from "styled-components";
 export const OffersDiscountsContainer = styled.section`
   display: flex;
   flex-direction: column;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xxl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xxl?.min})`} {
+    padding: 0px 120px;
+  }
 `;
 
 export const OffersDiscountsTextContainer = styled.div`
@@ -19,10 +25,12 @@ export const OffersDiscountsTextTitle = styled(Typography.Title).attrs(() => ({
 }))`
   margin-bottom: 0px;
   padding: 32px 52px 16px;
+  color: #172d5e !important;
   font-weight: 600 !important;
 `;
 
 export const OffersDiscountsTextDescription = styled(Typography.Text)`
+  display: block;
   font-size: 18px;
   font-weight: 300;
 `;

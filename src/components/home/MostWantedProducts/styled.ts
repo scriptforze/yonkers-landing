@@ -1,10 +1,16 @@
 import { Button, Typography } from "antd";
 import styled from "styled-components";
 
-export const MostWantedProductsContainer = styled.div`
+export const MostWantedProductsContainer = styled.section`
   display: flex;
-  margin: 105px 0px;
+  margin: 105px 0px 50px;
   flex-direction: column;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xl?.min})`} {
+    padding: 0px 120px;
+  }
 `;
 
 export const MostWantedProductsTitle = styled(Typography.Title).attrs(() => ({
@@ -27,6 +33,12 @@ export const MostWantedProductsCTAButton = styled(Button).attrs(() => ({
 
   & > .anticon {
     color: #3e79f7;
+  }
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xl?.min})`} {
+    align-self: flex-end;
   }
 `;
 
