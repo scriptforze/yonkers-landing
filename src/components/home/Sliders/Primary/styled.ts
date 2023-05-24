@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Button, Typography } from "antd";
 
-export const PrimarySliderContainer = styled.div`
+export const PrimarySliderContainer = styled.section`
   width: 100%;
   display: grid;
   background: radial-gradient(

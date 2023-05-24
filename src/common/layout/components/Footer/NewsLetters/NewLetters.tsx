@@ -1,10 +1,9 @@
-import { Button, Text, CSS } from "@nextui-org/react";
 import {
-  NewsLettersButton,
-  NewsLettersContainer,
-  NewsLettersInput,
   NewsLettersText,
   NewsLettersTitle,
+  NewsLettersInput,
+  NewsLettersButton,
+  NewsLettersContainer,
 } from "./styled";
 
 const NewLetters = () => {

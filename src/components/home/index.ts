@@ -1,4 +1,4 @@
-export * from "./CreateAcount";
+export * from "./CreateAccount";
 export * from "./MostWantedProducts";
 export * from "./NewProducts";
 export * from "./OffersDiscounts";

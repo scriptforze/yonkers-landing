@@ -23,9 +23,11 @@ const OffersDiscounst = () => {
         </OffersDiscountsTextTitle>
 
         <OffersDiscountsTextDescription>
-          ¡Grandes ofertas en repuestos y accesorios para autos! Mejora y mantén
-          tu vehículo a precios imbatibles. ¡No te lo pierdas, oferta por tiempo
-          limitado!
+          ¡Grandes ofertas en repuestos y accesorios para autos!
+        </OffersDiscountsTextDescription>
+        <OffersDiscountsTextDescription>
+          Mejora y mantén tu vehículo a precios imbatibles. ¡No te lo pierdas,
+          oferta por tiempo limitado!
         </OffersDiscountsTextDescription>
       </OffersDiscountsTextContainer>
 

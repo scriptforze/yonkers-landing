@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 
-export type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 export type ResponsiveProps =
   | {
       children: ReactNode;

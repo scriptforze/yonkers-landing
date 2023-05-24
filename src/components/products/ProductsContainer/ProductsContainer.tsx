@@ -1,14 +1,18 @@
 import React from "react";
 import { ProductsContainerProps } from "./types";
-import { ProductsContainerWrapper, ProductsTitle } from "./styled";
 import { ResultsBreadcrumbs } from "../ResultsBreadcrumbs";
+import {
+  ProductsTitle,
+  ProductsContainerWrapper,
+  ProductsContentContainer,
+} from "./styled";
 
 const ProductsContainer = ({ children }: ProductsContainerProps) => {
   return (
     <ProductsContainerWrapper>
       <ResultsBreadcrumbs />
       <ProductsTitle>Productos</ProductsTitle>
-      {children}
+      <ProductsContentContainer>{children}</ProductsContentContainer>
     </ProductsContainerWrapper>
   );
 };

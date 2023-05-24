@@ -1,7 +1,5 @@
-import ProductSearch from "@/common/assets/images/productSearch.png";
-
 import { PlusCircleOutlined } from "@ant-design/icons";
-import { ScrollableProducts } from "@/common/components";
+import { HeaderDivider, ItemsCarousel } from "@/common/components";
 import { useGetAllProductsQuery } from "@/services/products";
 import { ProductCard } from "@/common/components/ProductCard";
 
@@ -11,32 +9,44 @@ import {
   NewProductsCTAButton,
   NewProductsContainer,
 } from "./styled";
+import { useResponsive } from "@/common/hooks";
 
 export const NewProducts = () => {
+  const { shouldRender } = useResponsive({
+    md: true,
+    lg: true,
+    xl: true,
+    xxl: true,
+  });
   const { data: products } = useGetAllProductsQuery({
-    include: "images",
+    include: "images,category",
   });
 
   return products?.data?.length ? (
     <NewProductsContainer>
       <NewProductsHeader>
-        <NewProductsTitle>Productos Nuevos</NewProductsTitle>
+        <HeaderDivider>
+          <NewProductsTitle>Productos Nuevos</NewProductsTitle>
+        </HeaderDivider>
         <NewProductsCTAButton icon={<PlusCircleOutlined />}>
-          Ver todos
+          {shouldRender ? "Ver todos los productos" : "Ver todos"}
         </NewProductsCTAButton>
       </NewProductsHeader>
-      <ScrollableProducts.Container numProducts={1}>
+
+      <ItemsCarousel
+        keyBoardControl={true}
+        removeArrowOnDeviceType={["xs", "sm", "md"]}
+      >
         {products?.data?.map((product) => (
-          <ScrollableProducts.ProductContainer key={product.id}>
-            <ProductCard
-              brand="Hyundai"
-              title={product.name}
-              price={product.price}
-              imageURL={product?.images?.[0].urls.original || ""}
-            />
-          </ScrollableProducts.ProductContainer>
+          <ProductCard
+            brand={product?.category?.name || ""}
+            key={product.id}
+            title={product.name}
+            price={product.price}
+            imageURL={product?.images?.[0]?.urls.original || ""}
+          />
         ))}
-      </ScrollableProducts.Container>
+      </ItemsCarousel>
     </NewProductsContainer>
   ) : null;
 };

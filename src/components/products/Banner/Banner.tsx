@@ -6,7 +6,7 @@ export const ProductsBanner = () => {
   return (
     <BannerContainer>
       <BannerImage src={ProductsBannerImg} alt="products Image" />
-      <BannerText>Products</BannerText>
+      <BannerText>Productos</BannerText>
     </BannerContainer>
   );
 };

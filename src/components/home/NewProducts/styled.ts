@@ -1,10 +1,16 @@
 import { Button, Typography } from "antd";
 import styled from "styled-components";
 
-export const NewProductsContainer = styled.div`
+export const NewProductsContainer = styled.section`
   display: flex;
-  margin: 105px 0px;
   flex-direction: column;
+  padding: 0px 16px 105px;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xl?.min})`} {
+    padding: 0px 120px 105px;
+  }
 `;
 
 export const NewProductsTitle = styled(Typography.Title).attrs(() => ({
@@ -27,6 +33,12 @@ export const NewProductsCTAButton = styled(Button).attrs(() => ({
 
   & > .anticon {
     color: #3e79f7;
+  }
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.xl &&
+    `@media (min-width: ${theme.custom?.breakpoints?.xl?.min})`} {
+    align-self: flex-end;
   }
 `;
 
