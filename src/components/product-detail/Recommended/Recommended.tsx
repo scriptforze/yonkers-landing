@@ -1,292 +1,46 @@
-import { Button, Card, Text } from "@nextui-org/react";
-import Image from "next/image";
-import React from "react";
+import {
+  RecommendedContainer,
+  RecommendedProductsCardsContainer,
+  RecommendedProductsContainer,
+  RecommendedTitle,
+} from "./styled";
+import { ProductCard } from "@/common/components";
 
 const Recommended = () => {
   return (
-    <div
-      style={{
-        flexDirection: "column",
-        marginTop: "32px",
-        background: "#E8E8E8",
-        display: "flex",
-        justifyContent: "space-between",
-      }}
-    >
-      <Text h3 size={38} color="#172D5E" weight="semibold">
+    <RecommendedContainer>
+      <RecommendedTitle>
         Complementa tu compra con estas opciones
-      </Text>
+      </RecommendedTitle>
 
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "4px",
-            alignItems: "center",
-            padding: "10px 20px 10px 20px",
-          }}
-        >
-          <Card
-            isHoverable
-            isPressable
-            css={{
-              display: "flex",
-              flexDirection: "column",
-              width: "270px",
-              height: "390px",
-            }}
-          >
-            <Card.Body>
-              <Card.Image
-                src="/static/images/productSearch.png"
-                width={237}
-                height={362}
-                css={{ borderRadius: "8px" }}
-              />
+      <RecommendedProductsContainer>
+        <RecommendedProductsCardsContainer>
+          <ProductCard
+            price={570000}
+            lastPrice={690000}
+            title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
+            brand=" HYUNDAI"
+            imageURL={"/static/images/productSearch.png"}
+          />
 
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <Text
-                  css={{
-                    color: "#CF0E0E",
-                    fontWeight: "normal",
+          <ProductCard
+            price={570000}
+            lastPrice={690000}
+            title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
+            brand=" HYUNDAI"
+            imageURL={"/static/images/productSearch.png"}
+          />
 
-                    marginRight: "10px",
-                  }}
-                >
-                  $570.000
-                </Text>
-                <Text
-                  css={{
-                    color: "#616161",
-                    fontWeight: "normal",
-                    textDecorationLine: "line-through",
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  $690.000
-                </Text>
-              </div>
-              <Text
-                css={{
-                  color: "#0F2555",
-                  fontWeight: "$semibold",
-                  fontSize: "14px",
-                  width: "189px",
-                }}
-              >
-                Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC
-              </Text>
-              <Text
-                css={{
-                  color: "#616161",
-                  fontWeight: "normal",
-                  fontSize: "13px",
-                  marginBottom: "26px",
-                }}
-              >
-                HYUNDAI
-              </Text>
-              <Button
-                auto
-                ghost
-                css={{
-                  color: "#FE7062",
-                  borderRadius: "4px",
-                  borderColor: "#FE7062",
-                  background: "#FFFFFF",
-                  fontSize: "16px",
-                  fontWeight: "demibold",
-                  width: "190px",
-                  height: "40px",
-                  padding: "10px 20px 10px 20px",
-                }}
-              >
-                Ver producto
-              </Button>
-            </Card.Body>
-          </Card>
-
-          <Card
-            isHoverable
-            isPressable
-            css={{
-              display: "flex",
-              flexDirection: "column",
-              width: "270px",
-              height: "390px",
-            }}
-          >
-            <Card.Body>
-              <Card.Image
-                src="/static/images/productSearch.png"
-                width={237}
-                height={362}
-                css={{ borderRadius: "8px" }}
-              />
-
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <Text
-                  css={{
-                    color: "#CF0E0E",
-                    fontWeight: "normal",
-
-                    marginRight: "10px",
-                  }}
-                >
-                  $570.000
-                </Text>
-                <Text
-                  css={{
-                    color: "#616161",
-                    fontWeight: "normal",
-                    textDecorationLine: "line-through",
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  $690.000
-                </Text>
-              </div>
-              <Text
-                css={{
-                  color: "#0F2555",
-                  fontWeight: "$semibold",
-                  fontSize: "14px",
-                  width: "189px",
-                }}
-              >
-                Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC
-              </Text>
-              <Text
-                css={{
-                  color: "#616161",
-                  fontWeight: "normal",
-                  fontSize: "13px",
-                  marginBottom: "26px",
-                }}
-              >
-                HYUNDAI
-              </Text>
-              <Button
-                auto
-                ghost
-                css={{
-                  color: "#FE7062",
-                  borderRadius: "4px",
-                  borderColor: "#FE7062",
-                  background: "#FFFFFF",
-                  fontSize: "16px",
-                  fontWeight: "demibold",
-                  width: "190px",
-                  height: "40px",
-                  padding: "10px 20px 10px 20px",
-                }}
-              >
-                Ver producto
-              </Button>
-            </Card.Body>
-          </Card>
-
-          <Card
-            isHoverable
-            isPressable
-            css={{
-              display: "flex",
-              flexDirection: "column",
-              width: "270px",
-              height: "390px",
-            }}
-          >
-            <Card.Body>
-              <Card.Image
-                src="/static/images/productSearch.png"
-                width={237}
-                height={362}
-                css={{ borderRadius: "8px" }}
-              />
-
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
-                <Text
-                  css={{
-                    color: "#CF0E0E",
-                    fontWeight: "normal",
-
-                    marginRight: "10px",
-                  }}
-                >
-                  $570.000
-                </Text>
-                <Text
-                  css={{
-                    color: "#616161",
-                    fontWeight: "normal",
-                    textDecorationLine: "line-through",
-                    display: "flex",
-                    flexDirection: "row",
-                  }}
-                >
-                  $690.000
-                </Text>
-              </div>
-              <Text
-                css={{
-                  color: "#0F2555",
-                  fontWeight: "$semibold",
-                  fontSize: "14px",
-                  width: "189px",
-                }}
-              >
-                Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC
-              </Text>
-              <Text
-                css={{
-                  color: "#616161",
-                  fontWeight: "normal",
-                  fontSize: "13px",
-                  marginBottom: "26px",
-                }}
-              >
-                HYUNDAI
-              </Text>
-              <Button
-                auto
-                ghost
-                css={{
-                  color: "#FE7062",
-                  borderRadius: "4px",
-                  borderColor: "#FE7062",
-                  background: "#FFFFFF",
-                  fontSize: "16px",
-                  fontWeight: "demibold",
-                  width: "190px",
-                  height: "40px",
-                  padding: "10px 20px 10px 20px",
-                }}
-              >
-                Ver producto
-              </Button>
-            </Card.Body>
-          </Card>
-        </div>
-      </div>
-    </div>
+          <ProductCard
+            price={570000}
+            lastPrice={690000}
+            title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
+            brand=" HYUNDAI"
+            imageURL={"/static/images/productSearch.png"}
+          />
+        </RecommendedProductsCardsContainer>
+      </RecommendedProductsContainer>
+    </RecommendedContainer>
   );
 };
 
