@@ -15,7 +15,9 @@ import { useGetAllProductsQuery } from "@/services/products";
 import { ProductResultsProps } from "./types";
 
 const ProductResults = ({ filters }: ProductResultsProps) => {
+  const [currentPage, setCurrentPage] = React.useState(1);
   const { data: products, isLoading } = useGetAllProductsQuery({
+    page: currentPage,
     include: "images,category",
     search: filters?.categories?.map((category) => category).join(" "),
   });
@@ -51,9 +53,17 @@ const ProductResults = ({ filters }: ProductResultsProps) => {
         ))}
       </ProductsResultsCards>
       <ProductsPaginationContainer>
-        <ProductsPagination defaultCurrent={1} total={50} />
+        <ProductsPagination
+          defaultCurrent={1}
+          defaultPageSize={15}
+          current={currentPage}
+          total={products?.meta?.total}
+          pageSize={products?.meta?.per_page || 15}
+          onChange={(page) => setCurrentPage(page)}
+        />
         <TotalPaginationText>
-          Mostrando 1-18 de 46 artículo(s)
+          Mostrando {`${products?.meta?.from} - ${products?.meta?.to}`} de{" "}
+          {products?.meta?.total} artículo(s)
         </TotalPaginationText>
       </ProductsPaginationContainer>
     </ProductResultsContainer>
