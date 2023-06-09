@@ -2,6 +2,9 @@ import { HeartFilled, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { Card, Grid, Text } from "@nextui-org/react";
 import { Button } from "antd";
 import { Counter } from "../Counter";
+import Image from "next/image";
+
+import ProductSearch from "@/common/assets/images/productSearch.png";
 
 export const SlideProduct = () => {
   return (
@@ -54,7 +57,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/static/images/productSearch.png" />
+                <Image src={ProductSearch} alt="Product Image" />
               </Card.Body>
             </Card>
 
@@ -70,7 +73,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/static/images/productSearch.png" />
+                <Image src={ProductSearch} alt="Product Image" />
               </Card.Body>
             </Card>
 
@@ -86,7 +89,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/static/images/productSearch.png" />
+                <Image src={ProductSearch} alt="Product Image" />
               </Card.Body>
             </Card>
           </div>
@@ -104,7 +107,7 @@ export const SlideProduct = () => {
               }}
             >
               <Card.Body>
-                <Card.Image src="/static/images/productSearch.png" />
+                <Image src={ProductSearch} alt="Product Image" />
               </Card.Body>
             </Card>
           </div>

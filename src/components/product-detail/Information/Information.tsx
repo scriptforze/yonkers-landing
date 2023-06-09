@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import type { RadioChangeEvent } from "antd";
-import { Radio, Tabs } from "antd";
+import { Tabs } from "antd";
 import type { SizeType } from "antd/es/config-provider/SizeContext";
-import { Text } from "@nextui-org/react";
+
+import { InformationContainer, InformationTitle } from "./styled";
 
 const Information = () => {
   const [size, setSize] = useState<SizeType>("small");
@@ -12,29 +13,10 @@ const Information = () => {
   };
 
   return (
-    <div>
-      <Text
-        style={{
-          fontSize: "38px",
-          fontWeight: "$semi bold",
-          color: "#0F2555",
-          marginTop: "38px",
-
-          width: "541px",
-          height: "48px",
-        }}
-      >
-        Información de producto
-      </Text>
-
-      <Radio.Group
-        value={size}
-        onChange={onChange}
-        style={{ color: "#0F2555" }}
-      ></Radio.Group>
+    <InformationContainer>
+      <InformationTitle>Información de producto</InformationTitle>
 
       <Tabs
-        style={{ padding: "32px 24px 42px 24px" }}
         defaultActiveKey="1"
         type="card"
         size={size}
@@ -69,7 +51,7 @@ const Information = () => {
           };
         })}
       />
-    </div>
+    </InformationContainer>
   );
 };
 
