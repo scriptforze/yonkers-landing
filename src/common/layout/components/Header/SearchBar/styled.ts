@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const SearchInputContainer = styled.div`
   width: 100%;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
 `;
