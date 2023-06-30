@@ -39,10 +39,11 @@ export const NewProducts = () => {
       >
         {products?.data?.map((product) => (
           <ProductCard
-            brand={product?.category?.name || ""}
+            id={product.id}
             key={product.id}
             title={product.name}
             price={product.price}
+            brand={product?.category?.name || ""}
             imageURL={product?.images?.[0]?.urls.original || ""}
           />
         ))}

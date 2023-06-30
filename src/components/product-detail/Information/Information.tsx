@@ -1,55 +1,62 @@
+import { Table, Typography } from "antd";
 import React, { useState } from "react";
-import type { RadioChangeEvent } from "antd";
-import { Tabs } from "antd";
 import type { SizeType } from "antd/es/config-provider/SizeContext";
 
-import { InformationContainer, InformationTitle } from "./styled";
+import {
+  CustomTabs,
+  InformationContainer,
+  InformationTabContent,
+  InformationTitle,
+} from "./styled";
+import { Props } from "./types";
 
-const Information = () => {
+const Information = ({ product }: Props) => {
   const [size, setSize] = useState<SizeType>("small");
-
-  const onChange = (e: RadioChangeEvent) => {
-    setSize(e.target.value);
-  };
 
   return (
     <InformationContainer>
       <InformationTitle>Información de producto</InformationTitle>
 
-      <Tabs
-        defaultActiveKey="1"
-        type="card"
+      <CustomTabs
+        animated
         size={size}
-        items={new Array(2).fill(null).map((_, i) => {
-          const id = String(i + 1);
-          return {
-            label: `Características ${1}`,
-            key: id,
-            children: `Lorem ipsum dolor sit amet consectetur.
-             Enim eu quam eget interdum sagittis viverra. 
-             Proin consectetur sit tempus lacus. Feugiat 
-             condimentum tellus tristique turpis bibendum lectus phasellus diam augue.
-              Sed eget cursus mauris accumsan id pellentesque diam. Neque suspendiss
-               diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio 
-               dis dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam 
-               vitae elit pharetra egestas magna nisl. Amet cursus lorem suspendisse
-                ut tellus elit turpis lorem.
-
-                Lorem ipsum dolor sit amet consectetur. Enim eu quam eget interdum sagittis viverra.
-                Proin consectetur sit tempus lacus. Feugiat condimentum tellus tristique turpis bibendum
-                lectus phasellus diam augue. Sed eget cursus mauris accumsan id pellentesque diam. 
-                Neque suspendisse diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio dis
-                dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam vitae elit pharetra 
-                egestas magna nisl. Amet cursus lorem suspendisse ut tellus elit turpis lorem.
-
-                Lorem ipsum dolor sit amet consectetur. Enim eu quam eget interdum sagittis viverra. 
-                Proin consectetur sit tempus lacus. Feugiat condimentum tellus tristique turpis bibendum 
-                lectus phasellus diam augue. Sed eget cursus mauris accumsan id pellentesque diam. 
-                Neque suspendisse diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio 
-                dis dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam vitae elit pharetra 
-                egestas magna nisl. Amet cursus lorem suspendisse ut tellus elit turpis lorem.`,
-          };
-        })}
+        type="card"
+        defaultActiveKey="1"
+        items={[
+          {
+            key: "caracteristicas",
+            label: "Características",
+            children: (
+              <InformationTabContent>
+                <Typography.Paragraph>
+                  {product?.data?.short_description}
+                </Typography.Paragraph>
+                <Typography.Paragraph>
+                  {product?.data?.description}
+                </Typography.Paragraph>
+              </InformationTabContent>
+            ),
+          },
+          {
+            key: "funciones",
+            label: "Especificaciones",
+            children: (
+              <InformationTabContent>
+                <Table
+                  rowKey={(record) => record.id}
+                  dataSource={product?.data?.specifications}
+                >
+                  <Table.Column
+                    key="name"
+                    dataIndex="name"
+                    title="Especificación"
+                  />
+                  <Table.Column title="Valor" dataIndex="value" key="value" />
+                </Table>
+              </InformationTabContent>
+            ),
+          },
+        ]}
       />
     </InformationContainer>
   );

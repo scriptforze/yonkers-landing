@@ -9,7 +9,7 @@ import {
 } from "./styled";
 import { SortingButton } from "../SortingButton";
 import { ActiveFilters } from "../ActiveFilters";
-import { ProductCard, Responsive } from "@/common/components";
+import { ProductCard } from "@/common/components";
 import { FiltersProductButton } from "../FiltersProductButton";
 import { useGetAllProductsQuery } from "@/services/products";
 import { ProductResultsProps } from "./types";
@@ -43,6 +43,7 @@ const ProductResults = ({ filters }: ProductResultsProps) => {
       <ProductsResultsCards>
         {products?.data?.map(({ name, id, price, images, category }) => (
           <ProductCard
+            id={id}
             key={id}
             title={name}
             price={price}

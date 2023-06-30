@@ -4,7 +4,7 @@ import {
   RecommendedProductsContainer,
   RecommendedTitle,
 } from "./styled";
-import { ProductCard } from "@/common/components";
+import { ItemsCarousel, ProductCard } from "@/common/components";
 import ProductSearch from "@/common/assets/images/productSearch.png";
 
 const Recommended = () => {
@@ -15,8 +15,12 @@ const Recommended = () => {
       </RecommendedTitle>
 
       <RecommendedProductsContainer>
-        <RecommendedProductsCardsContainer>
+        <ItemsCarousel
+          keyBoardControl={true}
+          removeArrowOnDeviceType={["xs", "sm", "md"]}
+        >
           <ProductCard
+            id={1}
             price={570000}
             lastPrice={690000}
             title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
@@ -25,6 +29,7 @@ const Recommended = () => {
           />
 
           <ProductCard
+            id={2}
             price={570000}
             lastPrice={690000}
             title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
@@ -33,13 +38,14 @@ const Recommended = () => {
           />
 
           <ProductCard
+            id={3}
             price={570000}
             lastPrice={690000}
             title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
             brand=" HYUNDAI"
             imageURL={ProductSearch}
           />
-        </RecommendedProductsCardsContainer>
+        </ItemsCarousel>
       </RecommendedProductsContainer>
     </RecommendedContainer>
   );

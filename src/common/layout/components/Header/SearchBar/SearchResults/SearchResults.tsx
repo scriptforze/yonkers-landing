@@ -3,6 +3,7 @@ import { SearchResultsContainer } from "./styled";
 import { SearchResultsProps } from "./types";
 import { Empty, Skeleton } from "antd";
 import SearchResultItem from "./SearchResultItem";
+import Link from "next/link";
 
 const SearchResults = ({
   results = [],
@@ -22,7 +23,11 @@ const SearchResults = ({
           >
             {results.length > 0 ? (
               results.map((result) => {
-                return <SearchResultItem key={result.id} item={result} />;
+                return (
+                  <Link href={`/product-detail/${result.id}`} key={result.id}>
+                    <SearchResultItem item={result} />
+                  </Link>
+                );
               })
             ) : (
               <Empty

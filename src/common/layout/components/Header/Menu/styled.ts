@@ -1,4 +1,5 @@
 import { Button, Typography } from "antd";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const MenuContainer = styled.nav`
@@ -22,11 +23,12 @@ export const MenuItemsContainer = styled.div`
   font-size: 16px;
 `;
 
-export const MenuItemButton = styled(Button).attrs(() => ({
+export const MenuItemButton = styled(Link).attrs(() => ({
   type: "link",
 }))`
   padding: 0px;
   border: none;
+  color: #ffffff;
   font-size: 16px;
   font-weight: normal;
   & > span {

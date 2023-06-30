@@ -12,9 +12,9 @@ const Menu = () => {
   return (
     <MenuContainer>
       <MenuItemsContainer>
-        <MenuItemButton>Inicio</MenuItemButton>
-        <MenuItemButton>Productos</MenuItemButton>
-        <MenuItemButton>Contacto</MenuItemButton>
+        <MenuItemButton href="/">Inicio</MenuItemButton>
+        <MenuItemButton href="/products">Productos</MenuItemButton>
+        <MenuItemButton href="#">Contacto</MenuItemButton>
       </MenuItemsContainer>
       <Responsive xl xxl>
         <ContactTextContainer>

@@ -6,6 +6,7 @@ interface StaticRequire {
 
 type StaticImport = StaticRequire | StaticImageData;
 export interface ProductCardProps {
+  id: number;
   title: string;
   price: number;
   brand?: string;

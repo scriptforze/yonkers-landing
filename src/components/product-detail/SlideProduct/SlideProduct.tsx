@@ -1,22 +1,36 @@
-import { HeartFilled, MinusOutlined, PlusOutlined } from "@ant-design/icons";
-import { Card, Grid, Text } from "@nextui-org/react";
-import { Button } from "antd";
+import { HeartFilled } from "@ant-design/icons";
+import { Card, Text } from "@nextui-org/react";
+import { Button, Col, Row, Space } from "antd";
 import { Counter } from "../Counter";
 import Image from "next/image";
 
-import ProductSearch from "@/common/assets/images/productSearch.png";
+import { Props } from "./types";
+import { useEffect, useState } from "react";
+import { Section } from "./styled";
 
-export const SlideProduct = () => {
+export const SlideProduct = ({ product }: Props) => {
+  const [totalStock, setTotalStock] = useState<number>(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (product?.data) {
+      const stock = product.data.product_stocks!.reduce(
+        (counter, stock) => counter + stock.stock!,
+        0
+      );
+
+      const defaultImage = product?.data?.images![0].urls!.small!;
+      setSelectedImage(defaultImage);
+      setTotalStock(stock);
+    }
+  }, [product]);
+
+  const changeImage = (image: string) => {
+    setSelectedImage(image);
+  };
+
   return (
-    <section
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        background: "#CECECE",
-        justifyContent: "space-around",
-        marginTop: "64px",
-      }}
-    >
+    <Section>
       <div
         style={{
           display: "flex",
@@ -29,89 +43,75 @@ export const SlideProduct = () => {
           marginBottom: "38px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            height: "100%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "28px",
-              width: "414px",
-              height: "385px",
-            }}
-          >
-            <Card
-              isHoverable
-              isPressable
-              css={{
-                width: "85px",
-                height: "85px",
-                display: "flex",
-                background: "#FAFAFA",
-                flexDirection: "column",
+        <Row gutter={12}>
+          <Col span={6}>
+            <Space
+              direction="vertical"
+              style={{
+                overflowY: "auto",
+                maxHeight: "315px",
+                minHeight: "315px",
               }}
             >
-              <Card.Body>
-                <Image src={ProductSearch} alt="Product Image" />
-              </Card.Body>
-            </Card>
-
-            <Card
-              isHoverable
-              isPressable
-              css={{
-                width: "85px",
-                height: "85px",
-                display: "flex",
-                flexDirection: "column",
-                background: "#FAFAFA",
-              }}
-            >
-              <Card.Body>
-                <Image src={ProductSearch} alt="Product Image" />
-              </Card.Body>
-            </Card>
-
-            <Card
-              isHoverable
-              isPressable
-              css={{
-                width: "85px",
-                height: "85px",
-                display: "flex",
-                flexDirection: "column",
-                background: "#FAFAFA",
-              }}
-            >
-              <Card.Body>
-                <Image src={ProductSearch} alt="Product Image" />
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div>
+              {product?.data?.images?.map((image) => {
+                return (
+                  <Card
+                    isHoverable
+                    isPressable
+                    key={image?.id}
+                    css={{
+                      width: "85px",
+                      height: "85px",
+                      display: "flex",
+                      background: "white",
+                      flexDirection: "column",
+                      filter: "none",
+                    }}
+                    onClick={() => changeImage(image?.urls?.small!)}
+                  >
+                    <Image
+                      src={image?.urls?.small!}
+                      width={80}
+                      height={80}
+                      alt="Product Image"
+                      style={{
+                        filter: "brightness(1.1)",
+                        mixBlendMode: "multiply",
+                      }}
+                    />
+                  </Card>
+                );
+              })}
+            </Space>
+          </Col>
+          <Col>
             <Card
               css={{
                 display: "flex",
                 flexDirection: "column",
-                width: "264px",
-                height: "263px",
+                width: "260px",
+                height: "260px",
                 background: "#FAFAFA",
                 borderRadius: "8px",
                 justifySelf: "center",
+                marginTop: 25,
               }}
             >
-              <Card.Body>
-                <Image src={ProductSearch} alt="Product Image" />
-              </Card.Body>
+              {selectedImage && (
+                <Image
+                  width={260}
+                  height={260}
+                  src={selectedImage}
+                  alt="Product Image"
+                  style={{
+                    filter: "brightness(1.1)",
+                    mixBlendMode: "multiply",
+                  }}
+                />
+              )}
             </Card>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
 
       <div
@@ -143,8 +143,9 @@ export const SlideProduct = () => {
                   height: "90px",
                 }}
               >
-                Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L
-                SOHC
+                {/* Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L
+                SOHC */}
+                {product?.data?.name}
               </Text>
 
               <Button
@@ -172,10 +173,13 @@ export const SlideProduct = () => {
               <Text style={{ width: "63px", marginRight: "5px" }}>
                 SKU/REF:{" "}
               </Text>
-              <Text style={{ width: "100px" }}>65651SFDFSFD</Text>
+              <Text style={{ width: "100px" }}>
+                {/* 65651SFDFSFD */}
+                {product?.data?.sku}
+              </Text>
             </div>
 
-            <div
+            {/* <div
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -197,7 +201,7 @@ export const SlideProduct = () => {
               >
                 HYUNDAI
               </Text>
-            </div>
+            </div> */}
 
             <div
               style={{
@@ -227,7 +231,7 @@ export const SlideProduct = () => {
                   marginBottom: "16px",
                 }}
               >
-                52 Unidades disponibles
+                {totalStock} Unidades disponibles
               </Text>
             </div>
 
@@ -254,7 +258,7 @@ export const SlideProduct = () => {
                 marginBottom: "12px",
               }}
             >
-              $690.000
+              ${product?.data?.price.toLocaleString("es-CO")}
             </Text>
             <Text
               css={{
@@ -266,7 +270,7 @@ export const SlideProduct = () => {
                 marginBottom: "21px",
               }}
             >
-              $570.000
+              ${product?.data?.price.toLocaleString("es-CO")}
             </Text>
 
             <div
@@ -297,7 +301,7 @@ export const SlideProduct = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

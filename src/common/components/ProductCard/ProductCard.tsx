@@ -2,8 +2,10 @@ import React from "react";
 import { ProductCardProps } from "./types";
 import { Button, Text } from "@nextui-org/react";
 import { CustomCard, CustomCardImage } from "./styled";
+import Link from "next/link";
 
 const ProductCard = ({
+  id,
   title,
   brand,
   price,
@@ -60,23 +62,25 @@ const ProductCard = ({
         >
           {brand}
         </Text>
-        <Button
-          auto
-          ghost
-          css={{
-            color: "white",
-            borderRadius: "4px",
-            borderColor: "#FE7062",
-            background: "#FE7062",
-            fontSize: "16px",
-            fontWeight: "demibold",
-            width: "190px",
-            padding: "10px 20px 10px 20px",
-            height: "40px",
-          }}
-        >
-          Ver producto
-        </Button>
+        <Link href={`/product-detail/${id}`}>
+          <Button
+            auto
+            ghost
+            css={{
+              color: "white",
+              borderRadius: "4px",
+              borderColor: "#FE7062",
+              background: "#FE7062",
+              fontSize: "16px",
+              fontWeight: "demibold",
+              width: "190px",
+              padding: "10px 20px 10px 20px",
+              height: "40px",
+            }}
+          >
+            Ver producto
+          </Button>
+        </Link>
       </CustomCard.Body>
     </CustomCard>
   );

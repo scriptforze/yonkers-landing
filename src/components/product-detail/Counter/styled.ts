@@ -10,6 +10,7 @@ export const CounterButton = styled.button`
   font-size: 2rem;
   border: none;
   background: none;
+  cursor: pointer;
   color: #0f2555;
 `;
 

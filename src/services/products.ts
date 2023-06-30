@@ -1,11 +1,21 @@
 import { ecommerceApi as api } from "../store/ecommerce-api";
-export const addTagTypes = ["Products"] as const;
+export const addTagTypes = ["Products", "Product specifications"] as const;
 const injectedRtkApi = api
   .enhanceEndpoints({
     addTagTypes,
   })
   .injectEndpoints({
     endpoints: (build) => ({
+      getProductById: build.query<
+        GetProductByIdApiResponse,
+        GetProductByIdApiArg
+      >({
+        query: (queryArg) => ({
+          url: `/api/v1/products/${queryArg.product}`,
+          params: { include: queryArg.include, lang: queryArg.lang },
+        }),
+        providesTags: ["Products"],
+      }),
       getAllProducts: build.query<
         GetAllProductsApiResponse,
         GetAllProductsApiArg
@@ -37,10 +47,59 @@ const injectedRtkApi = api
         }),
         providesTags: ["Products"],
       }),
+      getAllProductSpecificationsByProduct: build.query<
+        GetAllProductSpecificationsByProductApiResponse,
+        GetAllProductSpecificationsByProductApiArg
+      >({
+        query: (queryArg) => ({
+          url: `/api/v1/products/${queryArg.product}/specifications`,
+          params: {
+            include: queryArg.include,
+            search: queryArg.search,
+            per_page: queryArg.perPage,
+            page: queryArg.page,
+            sort_by: queryArg.sortBy,
+            lang: queryArg.lang,
+          },
+        }),
+        providesTags: ["Product specifications"],
+      }),
     }),
     overrideExisting: false,
   });
 export { injectedRtkApi as ecommerceApi };
+export type GetAllProductSpecificationsByProductApiResponse =
+  /** status 200 success */ {
+    data?: ProductSpecification[];
+    meta?: Pagination;
+  };
+export type GetAllProductSpecificationsByProductApiArg = {
+  /** Id of product */
+  product: number;
+  /** Relationships of resource */
+  include?: string;
+  /** String to search */
+  search?: string;
+  /** Number of resources per page */
+  perPage?: number;
+  /** Number of current page */
+  page?: number;
+  /** Name of field to sort */
+  sortBy?: string;
+  /** Code of language */
+  lang?: string;
+};
+export type GetProductByIdApiResponse = /** status 200 success */ {
+  data?: Product;
+};
+export type GetProductByIdApiArg = {
+  /** Id of product */
+  product: number;
+  /** Relationships of resource */
+  include?: string;
+  /** Code of language */
+  lang?: string;
+};
 export type GetAllProductsApiResponse = /** status 200 success */ {
   data?: Product[];
   meta?: Pagination;
@@ -178,4 +237,8 @@ export type Pagination = {
   to?: number;
   total?: number;
 };
-export const { useGetAllProductsQuery } = injectedRtkApi;
+export const {
+  useGetProductByIdQuery,
+  useGetAllProductsQuery,
+  useGetAllProductSpecificationsByProductQuery,
+} = injectedRtkApi;
