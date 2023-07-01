@@ -102,7 +102,7 @@ jobs:
         id: deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.SCRIPTFORZE_PAT_SECRET }}
           publish_dir: ./out
           publish_branch: gh-pages
           #cname: yourdomain.com # Optional: If you have a custom domain
