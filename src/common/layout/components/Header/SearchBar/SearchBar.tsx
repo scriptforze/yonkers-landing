@@ -10,7 +10,6 @@ const SearchBar = () => {
   const debouncedSearchQuery = useDebounce<string | undefined>(query, 500);
 
   const {
-    isError,
     isLoading,
     isFetching,
     data: products,
