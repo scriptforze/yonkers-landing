@@ -1,4 +1,5 @@
 import { Product } from "@/services/products";
+import { HTMLProps } from "react";
 
 export interface SearchResultsProps {
   loading?: boolean;
