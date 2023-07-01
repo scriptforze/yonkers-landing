@@ -4,36 +4,14 @@ import {
   Recommended,
   SlideProduct,
 } from "@/components/product-detail";
-import { BASE_URL_API, axiosInstance } from "../../config/api";
-import {
-  GetAllProductsApiResponse,
-  GetProductByIdApiResponse,
-  Product,
-} from "@/services/products";
+import { axiosInstance } from "@/config/api";
+import { Product } from "@/services/products";
 import { useRouter } from "next/router";
 
 const ProductDetail = ({ product }: { product: Product }) => {
   const router = useRouter();
-  //let { id } = router.query;
-
-  //const productId = typeof id === "string" ? parseInt(id) : undefined;
 
   if (router.isFallback) return <>Loading...</>;
-
-  /*const {
-    data: productData,
-    isError: isProductDataError,
-    isFetching: isProductDataFetching,
-  } = useGetProductByIdQuery(
-    {
-      product: productId!,
-      include:
-        "category,tags,product_attribute_options,product_stocks,images,stock_images,specifications",
-    },
-    { skip: !productId }
-  );*/
-
-  //const product = productData ? productData : undefined;
 
   return (
     <Layout>
@@ -61,8 +39,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const productId = params.id;
-  console.log("productId", productId);
-  // Fetch the product data based on the ID from your API or other data source
   const response = await axiosInstance.get(`/products/${productId}`, {
     params: {
       include:
@@ -71,6 +47,8 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   });
 
   const { data: product } = response.data || {};
+  if (!product) return { redirect: { destination: "/", permanent: false } };
+
   return { props: { product }, revalidate: 60 };
 }
 
