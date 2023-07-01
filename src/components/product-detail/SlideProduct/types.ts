@@ -1,5 +1,5 @@
-import { GetProductByIdApiResponse } from "@/services/products";
+import { Product } from "@/services/products";
 
 export type Props = {
-  product?: GetProductByIdApiResponse;
+  product: Product;
 };
