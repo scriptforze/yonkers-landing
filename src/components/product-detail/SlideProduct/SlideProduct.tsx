@@ -13,13 +13,13 @@ export const SlideProduct = ({ product }: Props) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    if (product?.data) {
-      const stock = product.data.product_stocks!.reduce(
+    if (product) {
+      const stock = product.product_stocks!.reduce(
         (counter, stock) => counter + stock.stock!,
         0
       );
 
-      const defaultImage = product?.data?.images![0].urls!.small!;
+      const defaultImage = product?.images![0].urls!.small!;
       setSelectedImage(defaultImage);
       setTotalStock(stock);
     }
@@ -53,7 +53,7 @@ export const SlideProduct = ({ product }: Props) => {
                 minHeight: "315px",
               }}
             >
-              {product?.data?.images?.map((image) => {
+              {product?.images?.map((image) => {
                 return (
                   <Card
                     isHoverable
@@ -145,7 +145,7 @@ export const SlideProduct = ({ product }: Props) => {
               >
                 {/* Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L
                 SOHC */}
-                {product?.data?.name}
+                {product?.name}
               </Text>
 
               <Button
@@ -175,7 +175,7 @@ export const SlideProduct = ({ product }: Props) => {
               </Text>
               <Text style={{ width: "100px" }}>
                 {/* 65651SFDFSFD */}
-                {product?.data?.sku}
+                {product?.sku}
               </Text>
             </div>
 
@@ -258,7 +258,7 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "12px",
               }}
             >
-              ${product?.data?.price.toLocaleString("es-CO")}
+              ${product?.price.toLocaleString("es-CO")}
             </Text>
             <Text
               css={{
@@ -270,7 +270,7 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "21px",
               }}
             >
-              ${product?.data?.price.toLocaleString("es-CO")}
+              ${product?.price.toLocaleString("es-CO")}
             </Text>
 
             <div

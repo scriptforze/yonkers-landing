@@ -29,10 +29,10 @@ const Information = ({ product }: Props) => {
             children: (
               <InformationTabContent>
                 <Typography.Paragraph>
-                  {product?.data?.short_description}
+                  {product?.short_description}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
-                  {product?.data?.description}
+                  {product?.description}
                 </Typography.Paragraph>
               </InformationTabContent>
             ),
@@ -44,7 +44,7 @@ const Information = ({ product }: Props) => {
               <InformationTabContent>
                 <Table
                   rowKey={(record) => record.id}
-                  dataSource={product?.data?.specifications}
+                  dataSource={product?.specifications}
                 >
                   <Table.Column
                     key="name"
