@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    background: linear-gradient(180deg, rgba(62, 121, 247, 0.65) 0%, #3E79F7 53.12%, #3E79F7 100%);;
+    width: 100%;
+    height: 120px;
+    padding: 0px 16px;
+    gap: 10px;
+}
+
+.lines {
+    cursor: pointer;
+    top: 16px;
+    left: 16px;
+}
+
+.nav {
+    position: fixed; /*change to fixed*/
+    justify-content: flex-start;
+    align-items: center; 
+    display: none;
+    border-top: solid #FAFAFA;
+    flex-direction: column;
+    top: 60px;
+    z-index: 20;
+    background: #091D47;
+    width: 375px;
+    height: 725px;
+    clip-path: circle(100% at center);/*Improve*/
+    transition: clip-path 7s ease-in-out; /*Improve*/
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+} 
+
+.second_container {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-around;
+    top: 0px;
+    z-index: 10;
+    background: #091D47;
+    width: 100%;
+    height: 120px;
+    padding: 0px 16px;
+    gap: 10px;
+} 
+
+.logo {
+    position: absolute;
+    top: 16px;
+    left: 66px;
+}
+
+.person{
+    position: absolute;
+    top: 16px;
+    right: 51px;
+}
+
+.cart {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.search_container {
+    position: absolute;
+    bottom: 16px;
+    width: 343px;
+    height: 44px;
+    top: 60px;
+}
+
+.search_input {
+    width: 292px;
+    height: 44px;
+    padding: 0px 16px;
+    border-radius: 8px 0px 0px 8px;
+    background: #FAFAFA;
+}
+
+.search_searchButton {
+    width: 51px;
+    height: 44px;
+    border-radius: 0px 8px 8px 0px;
+    background: #FE7062;
+}
+
+.nav_footer {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_footer_facebook{
+    left: 34px;
+}
+
+.nav_footer_twitter {
+    left: 101px;
+}
+
+.nav_footer_pinterest { 
+    right: 101px;
+}
+
+.nav_footer_linkedin {
+    right: 34px;
+}  
+
+.span {
+    height: 214px;
+}
+
+.nav_underLines {
+    background: #FAFAFA;
+    width: 271px;  
+    height: 0.8px;
+    margin-top: 13px;            
+}

@@ -2,102 +2,37 @@ import { HeartFilled, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 import { Card, Grid, Text } from "@nextui-org/react";
 import { Button } from "antd";
 import Counter from "../counter/counter";
+import style from "@/styles/SlideProduct.module.css";
 
 export const SlideProduct = () => {
   return (
-    <section
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        background: "#CECECE",
-        justifyContent: "space-around",
-        marginTop: "64px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          height: "385px",
-          width: "414px",
-          padding: "37px 24px",
-          backgroundColor: "#FAFAFA",
-          borderRadius: "8px",
-          marginBottom: "38px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            height: "100%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "28px",
-              width: "414px",
-              height: "385px",
-            }}
-          >
-            <Card
-              isHoverable
-              isPressable
-              css={{
-                width: "85px",
-                height: "85px",
-                display: "flex",
-                background: "#FAFAFA",
-                flexDirection: "column",
-              }}
-            >
-              <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
-              </Card.Body>
-            </Card>
-
-            <Card
-              isHoverable
-              isPressable
-              css={{
-                width: "85px",
-                height: "85px",
-                display: "flex",
-                flexDirection: "column",
-                background: "#FAFAFA",
-              }}
-            >
-              <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
-              </Card.Body>
-            </Card>
-
-            <Card
-              isHoverable
-              isPressable
-              css={{
-                width: "85px",
-                height: "85px",
-                display: "flex",
-                flexDirection: "column",
-                background: "#FAFAFA",
-              }}
-            >
-              <Card.Body>
-                <Card.Image src="/assets/images/productSearch.png" />
-              </Card.Body>
-            </Card>
-          </div>
-
+    <section className={style.container} >
+      <div className={style.container_sesion} >
+        <div className={style.container_sidebar} >
+          <Card isHoverable isPressable>
+            <Card.Body>
+              <Card.Image src="/assets/images/productSearch.png" />
+            </Card.Body>
+          </Card>
+          <Card isHoverable isPressable>
+            <Card.Body>
+              <Card.Image src="/assets/images/productSearch.png" />
+            </Card.Body>
+          </Card>
+          <Card isHoverable isPressable>
+            <Card.Body>
+              <Card.Image src="/assets/images/productSearch.png" />
+            </Card.Body>
+          </Card>
+        </div>
+        <div className={style.container_mainMenu} >
           <div>
             <Card
               css={{
                 display: "flex",
                 flexDirection: "column",
-                width: "264px",
-                height: "263px",
+                width: "195px",
+                height: "439px",
                 background: "#FAFAFA",
                 borderRadius: "8px",
                 justifySelf: "center",
@@ -110,7 +45,7 @@ export const SlideProduct = () => {
           </div>
         </div>
       </div>
-
+{/* //////////////////////////////////////////////////////////////////////// */}
       <div
         style={{
           display: "flex",

@@ -6,6 +6,46 @@ const NewLetters = () => {
       <Text
         css={{ color: "#FAFAFA", fontWeight: "$bold", marginBottom: "16px" }}
       >
+        CONTACTO
+      </Text>
+
+      <Text
+        size={16}
+        css={{ color: "#FAFAFA", fontWeight: "$normal", marginBottom: "16px" }}
+      >
+        Cali: (602) 325-8569
+        soporte@yonkersgarage.com
+        Resto del país: 01-8000-879-9854
+      </Text><Text
+        css={{ color: "#FAFAFA", fontWeight: "$bold", marginBottom: "16px" }}
+      >
+        Atención al Cliente
+      </Text>
+
+      <Text
+        size={16}
+        css={{ color: "#FAFAFA", fontWeight: "$normal", marginBottom: "16px" }}
+      >
+        Gatos de envío
+        Devoluciones
+        Preguntas frecuentes
+        PQRS
+      </Text><Text
+        css={{ color: "#FAFAFA", fontWeight: "$bold", marginBottom: "16px" }}
+      >
+        Información Importante
+      </Text>
+
+      <Text
+        size={16}
+        css={{ color: "#FAFAFA", fontWeight: "$normal", marginBottom: "16px" }}
+      >
+        Políticas de Privacidad
+        Términos y Condiciones
+      </Text>
+      <Text
+        css={{ color: "#FAFAFA", fontWeight: "$bold", marginBottom: "16px" }}
+      >
         BOLETÍN INFORMATIVO
       </Text>
 
