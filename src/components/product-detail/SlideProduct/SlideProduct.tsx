@@ -11,21 +11,33 @@ import { Section } from "./styled";
 export const SlideProduct = ({ product }: Props) => {
   const [totalStock, setTotalStock] = useState<number>(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const element = product[3];
+
+  // useEffect(() => {
+  //   if (product) {
+  //     const stock = product.product_stocks!.reduce(
+  //       (counter, stock) => counter + stock.stock!,
+  //       0
+  //     );
+
+  //     const defaultImage = product?.images![0].urls!.small!;
+  //     setSelectedImage(defaultImage);
+  //     setTotalStock(stock);
+  //   }
+  // }, [product]);
 
   useEffect(() => {
     if (product) {
-      const stock = product.product_stocks!.reduce(
-        (counter, stock) => counter + stock.stock!,
-        0
-      );
+      const stock = product!.reduce(
+        (counter, stock) => counter + stock.stock!, 0 );
 
-      const defaultImage = product?.images![0].urls!.small!;
+      const defaultImage = element.image_url;
       setSelectedImage(defaultImage);
       setTotalStock(stock);
     }
   }, [product]);
 
-  const changeImage = (image: string) => {
+  const changeImage = (image) => {
     setSelectedImage(image);
   };
 
@@ -53,7 +65,8 @@ export const SlideProduct = ({ product }: Props) => {
                 minHeight: "315px",
               }}
             >
-              {product?.images?.map((image) => {
+              {/* {product?.images?.map((image) => { */}
+              {element?.image_url?.map((image) => {
                 return (
                   <Card
                     isHoverable
@@ -67,12 +80,12 @@ export const SlideProduct = ({ product }: Props) => {
                       flexDirection: "column",
                       filter: "none",
                     }}
-                    onClick={() => changeImage(image?.urls?.small!)}
+                    onClick={() => changeImage(image)}
                   >
                     <Image
-                      src={image?.urls?.small!}
                       width={80}
                       height={80}
+                      src={image}
                       alt="Product Image"
                       style={{
                         filter: "brightness(1.1)",
@@ -98,16 +111,16 @@ export const SlideProduct = ({ product }: Props) => {
               }}
             >
               {selectedImage && (
-                <Image
-                  width={260}
-                  height={260}
-                  src={selectedImage}
-                  alt="Product Image"
-                  style={{
-                    filter: "brightness(1.1)",
-                    mixBlendMode: "multiply",
-                  }}
-                />
+                  <Image
+                    width={260}
+                    height={260}
+                    src={ selectedImage }
+                    alt="Product Image"
+                    style={{
+                      filter: "brightness(1.1)",
+                      mixBlendMode: "multiply",
+                    }}
+                  />
               )}
             </Card>
           </Col>
@@ -145,7 +158,7 @@ export const SlideProduct = ({ product }: Props) => {
               >
                 {/* Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L
                 SOHC */}
-                {product?.name}
+                {element?.name + " " + element?.brand}
               </Text>
 
               <Button
@@ -171,7 +184,7 @@ export const SlideProduct = ({ product }: Props) => {
               }}
             >
               <Text style={{ width: "63px", marginRight: "5px" }}>
-                SKU/REF:{" "}
+                SKU/REF: {element?.sku}
               </Text>
               <Text style={{ width: "100px" }}>
                 {/* 65651SFDFSFD */}
@@ -258,7 +271,8 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "12px",
               }}
             >
-              ${product?.price.toLocaleString("es-CO")}
+              {/* ${product?.price.toLocaleString("es-CO")} */}
+              $ {element.price.toLocaleString("es-CO")}
             </Text>
             <Text
               css={{
@@ -270,7 +284,9 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "21px",
               }}
             >
-              ${product?.price.toLocaleString("es-CO")}
+              {/* ${product?.price.toLocaleString("es-CO")} */}
+              $ {((element.price) -
+                 (element.price * 0.2)).toLocaleString("es-CO")}
             </Text>
 
             <div

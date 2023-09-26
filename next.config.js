@@ -10,6 +10,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ["localhost"],
   },
   env: {
     BASE_URL_API: process.env.BASE_URL_API,

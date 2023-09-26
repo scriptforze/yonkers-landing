@@ -27,7 +27,6 @@ export const useResponsive = ({ xs, sm, md, lg, xl, xxl }: ResponsiveProps) => {
     if (width >= 768 && width <= 991) return "md";
     if (width >= 992 && width <= 1199) return "lg";
     if (width >= 1200 && width <= 1399) return "xl";
-
     if (width >= 1400) return "xxl";
     return null;
   };

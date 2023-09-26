@@ -12,6 +12,8 @@ import { Props } from "./types";
 
 const Information = ({ product }: Props) => {
   const [size, setSize] = useState<SizeType>("small");
+  const element = product[3];
+  
 
   return (
     <InformationContainer>
@@ -29,10 +31,11 @@ const Information = ({ product }: Props) => {
             children: (
               <InformationTabContent>
                 <Typography.Paragraph>
-                  {product?.short_description}
+                  {/* {product?.short_description} */}
+                  {element.features[0]}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
-                  {product?.description}
+                  {element?.features[1]}
                 </Typography.Paragraph>
               </InformationTabContent>
             ),

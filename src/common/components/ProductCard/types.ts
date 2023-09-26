@@ -12,4 +12,5 @@ export interface ProductCardProps {
   brand?: string;
   lastPrice?: number;
   imageURL: string | StaticImport;
+  alt: string;
 }

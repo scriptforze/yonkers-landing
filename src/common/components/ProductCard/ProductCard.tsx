@@ -11,11 +11,12 @@ const ProductCard = ({
   price,
   imageURL,
   lastPrice,
+  alt,
 }: ProductCardProps) => {
   return (
     <CustomCard>
       <CustomCard.Body>
-        <CustomCardImage src={imageURL} alt="Product Image" />
+        <CustomCardImage src={imageURL} alt={alt} />
 
         <div
           style={{
