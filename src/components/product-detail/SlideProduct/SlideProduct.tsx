@@ -126,7 +126,7 @@ export const SlideProduct = ({ product }: Props) => {
           </Col>
         </Row>
       </div>
-
+{/* //////////////////////////////////////////////////////////////////////// */}
       <div
         style={{
           display: "flex",
