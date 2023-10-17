@@ -2,7 +2,7 @@ import { Button, Grid, Image } from "@nextui-org/react";
 import style from "@/styles/Navbar.module.css"
 
 
-const Nav = () => {
+const ResponsiveNavbar = () => {
   return (
       <Grid className={style.nav} >
         <Button
@@ -119,4 +119,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default ResponsiveNavbar;

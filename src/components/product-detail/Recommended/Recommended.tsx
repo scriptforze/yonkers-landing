@@ -5,13 +5,13 @@ import {
   RecommendedTitle,
 } from "./styled";
 import { ItemsCarousel, ProductCard } from "@/common/components";
-import ProductSearch from "@/common/assets/images/productSearch.png";
+import { Props } from "./types";
 
-const Recommended = ({item}) => {
+const Recommended = ({product}: Props) => {
   return (
     <RecommendedContainer>
       <RecommendedTitle>
-        Complementa tu compra con estas opcioness
+        Complementa tu compra con estas opciones
       </RecommendedTitle>
 
         <RecommendedProductsContainer>
@@ -19,27 +19,18 @@ const Recommended = ({item}) => {
             keyBoardControl={true}
             removeArrowOnDeviceType={["xs", "sm", "md"]}
           >
-            {item.map((element) => (
+            {product.map((element) => (
               <ProductCard
                 key={element.id}
                 id={element.id}
-                price={"$" + (element.price - ((element.price) * 0.10))}
-                lastPrice={"$" + element.price}
+                price={`$${(element.price - (element.price * 0.2)).toLocaleString("es-CO")}`}
+                lastPrice={`$${element.price.toLocaleString("es-CO")}`}
                 title={element.name + " " + element.description}
                 brand={element.brand}
                 imageURL={element.image_url[0]}
                 alt={element.name}
               />
             ))}
-            <ProductCard
-              id={2}
-              price= {"$" + 23456}
-              lastPrice={"$" + `${654332}`}
-              title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
-              brand=" HYUNDAI"
-              imageURL={ProductSearch}
-              alt="Engine Oil Pump for Hyundai"
-            />
           </ItemsCarousel>
         </RecommendedProductsContainer>
     </RecommendedContainer>

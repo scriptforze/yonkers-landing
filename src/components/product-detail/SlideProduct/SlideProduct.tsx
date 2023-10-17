@@ -13,19 +13,6 @@ export const SlideProduct = ({ product }: Props) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const element = product[3];
 
-  // useEffect(() => {
-  //   if (product) {
-  //     const stock = product.product_stocks!.reduce(
-  //       (counter, stock) => counter + stock.stock!,
-  //       0
-  //     );
-
-  //     const defaultImage = product?.images![0].urls!.small!;
-  //     setSelectedImage(defaultImage);
-  //     setTotalStock(stock);
-  //   }
-  // }, [product]);
-
   useEffect(() => {
     if (product) {
       const stock = product!.reduce(
@@ -65,7 +52,6 @@ export const SlideProduct = ({ product }: Props) => {
                 minHeight: "315px",
               }}
             >
-              {/* {product?.images?.map((image) => { */}
               {element?.image_url?.map((image) => {
                 return (
                   <Card
@@ -126,7 +112,7 @@ export const SlideProduct = ({ product }: Props) => {
           </Col>
         </Row>
       </div>
-{/* //////////////////////////////////////////////////////////////////////// */}
+      
       <div
         style={{
           display: "flex",
@@ -156,8 +142,6 @@ export const SlideProduct = ({ product }: Props) => {
                   height: "90px",
                 }}
               >
-                {/* Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L
-                SOHC */}
                 {element?.name + " " + element?.brand}
               </Text>
 
@@ -187,35 +171,9 @@ export const SlideProduct = ({ product }: Props) => {
                 SKU/REF: {element?.sku}
               </Text>
               <Text style={{ width: "100px" }}>
-                {/* 65651SFDFSFD */}
                 {product?.sku}
               </Text>
             </div>
-
-            {/* <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                fontSize: "16px",
-                fontWeight: "normal",
-                color: "#616161",
-                lineHeight: "15px",
-                textTransform: "uppercase",
-              }}
-            >
-              <Text
-                style={{ width: "45px", height: "15px", marginRight: "12px" }}
-              >
-                Marca:
-              </Text>
-
-              <Text
-                style={{ width: "62px", height: "15px", marginBottom: "12px" }}
-              >
-                HYUNDAI
-              </Text>
-            </div> */}
-
             <div
               style={{
                 display: "flex",
@@ -271,7 +229,6 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "12px",
               }}
             >
-              {/* ${product?.price.toLocaleString("es-CO")} */}
               $ {element.price.toLocaleString("es-CO")}
             </Text>
             <Text
@@ -284,7 +241,6 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "21px",
               }}
             >
-              {/* ${product?.price.toLocaleString("es-CO")} */}
               $ {((element.price) -
                  (element.price * 0.2)).toLocaleString("es-CO")}
             </Text>

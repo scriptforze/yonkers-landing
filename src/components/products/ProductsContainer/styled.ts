@@ -13,6 +13,7 @@ export const ProductsContainerWrapper = styled.div`
     padding: 21px 120px;
   }
 `;
+
 export const ProductsTitle = styled(Typography.Title)`
   color: #172d5e !important ;
   font-size: 18px;

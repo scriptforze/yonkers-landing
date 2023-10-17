@@ -8,8 +8,8 @@ const Info = ({ items }) => {
     <>
       <Layout title="Information">
         <SlideProduct product={items}/>
-          <Information product={items}/>
-          <Recommended item={items}/>
+        <Information product={items}/>
+        <Recommended product={items}/>
       </Layout>
     </>
   );

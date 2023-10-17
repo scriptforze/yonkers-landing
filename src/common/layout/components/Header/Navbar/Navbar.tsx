@@ -18,7 +18,7 @@ import Logo from "@/common/assets/images/logo.png";
 import { Responsive } from "@/common/components";
 import { SearchBar } from "../SearchBar";
 import { useState } from 'react';
-import Nav from './Nav';
+import ResponsiveNavbar from './ResponsiveNavbar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,6 @@ const Navbar = () => {
         <MenuLogoContainer>
           <Responsive xs>
             <CustomControlButton
-              className="menu-button"
               icon={!isOpen ? <MenuOutlined /> : 
               <CloseOutlined style={{ color: '#e00909' }}/>
              }
@@ -49,7 +48,7 @@ const Navbar = () => {
           <CustomControlButton icon={<ShoppingCartOutlined />} />
         </NavbarControlsContainer>
         <Responsive xs>
-          { isOpen && (<Nav />) }
+          { isOpen && (<ResponsiveNavbar />) }
         </Responsive>
       </SuperiorNavbar>
     </NavbarContainer>
