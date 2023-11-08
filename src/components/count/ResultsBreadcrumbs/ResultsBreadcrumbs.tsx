@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { BreadcrumbsContainer,
    CountNav,
    CountText,
    CountButton,
    CountSection } from "./styled";
 import { CountForm } from "../CountForm";
+import { CountDeliveryForm } from "../CountDeliveryForm";
 import { CountDelivery } from "../CountDelivery";
 import { CountOrder } from "../CountOrder";
+import { CountPaymentForm } from "../CountPaymentForm";
 import { CountPayment } from "../CountPayment";
-import { useState } from 'react';
+import { Props } from "./types";
 
-const ResultsBreadcrumbs = () => {
+const ResultsBreadcrumbs = ({ product }: Props) => {
   const [activeTag, setActiveTag] = useState("cuenta");
 
   function openTag(tagName: string) {
@@ -20,33 +22,36 @@ const ResultsBreadcrumbs = () => {
       (tagDisplay[i] as HTMLElement).style.display = "none";
     }
 
-    setActiveTag(tagName);
+     setActiveTag(tagName);
     tablinks = document.getElementsByClassName("tablink");
     (document.getElementById(tagName) as HTMLElement).style.display = "block";
   }
+
+  const [dataFromChild, setDataFromChild] = useState<boolean>();
+
+  const handleDataFromChild = (data: boolean) => {
+    setDataFromChild(data);
+  }
+
   return (
     <BreadcrumbsContainer>
       <CountNav>
-        <CountButton onClick={() => openTag('cuenta')}
-        >
+        <CountButton onClick={() => openTag('cuenta')}>
           <CountText className="tablink" color={activeTag === "cuenta" ? "#FE7062" : "#212B36"}>
             Mi cuenta
           </CountText>
         </CountButton>
-        <CountButton onClick={() => openTag('envio')}
-        >
+        <CountButton onClick={() => openTag('envio')}>
           <CountText className="tablink" color={activeTag === "envio" ? "#FE7062" : "#212B36"}>
             Direcciones de envío
           </CountText>
         </CountButton>
-        <CountButton onClick={() => openTag('pedido')}
-        >
+        <CountButton onClick={() => openTag('pedido')}>
           <CountText color={activeTag === "pedido" ? "#FE7062" : "#212B36"}>
             Pedidos
           </CountText>
         </CountButton>
-        <CountButton onClick={() => openTag('pago')}
-        >
+        <CountButton onClick={() => openTag('pago')}>
           <CountText color={activeTag === "pago" ? "#FE7062" : "#212B36"}>
             Métodos de pago
           </CountText>
@@ -57,13 +62,17 @@ const ResultsBreadcrumbs = () => {
           <CountForm />
         </div>
         <div id="envio" className="tag" style={{ display: 'none' }}>
-          <CountDelivery />
+          {dataFromChild === true ? <CountDeliveryForm onDataFromChild={handleDataFromChild}/> :
+          <CountDelivery onDataFromChild={handleDataFromChild}/>
+          }
         </div>
         <div id="pedido" className="tag" style={{ display: 'none' }}>
-          <CountOrder />
+          <CountOrder product={product} />
         </div>
         <div id="pago" className="tag" style={{ display: 'none' }}>
-          <CountPayment />
+          {dataFromChild === true ? <CountPaymentForm onDataFromChild={handleDataFromChild}/> :
+            <CountPayment onDataFromChild={handleDataFromChild}/>
+          }
         </div>
       </CountSection>
     </BreadcrumbsContainer>
