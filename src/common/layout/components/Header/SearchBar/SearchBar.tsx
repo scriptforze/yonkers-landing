@@ -21,7 +21,7 @@ const SearchBar = () => {
     { skip: !debouncedSearchQuery }
   );
 
-  console.log("products", products?.data);
+  // console.log("products", products?.data);
 
   return (
     <SearchInputContainer>

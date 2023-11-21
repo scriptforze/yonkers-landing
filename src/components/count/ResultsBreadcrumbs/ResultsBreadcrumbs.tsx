@@ -63,7 +63,7 @@ const ResultsBreadcrumbs = ({ product }: Props) => {
         </div>
         <div id="envio" className="tag" style={{ display: 'none' }}>
           {dataFromChild === true ? <CountDeliveryForm onDataFromChild={handleDataFromChild}/> :
-          <CountDelivery onDataFromChild={handleDataFromChild}/>
+            <CountDelivery onDataFromChild={handleDataFromChild}/>
           }
         </div>
         <div id="pedido" className="tag" style={{ display: 'none' }}>

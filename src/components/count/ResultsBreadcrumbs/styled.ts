@@ -29,7 +29,6 @@ export const CountNav = styled.div`
   display: flex;
   width: 100%;
   overflow-y: hidden;
-  padding: 20px 0px 0px 32px;
   height: 55px;
   margin-bottom: 16px;
 

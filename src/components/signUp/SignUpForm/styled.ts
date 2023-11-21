@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Button, Typography, Input } from "antd";
 
-export const CountFormInput = styled(Input)`
+export const SignUpFormInput = styled(Input)`
   width: 300px;
   height: 40px;
   padding: 10px;
@@ -17,7 +17,7 @@ export const CountFormInput = styled(Input)`
   }
 `;
 
-export const CountFormButton = styled(Button)`
+export const SignUpFormButton = styled(Button)`
   border: none;
   font-size: 16px;
   font-weight: bold;
@@ -60,7 +60,7 @@ export const CountFormButton = styled(Button)`
   }
 `;
 
-export const CountFormText = styled(Typography.Paragraph)`
+export const SignUpFormText = styled(Typography.Paragraph)`
   font-family: 'Source Sans 3', sans-serif; 
   color: #999999;
   font-size: 14px;
@@ -75,7 +75,7 @@ export const CountFormText = styled(Typography.Paragraph)`
   }
 `;
 
-export const CountFormTextSub = styled(Typography.Paragraph)`
+export const SignUpFormTextSub = styled(Typography.Paragraph)`
   color: ${(props) => props.color || "#212B36"};
   font-size: 16px;
   font-weight: 400;

@@ -1,6 +1,6 @@
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { HeaderDivider, ItemsCarousel } from "@/common/components";
-import { useGetAllProductsQuery } from "@/services/products";
+import { Product, useGetAllProductsQuery } from "@/services/products";
 import { ProductCard } from "@/common/components/ProductCard";
 
 import {
@@ -37,11 +37,11 @@ export const NewProducts = () => {
         keyBoardControl={true}
         removeArrowOnDeviceType={["xs", "sm", "md"]}
       >
-        {products?.data?.map((product) => (
+        {products?.data?.map((product: Product) => (
           <ProductCard
             id={product.id}
             key={product.id}
-            title={product.name}
+            title={product.name} 
             price={product.price}
             brand={product?.category?.name || ""}
             imageURL={product?.images?.[0]?.urls.original || ""}

@@ -4,8 +4,7 @@ import {
   NavbarContainer,
   MenuLogoContainer,
   CustomControlButton,
-  NavbarControlsContainer,
-  HeaderContainerNav
+  NavbarControlsContainer
 } from "./styled";
 import {
   UserOutlined,

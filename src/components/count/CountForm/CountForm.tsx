@@ -2,7 +2,6 @@ import React from "react";
 import { CountFormText,
          CountFormInput,
          CountFormButton,
-         CountLine,
          CountFormTextSub} from "./styled";
 
 const CountForm = () => {
@@ -11,27 +10,27 @@ const CountForm = () => {
         <CountFormText>Nombres</CountFormText>
         <CountFormInput
           type="text"
-          placeholder="Ingresa su Nombre"
-        /><CountLine />
+          placeholder="Ingrese su Nombre"
+        />
         <CountFormText>Apellidos</CountFormText>
         <CountFormInput
           type="text"
-          placeholder="Ingresa su Apellidos"
-        /><CountLine />
+          placeholder="Ingrese su Apellidos"
+        />
         <CountFormText>Email</CountFormText>
         <CountFormInput
           type="email"
-          placeholder="Ingresa su Email"
-        /><CountLine />
+          placeholder="Ingrese su Email"
+        />
         <CountFormText>Teléfono</CountFormText>
         <CountFormInput
           type="tel"
-          placeholder="Ingresa su Teléfono"
-        /><CountLine />
+          placeholder="Ingrese su Teléfono"
+        />
         <CountFormText>Contraseña</CountFormText>
         <CountFormInput
           type="password"
-          placeholder="Ingresa su Contraseña"
+          placeholder="Ingrese su Contraseña"
         />
         <CountFormTextSub>Cambiar contraseña</CountFormTextSub>
         <CountFormButton>Editar</CountFormButton>
