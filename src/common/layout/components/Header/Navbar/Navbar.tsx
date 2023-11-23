@@ -12,14 +12,17 @@ import {
   CloseOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
-
 import Logo from "@/common/assets/images/logo.png";
 import { Responsive } from "@/common/components";
 import { SearchBar } from "../SearchBar";
 import { useState } from 'react';
 import ResponsiveNavbar from './ResponsiveNavbar';
 
-const Navbar = () => {
+interface NavbarProps {
+  appear: boolean | string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ appear }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
   
@@ -29,7 +32,7 @@ const Navbar = () => {
         <MenuLogoContainer>
           <Responsive xs>
             <CustomControlButton
-              icon={!isOpen ? <MenuOutlined /> : 
+              icon={ !isOpen ? <MenuOutlined /> : 
               <CloseOutlined style={{ color: '#e00909' }}/>
              }
               onClick={toggleDropdown}
@@ -37,15 +40,19 @@ const Navbar = () => {
           </Responsive>
           <CustomImage alt="logo icon" src={Logo} priority />
         </MenuLogoContainer>
-
-        <Responsive sm md lg xl xxl>
-          <SearchBar />
-        </Responsive>
-
-        <NavbarControlsContainer>
-          <CustomControlButton icon={<UserOutlined />} />
-          <CustomControlButton icon={<ShoppingCartOutlined />} />
-        </NavbarControlsContainer>
+        { appear === "false" ? (
+          ""
+        ) : (
+          <>
+            <Responsive sm md lg xl xxl>
+              <SearchBar />
+            </Responsive>
+            <NavbarControlsContainer>
+              <CustomControlButton icon={<UserOutlined />} />
+              <CustomControlButton icon={<ShoppingCartOutlined />} />
+            </NavbarControlsContainer>
+          </>
+        )}
         <Responsive xs>
           { isOpen && (<ResponsiveNavbar />) }
         </Responsive>

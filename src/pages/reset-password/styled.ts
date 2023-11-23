@@ -16,3 +16,15 @@ export const HeaderContainer = styled.header`
     padding: 36px 118px 37px;
   }
 `;
+
+export const ResetPasswordContainer = styled.div`
+  padding: 36px 0px;
+  height: 90vh; 
+  max-height: 200vh;
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.lg &&
+    `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
+    padding: 114px 0px;
+  }
+`;
