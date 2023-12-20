@@ -22,7 +22,6 @@ const ResetPasswordForm = () => {
       <ResetPasswordFormText
         sizeProps="14px"
         lineHeightProps="16px"
-        // marginProps=" 25px 0px 0px 0px"
         widthProps="88px"
       >
         Nueva contraseña
@@ -34,7 +33,6 @@ const ResetPasswordForm = () => {
       <ResetPasswordFormText
         sizeProps="14px"
         lineHeightProps="16px"
-        // marginProps=" 25px 0px 0px 0px"
         widthProps="88px"
       >
         Confirmar contraseña

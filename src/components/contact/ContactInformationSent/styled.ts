@@ -1,8 +1,8 @@
+import styled from "styled-components";
 import Image from "next/image";
 import { Typography, Button } from "antd";
-import styled from "styled-components";
 
-export const ContactContainerInformationSent = styled.section`
+export const ContactContainerInformationSent = styled.div`
   height: 400px;
   display: grid;
   grid-template-rows: 4fr;
@@ -38,8 +38,8 @@ export const ContactTextImage = styled(Image)`
   
 
   ${({ theme }) =>
-  theme.custom?.breakpoints?.lg &&
-  `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
+    theme.custom?.breakpoints?.lg &&
+    `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
     top: 25px;
   }
 `;
@@ -54,8 +54,8 @@ export const ContactTextTittleInformationSent = styled(Typography.Paragraph)`
   grid-area: tittle;
 
   ${({ theme }) =>
-  theme.custom?.breakpoints?.lg &&
-  `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
+    theme.custom?.breakpoints?.lg &&
+    `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
     width: 470px;
   }
 `;

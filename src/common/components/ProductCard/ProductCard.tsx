@@ -17,7 +17,6 @@ const ProductCard = ({
     <CustomCard>
       <CustomCard.Body>
         <CustomCardImage src={imageURL} alt={alt} />
-
         <div
           style={{
             display: "flex",

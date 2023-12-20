@@ -1,6 +1,5 @@
 import {
   RecommendedContainer,
-  RecommendedProductsCardsContainer,
   RecommendedProductsContainer,
   RecommendedTitle,
 } from "./styled";

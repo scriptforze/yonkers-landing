@@ -1,6 +1,6 @@
 import styled, { DefaultTheme, ThemedStyledProps } from "styled-components";
 import { Button, Typography, Input } from "antd";
-import { Props } from "./types";
+import { Props } from "@/common/types";
 
 export const ResetPasswordFormContainer = styled.div`
   width: 333px;

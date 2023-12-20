@@ -40,6 +40,7 @@ const CountOrder = ({product}: Props) => {
           brand={"ACME"}
           imageURL={"http://localhost:3000/img/brakepad1.jpg"}
           alt={"Description imag 1"}
+          appear={"false"}
         />
         <OrderProduct
           key={2}
@@ -50,6 +51,7 @@ const CountOrder = ({product}: Props) => {
           brand={"SOHC"}
           imageURL={"http://localhost:3000/img/sparkplugset3.jpg"}
           alt={"Description imag 2"}
+          appear={"false"}
         />
         <OrderProduct
           key={3}
@@ -60,6 +62,7 @@ const CountOrder = ({product}: Props) => {
           brand={"MICHELLIN"}
           imageURL={"http://localhost:3000/img/tire1.jpg"}
           alt={"Description imag 3"}
+          appear={"false"}
         />
         <CountOrderTotal>  
           <CountOrderText prefix="600">Total</CountOrderText>

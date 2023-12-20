@@ -19,14 +19,14 @@ const ContactContainer = () => {
 
   return (
     dataFromChild === true ?
-      <ContactInformationSent />
+      <ContactInformationSent appear="true" />
     :
       <ContactContentContainer>
         <ContactTittleContentContainer>
           <ContactText>Contacto</ContactText>
           <ContactText 
             colorProps="#999999"
-            styleProps="20px"
+            sizeProps="20px"
             weightProps="400"
             lineHeightProps="25.14px"
             marginProps="-30px 0px"
@@ -39,21 +39,21 @@ const ContactContainer = () => {
         </ContactContentForm>
         <ContactInfoContentContainer>
           <ContactText
-            styleProps="16px"
+            sizeProps="16px"
             weightProps="400"
             lineHeightProps="10px"
           >
             Cali: (602) 325-8569
           </ContactText>
           <ContactText
-            styleProps="16px"
+            sizeProps="16px"
             weightProps="400"
             lineHeightProps="10px"
           >
             Resto del país: 01-8000-879-9854
           </ContactText>
           <ContactText
-            styleProps="16px"
+            sizeProps="16px"
             weightProps="400"
             lineHeightProps="10px"
           >

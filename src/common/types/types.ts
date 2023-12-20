@@ -8,4 +8,5 @@ export interface Props {
   fontColorProps?: string;
   borderProps?: string;
   radiusProps?: string;
+  wildcardProps?: string;
 }

@@ -1,6 +1,6 @@
 import styled, { DefaultTheme, ThemedStyledProps } from "styled-components";
 import { Typography } from "antd";
-import { Props } from "./types";
+import { Props } from "@/common/types";
 
 export const ContactContentContainer = styled.div`
   display: grid;
@@ -35,7 +35,7 @@ export const ContactContentContainer = styled.div`
 
 export const ContactText = styled(Typography.Paragraph).attrs(
   (props: ThemedStyledProps<Props, DefaultTheme>) => ({
-    styleProps: props.styleProps || "32px",
+    sizeProps: props.sizeProps || "32px",
     colorProps: props.colorProps || "#172D5E",
     weightProps: props.weightProps || "600",
     lineHeightProps: props.lineHeightProps || "40.22px",
@@ -44,7 +44,7 @@ export const ContactText = styled(Typography.Paragraph).attrs(
 )<Props>`
   font-family: 'Source Sans 3', sans-serif; 
   color: ${(props) => props.colorProps};
-  font-size: ${(props) => props.styleProps};
+  font-size: ${(props) => props.sizeProps};
   font-weight: ${(props) => props.weightProps};
   line-height: ${(props) => props.lineHeightProps};
   margin: ${(props) => props.marginProps};

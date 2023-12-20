@@ -1,6 +1,6 @@
 import styled, { DefaultTheme, ThemedStyledProps } from "styled-components";
 import { Button, Typography, Input, Checkbox } from "antd";
-import { Props } from "./types";
+import { Props } from "@/common/types";
 
 export const ContactFormContainer = styled.div`
   width: 100%;
@@ -99,10 +99,6 @@ export const ContactFormButton = styled(Button)`
 
 export const ContactFormText = styled(Typography.Paragraph).attrs(
   (props: ThemedStyledProps<Props, DefaultTheme>) => ({
-    styleProps: props.styleProps || "32px",
-    colorProps: props.colorProps || "#172D5E",
-    weightProps: props.weightProps || "600",
-    lineHeightProps: props.lineHeightProps || "40.22px",
     marginProps: props.marginProps || "0px"
   })
 )<Props>`

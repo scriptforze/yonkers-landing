@@ -1,6 +1,6 @@
 import styled, { DefaultTheme, ThemedStyledProps } from "styled-components";
 import { Button, Typography, Input } from "antd";
-import { Props } from "./types";
+import { Props } from "@/common/types";
 
 export const SignUpFormContainer = styled.div`
   width: 333px;
@@ -65,9 +65,7 @@ export const SignUpFormText = styled(Typography.Paragraph).attrs(
   (props: ThemedStyledProps<Props, DefaultTheme>) => ({
     sizeProps: props.sizeProps || "14px",
     colorProps: props.colorProps || "#999999",
-    weightProps: props.weightProps || "400",
-    lineHeightProps: props.lineHeightProps || "40.22px",
-    marginProps: props.marginProps || "0px"
+    weightProps: props.weightProps || "400"
   })
 )<Props>`
   font-family: 'Source Sans 3', sans-serif; 

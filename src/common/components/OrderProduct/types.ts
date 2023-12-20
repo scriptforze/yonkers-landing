@@ -13,4 +13,5 @@ export interface OrderProductCardProps {
   lastPrice?: number;
   imageURL: string | StaticImport;
   alt: string;
+  appear?: string;
 }
