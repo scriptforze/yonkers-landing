@@ -17,6 +17,7 @@ import { Responsive } from "@/common/components";
 import { SearchBar } from "../SearchBar";
 import { useState } from 'react';
 import ResponsiveNavbar from './ResponsiveNavbar';
+import Link from "next/link";
 
 interface NavbarProps {
   appear: boolean | string;
@@ -38,7 +39,9 @@ const Navbar: React.FC<NavbarProps> = ({ appear }) => {
               onClick={toggleDropdown}
             />
           </Responsive>
-          <CustomImage alt="logo icon" src={Logo} priority />
+          <Link href={`/`}>
+            <CustomImage alt="logo icon" src={Logo} priority />
+          </Link>
         </MenuLogoContainer>
         { appear === "false" ? (
           ""
@@ -48,8 +51,12 @@ const Navbar: React.FC<NavbarProps> = ({ appear }) => {
               <SearchBar />
             </Responsive>
             <NavbarControlsContainer>
-              <CustomControlButton icon={<UserOutlined />} />
-              <CustomControlButton icon={<ShoppingCartOutlined />} />
+              <Link href={`/login`}>
+                <CustomControlButton icon={<UserOutlined />} />
+              </Link>
+              <Link href={`/checkout`}>
+                <CustomControlButton icon={<ShoppingCartOutlined />} />
+              </Link>
             </NavbarControlsContainer>
           </>
         )}

@@ -88,26 +88,6 @@ export const CheckoutMainText = styled(Typography.Paragraph).attrs(
   }
 `;
 
-export const CheckoutMainLinee = styled.div.attrs(
-  (props: ThemedStyledProps<Props, DefaultTheme>) => ({
-    colorProps: props.colorProps || "#C4CDD5"
-  })
-) <Props>`
-  width: 40px;
-  height: 3px;
-  background-color: ${(props) => props.colorProps};
-  position: relative;
-  bottom: 34px;
-
-  ${({ theme }) =>
-    theme.custom?.breakpoints?.sm &&
-    `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
-      width: 121px;
-      top: 46px;
-      left: 40px;
-  }
-`;
-
 export const CheckoutMainLine = styled.div.attrs(
   (props: ThemedStyledProps<Props, DefaultTheme>) => ({
     colorProps: props.colorProps || "#C4CDD5"

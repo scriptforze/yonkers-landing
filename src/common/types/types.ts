@@ -9,4 +9,5 @@ export interface Props {
   borderProps?: string;
   radiusProps?: string;
   wildcardProps?: string;
+  paddingProps?: string;
 }

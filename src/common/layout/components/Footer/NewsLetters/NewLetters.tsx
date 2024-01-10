@@ -19,6 +19,7 @@ const NewLetters = () => {
       <NewsLettersInput
         type="text"
         placeholder="Ingresa tu correo electrónico"
+        required
       />
 
       <NewsLettersButton>Subscribirme</NewsLettersButton>

@@ -12,10 +12,12 @@ const SignUpForm = () => {
        colorProps="#172D5E"
        sizeProps="32px"
        weightProps="600"
-      >Crear cuenta</SignUpFormText>
+       paddingProps="10px"
+      >
+        Crear cuenta
+      </SignUpFormText>
       <SignUpFormText>Nombres</SignUpFormText>
       <SignUpFormInput
-        widthProps="183px"
         type="text"
         placeholder="Ingrese su Nombre"
       />
@@ -23,7 +25,6 @@ const SignUpForm = () => {
       <SignUpFormInput
         type="text"
         placeholder="Ingrese su Apellidos"
-        widthProps="183px"
       />
       <SignUpFormText>Correo electrónico</SignUpFormText>
       <SignUpFormInput
@@ -45,7 +46,7 @@ const SignUpForm = () => {
         <Link href={"#"}> Términos y Condiciones </Link> y la 
         <Link href={"#"}> Política de privacidad</Link></SignUpFormText><br />
         <SignUpFormText sizeProps="12px">¿Ya tienes una cuenta?
-        <Link href={"#"}> Iniciar sesión</Link>
+        <Link href={"/login"}> Iniciar sesión</Link>
       </SignUpFormText>
     </SignUpFormContainer>
   );

@@ -1,6 +1,12 @@
-import styled from "styled-components";
+import styled, { DefaultTheme, ThemedStyledProps } from "styled-components";
+import { Typography, Button } from "antd";
+import { Props } from "@/common/types";
 
-export const CountOrderContainer = styled.div`
+export const CountOrderContainer = styled.div.attrs(
+  (props: ThemedStyledProps<Props, DefaultTheme>) => ({
+    lineHeightProps: props.lineHeightProps || ""
+  })
+) <Props>`
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -9,6 +15,7 @@ export const CountOrderContainer = styled.div`
   height: 100%;
   border-radius: 8px;
   border: 1px solid #D3D3D3;
+  line-height: ${(props) => props.lineHeightProps};
 
   ${({ theme }) =>
   theme.custom?.breakpoints?.sm &&
@@ -41,11 +48,15 @@ export const CountOrderSecondContainer = styled.div`
   }
 `;
 
-export const CountOrderDetalle = styled.p`
+export const CountOrderDetalle = styled(Typography.Text).attrs(
+  (props: ThemedStyledProps<Props, DefaultTheme>) => ({
+    fontColorProps: props.fontColorProps || "#000000"
+  })
+) <Props>`
   font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color:  ${(props) => props.color || "#000000"};
+  color:  ${(props) => props.fontColorProps};
   text-align: right;
   cursor: pointer;
 
@@ -57,14 +68,23 @@ export const CountOrderDetalle = styled.p`
   }
 `;
 
-export const CountOrderText = styled.p`
+export const CountOrderText = styled(Typography.Text).attrs(
+  (props: ThemedStyledProps<Props, DefaultTheme>) => ({
+    weightProps: props.weightProps || "400",
+    fontColorProps: props.fontColorProps || "#000000",
+    widthProps: props.widthProps || "220px",
+    marginProps: props.marginProps || "0px",
+    lineHeightProps: props.lineHeightProps || "left"
+  })
+) <Props>`
   display: inline;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
-  font-weight: ${(props) => props.prefix || "400"};
-  color:  ${(props) => props.color || "#000000"};
-  width:  ${(props) => props.itemRef || "220px"};
-  text-align: ${(props) => props.property || "left"};
+  font-weight: ${(props) => props.weightProps};
+  color:  ${(props) => props.fontColorProps};
+  width:  ${(props) => props.widthProps};
+  text-align: ${(props) => props.lineHeightProps};
+  margin-bottom: ${(props) => props.marginProps};
 `;
 
 export const CountOrderSpan = styled.span`

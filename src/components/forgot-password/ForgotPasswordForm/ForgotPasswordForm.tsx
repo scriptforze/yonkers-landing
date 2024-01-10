@@ -3,6 +3,7 @@ import { ForgotPasswordFormContainer,
          ForgotPasswordFormText,
          ForgotPasswordFormInput,
          ForgotPasswordFormButton } from "./styled";
+import Link from "next/link";
 
 const ForgotPasswordForm = () => {
   return (
@@ -33,13 +34,18 @@ const ForgotPasswordForm = () => {
         type="mail"
         placeholder="Ejemplo@gmail.com"
       />
-      <ForgotPasswordFormButton
-        colorProps="#FE7062"
-        fontColorProps="#FFFFFF"
-        weightProps="600"
-        lineHeightProps="20.11px"
-        borderProps="none"
-        radiusProps="4px">Restablecer contraseña</ForgotPasswordFormButton>
+      {/* This Link is meanwhile.. */}
+      <Link href={"/reset-password"}>
+        <ForgotPasswordFormButton
+          colorProps="#FE7062"
+          fontColorProps="#FFFFFF"
+          weightProps="600"
+          lineHeightProps="20.11px"
+          borderProps="none"
+          radiusProps="4px">
+            Restablecer contraseña
+          </ForgotPasswordFormButton>
+      </Link>
     </ForgotPasswordFormContainer>
   );
 };

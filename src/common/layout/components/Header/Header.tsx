@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Navbar />
+        <Navbar appear={"true"} />
         <Responsive xs>
           <SearchBar />
         </Responsive>

@@ -59,7 +59,7 @@ const LoginForm = () => {
         Continuar con Facebook
       </LoginFormButton>
       <LinkFormContainer>
-        <Link href={"#"}
+        <Link href={"/sign-up"}
           style={{ 
             color: "#999999",
             textDecoration: 'underline',
@@ -67,7 +67,7 @@ const LoginForm = () => {
             fontSize: "14px",
             margin: "20px 0px 8px 0px"}}>Aún no estoy registrado</Link>
         <br />
-        <Link href={"#"}
+        <Link href={"/forgot-password"}
           style={{ 
             color: "#999999",
             textDecoration: 'underline',

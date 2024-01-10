@@ -3,6 +3,7 @@ import { CountFormText,
          CountFormInput,
          CountFormButton,
          CountFormTextSub} from "./styled";
+import Link from "next/link";
 
 const CountForm = () => {
   return (
@@ -32,7 +33,9 @@ const CountForm = () => {
           type="password"
           placeholder="Ingrese su Contraseña"
         />
-        <CountFormTextSub>Cambiar contraseña</CountFormTextSub>
+        <Link href={`/reset-password`}>
+          <CountFormTextSub>Cambiar contraseña</CountFormTextSub>
+        </Link>
         <CountFormButton>Editar</CountFormButton>
       </form>
   );

@@ -4,7 +4,7 @@ import { Props } from "@/common/types";
 
 export const SignUpFormContainer = styled.div`
   width: 333px;
-  height: 794px;
+  height: 800px;
   background-color: #ffffff;
   border-radius: 8px;
   position: relative;
@@ -65,7 +65,8 @@ export const SignUpFormText = styled(Typography.Paragraph).attrs(
   (props: ThemedStyledProps<Props, DefaultTheme>) => ({
     sizeProps: props.sizeProps || "14px",
     colorProps: props.colorProps || "#999999",
-    weightProps: props.weightProps || "400"
+    weightProps: props.weightProps || "400",
+    paddingProps: props.paddingProps || "0px"
   })
 )<Props>`
   font-family: 'Source Sans 3', sans-serif; 
@@ -79,5 +80,6 @@ export const SignUpFormText = styled(Typography.Paragraph).attrs(
     theme.custom?.breakpoints?.sm &&
     `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
       line-height: 0px;
+      padding-bottom: ${(props) => props.paddingProps};
   }
 `;
