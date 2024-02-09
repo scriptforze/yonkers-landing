@@ -97,7 +97,7 @@ export const CheckoutMainLine = styled.div.attrs(
   height: 3px;
   background-color: ${(props) => props.colorProps};
   position: absolute;
-  top: 117px;
+  top: 118px;
    
   ${({ theme }) =>
     theme.custom?.breakpoints?.sm &&

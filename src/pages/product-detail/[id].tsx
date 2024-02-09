@@ -8,16 +8,17 @@ import { axiosInstance } from "@/config/api";
 import { Product } from "@/services/products";
 import { useRouter } from "next/router";
 
+// import DashboardSkeleton from 
+
 const ProductDetail = ({ product }: { product: Product }) => {
   const router = useRouter();
-
   if (router.isFallback) return <>Loading...</>;
 
   return (
     <Layout>
       <SlideProduct product={product} />
       <Information product={product} />
-      <Recommended />
+      <Recommended product={product} />
     </Layout>
   );
 };

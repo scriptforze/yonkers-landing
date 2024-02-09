@@ -14,8 +14,8 @@ export const ContactFormContainer = styled.div`
   margin-bottom: 35px;
   
   ${({ theme }) =>
-  theme.custom?.breakpoints?.sm &&
-  `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
+    theme.custom?.breakpoints?.sm &&
+    `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
     padding: 40px;
     height: 100%;
     margin: -60px 0px -30px 0px;
@@ -23,8 +23,8 @@ export const ContactFormContainer = styled.div`
   }
 
   ${({ theme }) =>
-  theme.custom?.breakpoints?.lg &&
-  `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
+    theme.custom?.breakpoints?.lg &&
+    `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
     width: 100%;
   }
 `;
@@ -51,8 +51,8 @@ export const ContactFormInput = styled(Input)`
   margin-bottom: 20px;
 
   ${({ theme }) =>
-  theme.custom?.breakpoints?.sm &&
-  `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
+    theme.custom?.breakpoints?.sm &&
+    `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
     min-width: 472px;
   }
 `;
@@ -67,8 +67,8 @@ export const ContactFormTextArea = styled(Input)`
   height: 82px;
 
   ${({ theme }) =>
-  theme.custom?.breakpoints?.sm &&
-  `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
+    theme.custom?.breakpoints?.sm &&
+    `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
     margin-bottom: 35px;
   }
 `;
@@ -87,8 +87,8 @@ export const ContactFormButton = styled(Button)`
   margin: 24px auto; 
 
   ${({ theme }) =>
-  theme.custom?.breakpoints?.sm &&
-  `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
+    theme.custom?.breakpoints?.sm &&
+    `@media (min-width: ${theme.custom?.breakpoints?.sm?.min})`} {
     width: 161px;
     position: relative;
     align-self: right;
@@ -101,14 +101,13 @@ export const ContactFormText = styled(Typography.Paragraph).attrs(
   (props: ThemedStyledProps<Props, DefaultTheme>) => ({
     marginProps: props.marginProps || "0px"
   })
-)<Props>`
+) <Props>`
   font-family: 'Source Sans 3', sans-serif; 
   color: #999999;
   font-size: 14px;
   font-weight: 400;
   line-height: 0px;
   text-align: left;
-
   display: inline;
   margin: ${(props) => props.marginProps};
   position: relative;

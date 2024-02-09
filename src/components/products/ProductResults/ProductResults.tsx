@@ -27,7 +27,6 @@ const ProductResults = ({ filters }: ProductResultsProps) => {
       <ProductResultsControls>
         <SortingButton />
       </ProductResultsControls>
-
       <ProductsResultsCards>
         {products?.data?.map(({ name, id, price, images, category }) => (
           <ProductCard

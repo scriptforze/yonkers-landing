@@ -1,23 +1,26 @@
 import React, { useState } from "react";
-import { ContactFormContainer,
-    ContactFormText,
-    ContactFormInput,
-    ContactFormTextArea,
-    ContactFormButton,
-    FilterCheckBox } from "./styled";
+import {
+  ContactFormContainer,
+  ContactFormText,
+  ContactFormInput,
+  ContactFormTextArea,
+  ContactFormButton,
+  FilterCheckBox
+} from "./styled";
 
 interface ChildComponentProps {
   onDataFromChild: (data: boolean) => void;
 }
-    
-const ContactForm: React.FC<ChildComponentProps> = ({ onDataFromChild }: ChildComponentProps) => {  
+
+const ContactForm: React.FC<ChildComponentProps> = ({ onDataFromChild }: ChildComponentProps) => {
 
   const [data, setData] = useState(true);
 
   const sendDataToParent = () => {
+
     onDataFromChild(data);
   }
-  
+
   const [inputValue, setInputValue] = useState<string>('');
   const [isFieldEmpty, setIsFieldEmpty] = useState<boolean>(false);
 
@@ -65,7 +68,7 @@ const ContactForm: React.FC<ChildComponentProps> = ({ onDataFromChild }: ChildCo
           type="TextArea"
           placeholder="Ingrese su Mensaje"
         />
-        <FilterCheckBox/><ContactFormText marginProps="0px 0px 0px 16px">I agree to the Privacy statement</ContactFormText>
+        <FilterCheckBox /><ContactFormText marginProps="0px 0px 0px 16px">I agree to the Privacy statement</ContactFormText>
         <ContactFormButton onClick={sendDataToParent}>Enviar</ContactFormButton>
       </form>
     </ContactFormContainer>

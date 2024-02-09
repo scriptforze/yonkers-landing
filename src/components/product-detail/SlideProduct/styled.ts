@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  gap: 144px;
+  width: 100%;
+  gap: 60px;
   display: flex;
   padding: 64px 24px;
   flex-direction: row;
@@ -10,7 +11,7 @@ export const Section = styled.section`
   ${({ theme }) =>
     theme.custom?.breakpoints?.md &&
     `@media (max-width: ${theme.custom?.breakpoints?.md?.max})`} {
-    align-items: center;
-    flex-direction: column;
+      align-items: center;
+      flex-direction: column;
   }
 `;

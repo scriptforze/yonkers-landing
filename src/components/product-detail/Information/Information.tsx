@@ -12,13 +12,10 @@ import { Props } from "./types";
 
 const Information = ({ product }: Props) => {
   const [size, setSize] = useState<SizeType>("small");
-  const element = product[3];
-  
 
   return (
     <InformationContainer>
       <InformationTitle>Información de producto</InformationTitle>
-
       <CustomTabs
         animated
         size={size}
@@ -31,10 +28,10 @@ const Information = ({ product }: Props) => {
             children: (
               <InformationTabContent>
                 <Typography.Paragraph>
-                  {element.features[0]}
+                  {product.description}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
-                  {element?.features[1]}
+                  {product?.short_description}
                 </Typography.Paragraph>
               </InformationTabContent>
             ),
