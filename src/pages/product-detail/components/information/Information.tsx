@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  Tabs } from "antd";
+import { Tabs } from "antd";
 import type { SizeType } from "antd/es/config-provider/SizeContext";
 import { Text } from "@nextui-org/react";
 

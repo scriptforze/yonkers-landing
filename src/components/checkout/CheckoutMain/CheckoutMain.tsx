@@ -35,14 +35,13 @@ const CheckoutMain = ({ product }: PropsProduct) => {
     "confirmacion",
     "recibido"
   ];
-  
+
   const [activeTag, setActiveTag] = useState("carrito");
   const [deactivate, setDeactivateTag] = useState("confirmacion");
   const [charge, setCharge] = useState(0);
   const [name, setName] = useState(0);
   const [change, setChange] = useState(1);
-  
-  console.log("BeforeTag! " + activeTag + " BeforedeactivateTag! " + deactivate);
+
   function openTag(tagName: string) {
     var tagDisplay = document.getElementsByClassName("tag");
     for (var i = 0; i < tagDisplay.length; i++) {
@@ -64,7 +63,6 @@ const CheckoutMain = ({ product }: PropsProduct) => {
     (tagDisplay[change - 1] as HTMLElement).style.display = "none";
     (tagDisplay[change - 2] as HTMLElement).style.display = "block";
     setDeactivateTag(tagName);
-    console.log("Hello there! " + activeTag + ", " + deactivate);
     charge <= 99 ? setCharge(charge - 33) : setCharge(charge - charge);
     setName((prevIndex) => (prevIndex - 1) % nameButton.length);
     setChange((changeIndex) => (changeIndex - 1) % changeDisplay.length);
@@ -73,7 +71,7 @@ const CheckoutMain = ({ product }: PropsProduct) => {
   return (
     <CheckoutMainContainer>
       {activeTag === "recibido" ? (
-        "" 
+        ""
       ) : (
         <>
           <CheckoutMainLine>
@@ -81,84 +79,60 @@ const CheckoutMain = ({ product }: PropsProduct) => {
           </CheckoutMainLine>
           <CheckoutMainNav>
             <CheckoutMainText
-              colorProps = {
-                activeTag === "carrito" || 
-                activeTag === "envio" || 
-                activeTag === "pago" || 
-                activeTag === "confirmacion" ? "#FE7062" : "#C4CDD5" 
+              colorProps={
+                activeTag === "carrito" ||
+                  activeTag === "envio" ||
+                  activeTag === "pago" ||
+                  activeTag === "confirmacion" ? "#FE7062" : "#C4CDD5"
               }
-              fontColorProps = {
-                activeTag === "carrito" || 
-                activeTag === "envio" || 
-                activeTag === "pago" || 
-                activeTag === "confirmacion" ? "#FFFFFF" : "#999999" 
+              fontColorProps={
+                activeTag === "carrito" ||
+                  activeTag === "envio" ||
+                  activeTag === "pago" ||
+                  activeTag === "confirmacion" ? "#FFFFFF" : "#999999"
               }
             >
               1
             </CheckoutMainText>
             <CheckoutMainText
-              colorProps = {
-                activeTag === "envio" || 
-                activeTag === "pago" || 
-                activeTag === "confirmacion" ? "#FE7062" : "#C4CDD5"
+              colorProps={
+                activeTag === "envio" ||
+                  activeTag === "pago" ||
+                  activeTag === "confirmacion" ? "#FE7062" : "#C4CDD5"
               }
-              fontColorProps = {
-                activeTag === "envio" || 
-                activeTag === "pago" || 
-                activeTag === "confirmacion" ? "#FFFFFF" : "#999999" 
+              fontColorProps={
+                activeTag === "envio" ||
+                  activeTag === "pago" ||
+                  activeTag === "confirmacion" ? "#FFFFFF" : "#999999"
               }
             >
               2
             </CheckoutMainText>
             <CheckoutMainText
-              colorProps = { 
-                activeTag === "pago" || 
-                activeTag === "confirmacion" ? "#FE7062" : "#C4CDD5" 
+              colorProps={
+                activeTag === "pago" ||
+                  activeTag === "confirmacion" ? "#FE7062" : "#C4CDD5"
               }
-              fontColorProps = {
-                activeTag === "pago" || 
-                activeTag === "confirmacion" ? "#FFFFFF" : "#999999" 
-                ||
-                deactivate === "pago" || 
-                deactivate === "confirmacion" ? "#999999" : "#FFFFFF"
+              fontColorProps={
+                activeTag === "pago" ||
+                  activeTag === "confirmacion" ? "#FFFFFF" : "#999999"
+                    ||
+                    deactivate === "pago" ||
+                    deactivate === "confirmacion" ? "#999999" : "#FFFFFF"
               }
             >
               3
             </CheckoutMainText>
-            {/* { deactivate === "confirmacion" ? (
-                <CheckoutMainText
-                  colorProps={"#C4CDD5"}
-                  fontColorProps={"#999999"}
-                >
-                  4
-                </CheckoutMainText>
-              ) : (
-                <CheckoutMainText
-                  colorProps={
-                    activeTag === "confirmacion"
-                    ? "#ff0000"//red
-                    : "#3cb371"//green
-                  }
-                  fontColorProps={
-                      activeTag === "confirmacion"
-                      ? "#FFFFFF"//white
-                      : "#999999"//gray
-                  }
-                >
-                  4
-                </CheckoutMainText>
-              )
-            } */}
             <CheckoutMainText
               colorProps={
                 activeTag === "confirmacion"
-                ? "#FE7062"
-                : "#C4CDD5"
+                  ? "#FE7062"
+                  : "#C4CDD5"
               }
               fontColorProps={
-                  activeTag === "confirmacion"
-                  ? "#FFFFFF"//white
-                  : "#999999"//gray
+                activeTag === "confirmacion"
+                  ? "#FFFFFF"
+                  : "#999999"
               }
             >
               4

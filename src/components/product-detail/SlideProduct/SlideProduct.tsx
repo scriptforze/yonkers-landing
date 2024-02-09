@@ -1,32 +1,52 @@
-import { HeartFilled } from "@ant-design/icons";
+'use client'
+
+import { usePathname } from 'next/navigation'
+// import { HeartFilled } from "@ant-design/icons";
 import { Card, Text } from "@nextui-org/react";
 import { Button, Col, Row, Space } from "antd";
 import { Counter } from "../Counter";
 import Image from "next/image";
-
 import { Props } from "./types";
 import { useEffect, useState } from "react";
 import { Section } from "./styled";
 
 export const SlideProduct = ({ product }: Props) => {
   const [totalStock, setTotalStock] = useState<number>(0);
+  const [counter, setCounter] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const element = product[3];
+
+  const { name, sku, images, price } = product;
+  let stock: number | undefined;
+  if (product && product.product_stocks && product.product_stocks.length > 0) {
+    stock = product.product_stocks[0].stock;
+  }
+
+
+  const PHONE_NUMBER_WSP = process.env.PHONE_NUMBER_WSP;
 
   useEffect(() => {
     if (product) {
-      const stock = product!.reduce(
-        (counter, stock) => counter + stock.stock!, 0 );
+      // const stock = product.reduce(
+      //   (counter, stock) => counter + stock.stock!, 0);
 
-      const defaultImage = element.image_url;
+      // const stock: number = product?.stock?.reduce(
+      //   (counter, stockItem) => counter + stockItem.stock!, 0);
+
+      const defaultImage = product?.images?.[0]?.urls?.original;
       setSelectedImage(defaultImage);
       setTotalStock(stock);
     }
   }, [product]);
 
-  const changeImage = (image) => {
+  const changeImage = (image: string) => {
     setSelectedImage(image);
   };
+
+  const pathname = usePathname();
+
+  const handleDataFromChild = (data: number) => {
+    setCounter(data);
+  }
 
   return (
     <Section>
@@ -34,12 +54,11 @@ export const SlideProduct = ({ product }: Props) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          height: "385px",
-          width: "414px",
-          padding: "37px 24px",
+          width: "100%",
+          maxWidth: "550px",
+          padding: "40px 0px 0px 20px",
           backgroundColor: "#FAFAFA",
           borderRadius: "8px",
-          marginBottom: "38px",
         }}
       >
         <Row gutter={12}>
@@ -52,26 +71,26 @@ export const SlideProduct = ({ product }: Props) => {
                 minHeight: "315px",
               }}
             >
-              {element?.image_url?.map((image) => {
+              {images?.map((image) => {
                 return (
                   <Card
                     isHoverable
                     isPressable
                     key={image?.id}
                     css={{
-                      width: "85px",
-                      height: "85px",
+                      width: "50px",
+                      height: "50px",
                       display: "flex",
                       background: "white",
                       flexDirection: "column",
                       filter: "none",
                     }}
-                    onClick={() => changeImage(image)}
+                    onClick={() => changeImage(image?.urls?.original)}
                   >
                     <Image
-                      width={80}
-                      height={80}
-                      src={image}
+                      width={50}
+                      height={50}
+                      src={image?.urls?.original || ""}
                       alt="Product Image"
                       style={{
                         filter: "brightness(1.1)",
@@ -88,8 +107,8 @@ export const SlideProduct = ({ product }: Props) => {
               css={{
                 display: "flex",
                 flexDirection: "column",
-                width: "260px",
-                height: "260px",
+                width: "220px",
+                height: "220px",
                 background: "#FAFAFA",
                 borderRadius: "8px",
                 justifySelf: "center",
@@ -97,31 +116,33 @@ export const SlideProduct = ({ product }: Props) => {
               }}
             >
               {selectedImage && (
-                  <Image
-                    width={260}
-                    height={260}
-                    src={ selectedImage }
-                    alt="Product Image"
-                    style={{
-                      filter: "brightness(1.1)",
-                      mixBlendMode: "multiply",
-                    }}
-                  />
+                <Image
+                  width={220}
+                  height={220}
+                  src={selectedImage}
+                  alt="Product Image"
+                  style={{
+                    filter: "brightness(1.1)",
+                    mixBlendMode: "multiply",
+                  }}
+                />
               )}
             </Card>
           </Col>
         </Row>
       </div>
-      
+
       <div
         style={{
           display: "flex",
           flexDirection: "row",
-          width: "414px",
-          height: "385px",
-          padding: "24px 58px 18px 24px",
+          width: "100%",
+          maxWidth: "550px",
+          height: "350px",
+          padding: "20px",
           borderRadius: "8px",
           background: "#FAFAFA",
+          justifyContent: "center",
         }}
       >
         <div
@@ -138,14 +159,12 @@ export const SlideProduct = ({ product }: Props) => {
                   fontWeight: "$semibold",
                   fontSize: "23px",
                   lineHeight: "30px",
-                  width: "332px",
-                  height: "90px",
+                  width: "300px",
                 }}
               >
-                {element?.name + " " + element?.brand}
+                {name}
               </Text>
-
-              <Button
+              {/* <Button
                 style={{
                   background: "none",
                   border: "none",
@@ -153,9 +172,8 @@ export const SlideProduct = ({ product }: Props) => {
                 }}
                 shape="circle"
                 icon={<HeartFilled />}
-              ></Button>
+              ></Button> */}
             </div>
-
             <div
               style={{
                 display: "flex",
@@ -167,12 +185,15 @@ export const SlideProduct = ({ product }: Props) => {
                 textTransform: "uppercase",
               }}
             >
-              <Text style={{ width: "63px", marginRight: "5px" }}>
-                SKU/REF: {element?.sku}
+              <Text style={{ marginRight: "15px" }}>
+                SKU/REF:
               </Text>
-              <Text style={{ width: "100px" }}>
-                {product?.sku}
+              <Text>
+                {sku}
               </Text>
+              {/* <Text style={{ width: "100px" }}>
+                Marca: {product?.slug}
+              </Text> */}
             </div>
             <div
               style={{
@@ -189,20 +210,20 @@ export const SlideProduct = ({ product }: Props) => {
                   color: "#0F2555",
                   width: "42px",
                   height: "15px",
-                  marginRight: "12px",
                 }}
               >
                 Stock:
               </Text>
               <Text
                 style={{
-                  color: "#0F2555",
+                  color: counter >= (stock || 0) ? "#008f39 " : "#0F2555",
+                  fontSize: counter >= (stock || 0) ? "18px" : "16px",
                   width: "165px",
                   height: "15px",
                   marginBottom: "16px",
                 }}
               >
-                {totalStock} Unidades disponibles
+                {stock} Unidades disponibles
               </Text>
             </div>
 
@@ -216,7 +237,7 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "4px",
               }}
             >
-              Precio
+              Precio:
             </Text>
             <Text
               css={{
@@ -229,7 +250,7 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "12px",
               }}
             >
-              $ {element.price.toLocaleString("es-CO")}
+              {`$${(price * counter).toLocaleString("es-CO")}`}
             </Text>
             <Text
               css={{
@@ -241,18 +262,22 @@ export const SlideProduct = ({ product }: Props) => {
                 marginBottom: "21px",
               }}
             >
-              $ {((element.price) -
-                 (element.price * 0.2)).toLocaleString("es-CO")}
+              ${((((price) - (price * 0.2)) * counter).toLocaleString("es-CO"))}
             </Text>
 
             <div
               style={{
                 display: "flex",
-                flexDirection: "row",
+                // flexDirection: "row",
+                flexDirection: "column",
+                alignItems: "center",
               }}
             >
-              <div style={{ marginRight: "20px" }}>
-                <Counter />
+              <div style={{ marginRight: "15px" }}>
+                <Counter
+                  onDataFromChild={handleDataFromChild}
+                  stock={stock}
+                />
               </div>
 
               <Button
@@ -263,11 +288,18 @@ export const SlideProduct = ({ product }: Props) => {
                   background: "#FE7062",
                   fontSize: "16px",
                   fontWeight: "demibold",
-                  width: "190px",
+                  width: "100%",
+                  maxWidth: "182px",
+                  padding: "5px 3px",
                   height: "40px",
                 }}
+                // href="/checkout"
+                href={
+                  `${'https://wa.me/' + PHONE_NUMBER_WSP + '?text=Hola! Estoy interesado en este producto: '}https://yonkersgarage.scriptforze.com` + pathname}
+                target="_blank"
               >
-                Agregar al carrito
+                {/* Agregar al carrito */}
+                Consultar por WhatsApp
               </Button>
             </div>
           </div>

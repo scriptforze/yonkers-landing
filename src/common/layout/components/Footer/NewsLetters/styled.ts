@@ -26,7 +26,7 @@ export const NewsLettersText = styled(Typography.Paragraph)`
 `;
 
 export const NewsLettersInput = styled(Input)`
-  width: 100%;
+  width: 95%;
   height: 48px;
   font-size: normal;
   border-radius: 4px;
@@ -34,7 +34,7 @@ export const NewsLettersInput = styled(Input)`
 `;
 
 export const NewsLettersButton = styled(Button)`
-  width: 100%;
+  width: 95%;
   height: 48px;
   border: none;
   font-size: 16px;
