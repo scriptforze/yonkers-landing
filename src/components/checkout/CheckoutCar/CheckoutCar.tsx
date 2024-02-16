@@ -16,7 +16,7 @@ const CheckoutCar = () => {
         <OrderProduct
           key={1}
           id={1}
-          price={`$${(10000).toLocaleString("es-CO")}`}
+          price={10000}
           lastPrice={50000}
           title={"Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"ACME"}
@@ -26,7 +26,7 @@ const CheckoutCar = () => {
         <OrderProduct
           key={2}
           id={2}
-          price={`$${(60000).toLocaleString("es-CO")}`}
+          price={60000}
           lastPrice={5400}
           title={"KMD: lñkajsdf  3736"}
           brand={"SOHC"}
@@ -36,7 +36,7 @@ const CheckoutCar = () => {
         <OrderProduct
           key={3}
           id={3}
-          price={`$${(176000).toLocaleString("es-CO")}`}
+          price={176000}
           lastPrice={15400}
           title={"KMD: lñkajsdf  3736 para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"MICHELLIN"}
