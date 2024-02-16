@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { OrderProductCardProps } from "./types";
-import { CustomCardImage,
-        CustomCardContainer,
-        OrderProductText,
-        OrderProductPrice,
-        Count,
-        CountButton,
-        ImageDelete } from "./styled";
+import {
+  CustomCardImage,
+  CustomCardContainer,
+  OrderProductText,
+  OrderProductPrice,
+  Count,
+  CountButton,
+  ImageDelete
+} from "./styled";
 import Link from "next/link";
 import Delete from "@/common/assets/images/delete.svg";
 
@@ -19,7 +21,7 @@ const OrderProduct = ({
   alt,
   appear
 }: OrderProductCardProps) => {
-  
+
   const [add, setAdd] = useState(0);
 
   useEffect(() => {
@@ -31,21 +33,21 @@ const OrderProduct = ({
       marginProps="0px">
       <CustomCardImage src={imageURL} alt={alt} />
       <OrderProductText>
-        {title + " " + brand}      
+        {title + " " + brand}
       </OrderProductText>
       <OrderProductPrice
-        sizeProps= { appear === "false" ? "" : "-96px" }
-        lineHeightProps={ appear === "false" ? "" : "40px" }
-        marginProps={ appear === "false" ? "" : "10px 0px" }
+        sizeProps={appear === "false" ? "" : "-96px"}
+        lineHeightProps={appear === "false" ? "" : "40px"}
+        marginProps={appear === "false" ? "" : "10px 0px"}
       >
-        {price}
+        ${price.toLocaleString("es-CO")}
       </OrderProductPrice>
 
-      { appear === "false" ? (
+      {appear === "false" ? (
         ""
       ) : (
         <Count>
-          <CountButton 
+          <CountButton
             onClick={() => setAdd(add - 1)}
             sizeProps="8px 0px 0px 8px">
             -
@@ -62,7 +64,7 @@ const OrderProduct = ({
           <CountButton onClick={() => setAdd(add + 1)}>
             +
           </CountButton>
-          <ImageDelete src={Delete} alt="Image close card"/>
+          <ImageDelete src={Delete} alt="Image close card" />
         </Count>
       )}
       <Link href={`/product-detail/${id}`} />
