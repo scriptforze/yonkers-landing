@@ -1,30 +1,32 @@
 import React from "react";
 import { useState } from 'react';
-import { CountOrderContainer,
-         CountOrderText,
-         CountOrderDetalle,
-         CountOrderSpan,
-         CountOrderSecondContainer,
-         CountOrderTotal,
-         CountOrderContainerAddres,
-         CountOrderContainerTotal } from "./styled";
+import {
+  CountOrderContainer,
+  CountOrderText,
+  CountOrderDetalle,
+  CountOrderSpan,
+  CountOrderSecondContainer,
+  CountOrderTotal,
+  CountOrderContainerAddres,
+  CountOrderContainerTotal
+} from "./styled";
 import { OrderProduct } from "@/common/components/OrderProduct";
 import { Props } from "./types";
 
-const CountOrder = ({product}: Props) => {
+const CountOrder = ({ product }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
     <>
-      { !isOpen && (<CountOrderContainer lineHeightProps="hidden">
+      {!isOpen && (<CountOrderContainer lineHeightProps="hidden">
         <CountOrderText widthProps="100px">10 Febrero 2023</CountOrderText>
         <CountOrderText widthProps="150px">Orden N° 197864826</CountOrderText>
         <CountOrderText widthProps="100px" color="#03947D">Entregado</CountOrderText>
         <CountOrderSpan data-currency="USD" prefix="left">$300,000</CountOrderSpan>
         <CountOrderDetalle onClick={toggleDropdown}>Detalles de la orden</CountOrderDetalle>
-      </CountOrderContainer> )}
-      { isOpen && (<CountOrderSecondContainer>
+      </CountOrderContainer>)}
+      {isOpen && (<CountOrderSecondContainer>
         <CountOrderText widthProps="100px">10 Febrero 2023</CountOrderText>
         <CountOrderText widthProps="150px">Orden N° 197864826</CountOrderText>
         <CountOrderText widthProps="100px" fontColorProps="#03947D">Entregado</CountOrderText>
@@ -34,7 +36,7 @@ const CountOrder = ({product}: Props) => {
         <OrderProduct
           key={1}
           id={1}
-          price={`$${(10000).toLocaleString("es-CO")}`}
+          price={10000}
           lastPrice={50000}
           title={"Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"ACME"}
@@ -45,7 +47,7 @@ const CountOrder = ({product}: Props) => {
         <OrderProduct
           key={2}
           id={2}
-          price={`$${(60000).toLocaleString("es-CO")}`}
+          price={60000}
           lastPrice={5400}
           title={"KMD: lñkajsdf  3736"}
           brand={"SOHC"}
@@ -56,7 +58,7 @@ const CountOrder = ({product}: Props) => {
         <OrderProduct
           key={3}
           id={3}
-          price={`$${(176000).toLocaleString("es-CO")}`}
+          price={176000}
           lastPrice={15400}
           title={"KMD: lñkajsdf  3736 para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"MICHELLIN"}
@@ -64,7 +66,7 @@ const CountOrder = ({product}: Props) => {
           alt={"Description imag 3"}
           appear={"false"}
         />
-        <CountOrderTotal>  
+        <CountOrderTotal>
           <CountOrderText weightProps="600">Total</CountOrderText>
           <CountOrderSpan>$246,000</CountOrderSpan>
         </CountOrderTotal>
@@ -87,7 +89,7 @@ const CountOrder = ({product}: Props) => {
           <CountOrderText weightProps="300" widthProps="50%">Impuestos</CountOrderText>
           <CountOrderText weightProps="300" widthProps="50%" lineHeightProps="right" marginProps="14px">$4,000</CountOrderText>
         </CountOrderContainerTotal>
-        <CountOrderTotal>  
+        <CountOrderTotal>
           <CountOrderText weightProps="600">Total</CountOrderText>
           <CountOrderSpan data-currency="USD">$300,000</CountOrderSpan>
         </CountOrderTotal>
@@ -99,7 +101,7 @@ const CountOrder = ({product}: Props) => {
           </CountOrderText>
         </CountOrderContainerAddres>
         <CountOrderDetalle onClick={toggleDropdown} color="#FE7062">Ver menos</CountOrderDetalle>
-      </CountOrderSecondContainer> )}
+      </CountOrderSecondContainer>)}
     </>
   );
 };

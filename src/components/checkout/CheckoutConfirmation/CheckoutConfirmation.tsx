@@ -48,7 +48,7 @@ const CheckoutConfirmation = ({ onDataFromChild }: ChildComponentProps) => {
         <OrderProduct
           key={1}
           id={1}
-          price={`$${(10000).toLocaleString("es-CO")}`}
+          price={10000}
           lastPrice={50000}
           title={"Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"ACME"}
@@ -59,7 +59,7 @@ const CheckoutConfirmation = ({ onDataFromChild }: ChildComponentProps) => {
         <OrderProduct
           key={2}
           id={2}
-          price={`$${(10000).toLocaleString("es-CO")}`}
+          price={10000}
           lastPrice={50000}
           title={"Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"ACME"}
@@ -70,7 +70,7 @@ const CheckoutConfirmation = ({ onDataFromChild }: ChildComponentProps) => {
         <OrderProduct
           key={3}
           id={3}
-          price={`$${(10000).toLocaleString("es-CO")}`}
+          price={10000}
           lastPrice={50000}
           title={"Bomba de aceite de motor para Hyundai Accent 1995 - 2001 1.5L"}
           brand={"ACME"}

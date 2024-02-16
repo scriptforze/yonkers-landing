@@ -5,7 +5,7 @@ import { CounterButton, CounterContainer, CounterNumber } from "./styled";
 
 interface CounterProps {
   onDataFromChild: (data: number) => void;
-  stock: (data: number) => void;
+  stock: number;
 }
 const Counter: React.FC<CounterProps> = ({ onDataFromChild, stock }) => {
 

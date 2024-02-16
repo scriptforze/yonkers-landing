@@ -15,28 +15,28 @@ export const SlideProduct = ({ product }: Props) => {
   const [counter, setCounter] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const { name, sku, images, price } = product;
-  let stock: number | undefined;
-  if (product && product.product_stocks && product.product_stocks.length > 0) {
-    stock = product.product_stocks[0].stock;
-  }
+  const { name, sku, images, price, product_stocks } = product;
+  const stock = product_stocks![0].stock || 0;
+  // if (product && product.product_stocks && product.product_stocks.length > 0) {
+  //   stock = product.product_stocks[0].stock;
+  // }
 
 
   const PHONE_NUMBER_WSP = process.env.PHONE_NUMBER_WSP;
 
-  useEffect(() => {
-    if (product) {
-      // const stock = product.reduce(
-      //   (counter, stock) => counter + stock.stock!, 0);
+  // useEffect(() => {
+  //   if (product) {
+  //     // const stock = product.reduce(
+  //     //   (counter, stock) => counter + stock.stock!, 0);
 
-      // const stock: number = product?.stock?.reduce(
-      //   (counter, stockItem) => counter + stockItem.stock!, 0);
+  //     // const stock: number = product?.stock?.reduce(
+  //     //   (counter, stockItem) => counter + stockItem.stock!, 0);
 
-      const defaultImage = product?.images?.[0]?.urls?.original;
-      setSelectedImage(defaultImage);
-      setTotalStock(stock);
-    }
-  }, [product]);
+  //     const defaultImage = product?.images?.[0]?.urls?.original;
+  //     setSelectedImage(defaultImage);
+  //     setTotalStock(stock);
+  //   }
+  // }, [product]);
 
   const changeImage = (image: string) => {
     setSelectedImage(image);
