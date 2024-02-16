@@ -28,7 +28,7 @@ const Information = ({ product }: Props) => {
             children: (
               <InformationTabContent>
                 <Typography.Paragraph>
-                  {product.description}
+                  {product?.description}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
                   {product?.short_description}
