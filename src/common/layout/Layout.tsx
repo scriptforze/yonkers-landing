@@ -14,11 +14,11 @@ export const Layout: FC<LayoutProps> = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>{`Informacion sobre ${title}`}</title>
+        <title>{`Información sobre ${title}`}</title>
         <meta name="author" content="Aracelly Peña" />
         <meta
           name="description"
-          content={`Informacion sobre ${title}`}
+          content={`Información sobre ${title}`}
         />
         <meta name="keywords" content={`${title}, yonker´s, garage`} />
         {/* TODO: Change this whit his respective variable */}
