@@ -15,6 +15,7 @@ const nextConfig = {
   env: {
     BASE_URL_API: process.env.BASE_URL_API,
     PHONE_NUMBER_WSP: process.env.PHONE_NUMBER_WSP,
+    API_URL_API: process.env.API_URL_API,
   },
 };
 

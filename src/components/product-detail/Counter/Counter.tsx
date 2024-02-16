@@ -12,10 +12,6 @@ const Counter: React.FC<CounterProps> = ({ onDataFromChild, stock }) => {
   const [count, setCount] = useState(1);
   onDataFromChild(count);
 
-  const sendDataToParent = () => {
-    onDataFromChild(count);
-  }
-
   const decrementCount = () => {
     if (count > 0) {
       setCount(count - 1);

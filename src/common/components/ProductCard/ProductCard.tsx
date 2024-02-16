@@ -39,7 +39,7 @@ const ProductCard = ({
               textDecorationLine: "line-through",
             }}
           >
-            ${lastPrice?.toLocaleString("es-CO")}
+            {/* ${lastPrice?.toLocaleString("es-CO")} */}
           </Text>
         </div>
         <Text

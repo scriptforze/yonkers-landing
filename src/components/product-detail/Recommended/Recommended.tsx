@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 import {
   RecommendedContainer,
   RecommendedProductsContainer,
@@ -7,6 +5,8 @@ import {
 } from "./styled";
 import { ItemsCarousel, ProductCard } from "@/common/components";
 import { Props } from "./types";
+import { useGetAllProductsQuery } from "@/services/products";
+import { original } from "@reduxjs/toolkit";
 
 interface ProductData {
   id: number;
@@ -22,24 +22,14 @@ interface ProductData {
 }
 
 const Recommended: React.FC<Props> = ({ product }: Props) => {
-  const [products, setProducts] = useState<ProductData[]>([]);
-  const tag = product?.tags?.[0]?.name;
+  const tagsString = product?.tags?.map(tag => `tag_${tag.name}`).join(" ");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://ecommerceapi.scriptforze.com/api/v1/products?include=images&search=tag_${tag}`);
-        setProducts(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+  const { data: products, isSuccess } = useGetAllProductsQuery({
+    include: "images,tags",
+    search: tagsString,
+  });
 
-    };
-    fetchData();
-  }, [tag]);
-
-  return (
+  return products?.data?.length ? (
     <RecommendedContainer>
       <RecommendedTitle>
         Complementa tu compra con estas opciones
@@ -49,24 +39,25 @@ const Recommended: React.FC<Props> = ({ product }: Props) => {
           keyBoardControl={true}
           removeArrowOnDeviceType={["xs", "sm", "md"]}
         >
-          {Array.isArray(products.data) &&
-            products.data.map((pro) => (
+          {isSuccess &&
+            products.data.map((product) => (
               <ProductCard
-                key={pro.id}
-                id={pro.id}
-                price={(pro.price - pro.price * 0.2)}
-                lastPrice={pro.price}
-                title={pro.name}
-                brand={pro.slug}
-                imageURL={pro.images[0].urls.original}
-                alt={pro.name}
+                key={product.id}
+                id={product.id}
+                price={(product.price - product.price * 0.2)}
+                lastPrice={product.price}
+                title={product.name}
+                brand={product.slug}
+                imageURL={product.images![0].urls?.thumb!}
+
+                alt={product.name}
               />
             ))
           }
         </ItemsCarousel>
       </RecommendedProductsContainer>
     </RecommendedContainer>
-  );
+  ) : null;
 };
 
 export default Recommended;
