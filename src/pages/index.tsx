@@ -3,7 +3,7 @@ import {
   Sliders,
   UsefulTips,
   NewProducts,
-  CreateAcount,
+  CreateAccount,
   OffersDiscounst,
   MostWantedProducts,
 } from "@/components/home";
@@ -15,7 +15,7 @@ export default function Home() {
       <OffersDiscounst />
       <MostWantedProducts />
       <NewProducts />
-      <CreateAcount />
+      <CreateAccount />
       <UsefulTips />
     </Layout>
   );

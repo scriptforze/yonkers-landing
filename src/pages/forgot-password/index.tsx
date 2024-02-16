@@ -1,12 +1,11 @@
 import React from "react";
-import { HeaderContainer, ForgotPasswordContainer } from "./styled";
 import { Navbar } from "@/common/layout/components/Header/Navbar";
 import { Responsive } from "@/common/components";
 import { Menu } from "@/common/layout/components/Header/Menu";
-import { ForgotPasswordForm } from "@/components/forgot-password";
+import { ForgotPasswordForm, HeaderContainer, ForgotPasswordContainer } from "@/components/forgot-password";
 
 const SingUp = () => {
-  
+
   return (
     <>
       <HeaderContainer>

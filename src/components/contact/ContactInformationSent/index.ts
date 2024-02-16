@@ -1,1 +1,2 @@
-export { default as ContactInformationSent } from "./ContactInformationSent";
+export { default as ContactInformationSent } from './ContactInformationSent';
+export * from './styled';

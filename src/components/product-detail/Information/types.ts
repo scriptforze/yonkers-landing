@@ -1,5 +1,5 @@
 import { Product } from "@/services/products";
 
-export type Props = {
+export type InformationProps = {
   product?: Product;
 };

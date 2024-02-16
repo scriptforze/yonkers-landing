@@ -13,7 +13,7 @@ interface NavbarProps {
   appear: boolean | string;
 }
 
-const contactInformationSent: React.FC<NavbarProps> = ({ appear }) => {
+const ContactInformationSent: React.FC<NavbarProps> = ({ appear }) => {
 
   return (
     <ContactContainerInformationSent>
@@ -47,4 +47,4 @@ const contactInformationSent: React.FC<NavbarProps> = ({ appear }) => {
   );
 };
 
-export default contactInformationSent;
+export default ContactInformationSent;
