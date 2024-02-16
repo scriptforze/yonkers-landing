@@ -6,11 +6,11 @@ import { Card, Text } from "@nextui-org/react";
 import { Button, Col, Row, Space } from "antd";
 import { Counter } from "../Counter";
 import Image from "next/image";
-import { Props } from "./types";
+import { SlideProductProps } from "./types";
 import { useEffect, useState } from "react";
 import { Section } from "./styled";
 
-export const SlideProduct = ({ product }: Props) => {
+export const SlideProduct = ({ product }: SlideProductProps) => {
   const [totalStock, setTotalStock] = useState<number>(0);
   const [counter, setCounter] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);

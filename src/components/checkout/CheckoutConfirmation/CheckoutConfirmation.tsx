@@ -5,9 +5,9 @@ import {
   CheckoutConfirmationText,
   CheckoutConfirmationTitle,
   CheckoutConfirmationLine,
-  CountOrderTotal,
-  CountOrderText,
-  CountOrderSpan
+  CheckoutOrderTotal,
+  CheckoutOrderText,
+  CheckoutOrderSpan
 } from "./styled";
 
 interface ChildComponentProps {
@@ -78,10 +78,10 @@ const CheckoutConfirmation = ({ onDataFromChild }: ChildComponentProps) => {
           alt={"Description imag 1"}
           appear={"false"}
         />
-        <CountOrderTotal>
-          <CountOrderText prefix="600">Total</CountOrderText>
-          <CountOrderSpan>$30,000</CountOrderSpan>
-        </CountOrderTotal>
+        <CheckoutOrderTotal>
+          <CheckoutOrderText prefix="600">Total</CheckoutOrderText>
+          <CheckoutOrderSpan>$30,000</CheckoutOrderSpan>
+        </CheckoutOrderTotal>
       </CheckoutConfirmationContainer>
     </>
   );

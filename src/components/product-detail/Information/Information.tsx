@@ -8,9 +8,9 @@ import {
   InformationTabContent,
   InformationTitle,
 } from "./styled";
-import { Props } from "./types";
+import { InformationProps } from "./types";
 
-const Information = ({ product }: Props) => {
+const Information = ({ product }: InformationProps) => {
   const [size, setSize] = useState<SizeType>("small");
 
   return (

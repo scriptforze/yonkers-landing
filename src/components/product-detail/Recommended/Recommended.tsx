@@ -4,7 +4,7 @@ import {
   RecommendedTitle,
 } from "./styled";
 import { ItemsCarousel, ProductCard } from "@/common/components";
-import { Props } from "./types";
+import { RecommendedProps } from "./types";
 import { useGetAllProductsQuery } from "@/services/products";
 import { original } from "@reduxjs/toolkit";
 
@@ -21,7 +21,7 @@ interface ProductData {
   ];
 }
 
-const Recommended: React.FC<Props> = ({ product }: Props) => {
+const Recommended: React.FC<RecommendedProps> = ({ product }: RecommendedProps) => {
   const tagsString = product?.tags?.map(tag => `tag_${tag.name}`).join(" ");
 
   const { data: products, isSuccess } = useGetAllProductsQuery({

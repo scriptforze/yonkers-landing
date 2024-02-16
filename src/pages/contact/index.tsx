@@ -1,12 +1,11 @@
 import { Layout } from "@/common/layout";
-import { ContactContainer} from "@/components/contact/ContactContainer";
-import { Banner } from "@/components/contact/Banner";
+import { ContactContainer, ContactBanner } from "@/components/contact";
 
 const Contact = () => {
 
   return (
     <Layout title="Contáctanos">
-      <Banner/>
+      <ContactBanner />
       <ContactContainer />
     </Layout>
   );

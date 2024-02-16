@@ -34,7 +34,7 @@ export const CheckoutConfirmationText = styled.p`
   text-align: ${(props) => props.property || "left"};
 `;
 
-export const CountOrderTotal = styled.span`
+export const CheckoutOrderTotal = styled.span`
   display: flex;
   flex-direction: row;  
   justify-content: flex-end;
@@ -42,7 +42,7 @@ export const CountOrderTotal = styled.span`
   width: 100%;
 `;
 
-export const CountOrderText = styled.p`
+export const CheckoutOrderText = styled.p`
   display: inline;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
@@ -52,7 +52,7 @@ export const CountOrderText = styled.p`
   text-align: left;
 `;
 
-export const CountOrderSpan = styled.span`
+export const CheckoutOrderSpan = styled.span`
   display: inline;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 20px;

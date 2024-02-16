@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { BreadcrumbsContainer,
-   CountNav,
-   CountText,
-   CountButton,
-   CountSection } from "./styled";
+import {
+  BreadcrumbsContainer,
+  CountNav,
+  CountText,
+  CountButton,
+  CountSection
+} from "./styled";
 import { CountForm } from "../CountForm";
 import { CountDeliveryForm } from "../CountDeliveryForm";
 import { CountDelivery } from "../CountDelivery";
 import { CountOrder } from "../CountOrder";
 import { CountPaymentForm } from "../CountPaymentForm";
 import { CountPayment } from "../CountPayment";
-import { Props } from "./types";
+import { ResultsBreadcrumbsProps } from "./types";
 
-const ResultsBreadcrumbs = ({ product }: Props) => {
+const ResultsBreadcrumbs = ({ product }: ResultsBreadcrumbsProps) => {
   const [activeTag, setActiveTag] = useState("cuenta");
 
   function openTag(tagName: string) {
@@ -22,7 +24,7 @@ const ResultsBreadcrumbs = ({ product }: Props) => {
       (tagDisplay[i] as HTMLElement).style.display = "none";
     }
 
-     setActiveTag(tagName);
+    setActiveTag(tagName);
     tablinks = document.getElementsByClassName("tablink");
     (document.getElementById(tagName) as HTMLElement).style.display = "block";
   }
@@ -62,16 +64,16 @@ const ResultsBreadcrumbs = ({ product }: Props) => {
           <CountForm />
         </div>
         <div id="envio" className="tag" style={{ display: 'none' }}>
-          {dataFromChild === true ? <CountDeliveryForm onDataFromChild={handleDataFromChild}/> :
-            <CountDelivery onDataFromChild={handleDataFromChild}/>
+          {dataFromChild === true ? <CountDeliveryForm onDataFromChild={handleDataFromChild} /> :
+            <CountDelivery onDataFromChild={handleDataFromChild} />
           }
         </div>
         <div id="pedido" className="tag" style={{ display: 'none' }}>
           <CountOrder product={product} />
         </div>
         <div id="pago" className="tag" style={{ display: 'none' }}>
-          {dataFromChild === true ? <CountPaymentForm onDataFromChild={handleDataFromChild}/> :
-            <CountPayment onDataFromChild={handleDataFromChild}/>
+          {dataFromChild === true ? <CountPaymentForm onDataFromChild={handleDataFromChild} /> :
+            <CountPayment onDataFromChild={handleDataFromChild} />
           }
         </div>
       </CountSection>

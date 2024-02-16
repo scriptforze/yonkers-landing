@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Layout } from "@/common/layout";
 import {
-  Banner,
+  ProductsBanner,
   ProductResults,
   ProductsContainer,
 } from "@/components/products";
@@ -18,7 +18,7 @@ const Product = () => {
 
   return (
     <Layout>
-      <Banner />
+      <ProductsBanner />
       <ProductsContainer>
         <Responsive lg xl xxl>
           <ProductFilters onFiltersChanged={onFiltersChanged} />

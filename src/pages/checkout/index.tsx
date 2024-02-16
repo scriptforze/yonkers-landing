@@ -1,10 +1,8 @@
 import { Navbar } from "@/common/layout/components/Header/Navbar";
-import { CheckoutMain } from "@/components/checkout/CheckoutMain";
-import { HeaderContainer } from "./styled";
+import { CheckoutMain, HeaderContainer, CheckoutProps } from "@/components/checkout";
 import { getLatestItems } from "@/services/storeService";
-import { Props } from "./types";
 
-const Checkout = ({ product }: Props) => {
+const Checkout = ({ product }: CheckoutProps) => {
 
   return (
     <>

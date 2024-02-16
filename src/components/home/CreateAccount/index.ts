@@ -1,1 +1,2 @@
-export { default as CreateAcount } from "./CreateAccount";
+export {default as CreateAccount} from './CreateAccount';
+export * from './styled';

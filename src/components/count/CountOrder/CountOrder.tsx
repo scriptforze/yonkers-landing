@@ -11,9 +11,9 @@ import {
   CountOrderContainerTotal
 } from "./styled";
 import { OrderProduct } from "@/common/components/OrderProduct";
-import { Props } from "./types";
+import { CountOrderProps } from "./types";
 
-const CountOrder = ({ product }: Props) => {
+const CountOrder = ({ product }: CountOrderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
 

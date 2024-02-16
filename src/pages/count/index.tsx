@@ -1,10 +1,8 @@
 import { Layout } from "@/common/layout";
-import { CountContainer} from "@/components/count/CountContainer";
-import { ResultsBreadcrumbs } from "@/components/count/ResultsBreadcrumbs";
+import { CountContainer, ResultsBreadcrumbs, CountProps } from "@/components/count";
 import { getLatestItems } from "@/services/storeService";
-import { Props } from "./types";
 
-const Count = ({product}: Props) => {
+const Count = ({ product }: CountProps) => {
 
   return (
     <Layout title="Mi Cuenta">
