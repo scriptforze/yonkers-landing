@@ -1,6 +1,6 @@
 import { Navbar } from "@/common/layout/components/Header/Navbar";
 import { CheckoutMain, HeaderContainer, CheckoutProps } from "@/components/checkout";
-import { getLatestItems } from "@/services/storeService";
+// import { getLatestItems } from "@/services/storeService";
 
 const Checkout = ({ product }: CheckoutProps) => {
 
@@ -16,11 +16,11 @@ const Checkout = ({ product }: CheckoutProps) => {
 
 export default Checkout;
 
-export async function getStaticProps() {
-  const res = await getLatestItems();
-  return {
-    props: {
-      product: res,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const res = await getLatestItems();
+//   return {
+//     props: {
+//       product: res,
+//     },
+//   };
+// }
