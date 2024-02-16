@@ -1,38 +1,25 @@
 import React, { useState } from "react";
-import type { RadioChangeEvent } from "antd";
-import { Radio, Tabs } from "antd";
+import { Tabs } from "antd";
 import type { SizeType } from "antd/es/config-provider/SizeContext";
 import { Text } from "@nextui-org/react";
 
 const Information = () => {
   const [size, setSize] = useState<SizeType>("small");
 
-  const onChange = (e: RadioChangeEvent) => {
-    setSize(e.target.value);
-  };
-
   return (
-    <div>
+    <>
       <Text
         style={{
           fontSize: "38px",
-          fontWeight: "$semi bold",
+          fontWeight: "semi bold",
           color: "#0F2555",
           marginTop: "38px",
-
           width: "541px",
           height: "48px",
         }}
       >
         Información de producto
       </Text>
-
-      <Radio.Group
-        value={size}
-        onChange={onChange}
-        style={{ color: "#0F2555" }}
-      ></Radio.Group>
-
       <Tabs
         style={{ padding: "32px 24px 42px 24px" }}
         defaultActiveKey="1"
@@ -44,32 +31,18 @@ const Information = () => {
             label: `Características ${1}`,
             key: id,
             children: `Lorem ipsum dolor sit amet consectetur.
-             Enim eu quam eget interdum sagittis viverra. 
-             Proin consectetur sit tempus lacus. Feugiat 
-             condimentum tellus tristique turpis bibendum lectus phasellus diam augue.
+            Enim eu quam eget interdum sagittis viverra. 
+            Proin consectetur sit tempus lacus. Feugiat 
+            condimentum tellus tristique turpis bibendum lectus phasellus diam augue.
               Sed eget cursus mauris accumsan id pellentesque diam. Neque suspendiss
-               diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio 
-               dis dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam 
-               vitae elit pharetra egestas magna nisl. Amet cursus lorem suspendisse
-                ut tellus elit turpis lorem.
-
-                Lorem ipsum dolor sit amet consectetur. Enim eu quam eget interdum sagittis viverra.
-                Proin consectetur sit tempus lacus. Feugiat condimentum tellus tristique turpis bibendum
-                lectus phasellus diam augue. Sed eget cursus mauris accumsan id pellentesque diam. 
-                Neque suspendisse diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio dis
-                dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam vitae elit pharetra 
-                egestas magna nisl. Amet cursus lorem suspendisse ut tellus elit turpis lorem.
-
-                Lorem ipsum dolor sit amet consectetur. Enim eu quam eget interdum sagittis viverra. 
-                Proin consectetur sit tempus lacus. Feugiat condimentum tellus tristique turpis bibendum 
-                lectus phasellus diam augue. Sed eget cursus mauris accumsan id pellentesque diam. 
-                Neque suspendisse diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio 
-                dis dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam vitae elit pharetra 
-                egestas magna nisl. Amet cursus lorem suspendisse ut tellus elit turpis lorem.`,
+              diam erat amet nulla aliquam dictumst. Proin malesuada lectus odio 
+              dis dolor odio amet hendrerit. Eget lacus ac ut nisl. Varius aliquam 
+              vitae elit pharetra egestas magna nisl. Amet cursus lorem suspendisse
+                ut tellus elit turpis lorem.`,
           };
         })}
       />
-    </div>
+    </>
   );
 };
 
