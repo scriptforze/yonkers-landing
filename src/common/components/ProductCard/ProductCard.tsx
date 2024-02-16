@@ -11,12 +11,12 @@ const ProductCard = ({
   price,
   imageURL,
   lastPrice,
+  alt,
 }: ProductCardProps) => {
   return (
     <CustomCard>
       <CustomCard.Body>
-        <CustomCardImage src={imageURL} alt="Product Image" />
-
+        <CustomCardImage src={imageURL} alt={alt} />
         <div
           style={{
             display: "flex",
@@ -30,7 +30,7 @@ const ProductCard = ({
               marginRight: "10px",
             }}
           >
-            {price}
+            ${price?.toLocaleString("es-CO")}
           </Text>
           <Text
             css={{
@@ -39,7 +39,7 @@ const ProductCard = ({
               textDecorationLine: "line-through",
             }}
           >
-            {lastPrice}
+            ${lastPrice?.toLocaleString("es-CO")}
           </Text>
         </div>
         <Text
@@ -48,7 +48,11 @@ const ProductCard = ({
             fontWeight: "$semibold",
             fontSize: "14px",
             width: "189px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
+          placeholder={title}
         >
           {title}
         </Text>
@@ -58,7 +62,11 @@ const ProductCard = ({
             fontWeight: "normal",
             fontSize: "13px",
             marginBottom: "26px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
+          placeholder={brand}
         >
           {brand}
         </Text>
@@ -76,6 +84,7 @@ const ProductCard = ({
               width: "190px",
               padding: "10px 20px 10px 20px",
               height: "40px",
+              margin: "auto",
             }}
           >
             Ver producto

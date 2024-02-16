@@ -21,13 +21,11 @@ const SearchBar = () => {
     { skip: !debouncedSearchQuery }
   );
 
-  console.log("products", products?.data);
-
   return (
     <SearchInputContainer>
       <SearchInput
         onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        onBlur={() => setFocused(true)}
         onChange={(ev) => setQuery(ev.target.value)}
       />
       <SearchResults

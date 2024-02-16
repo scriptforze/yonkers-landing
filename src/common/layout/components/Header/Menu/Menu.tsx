@@ -14,7 +14,7 @@ const Menu = () => {
       <MenuItemsContainer>
         <MenuItemButton href="/">Inicio</MenuItemButton>
         <MenuItemButton href="/products">Productos</MenuItemButton>
-        <MenuItemButton href="#">Contacto</MenuItemButton>
+        <MenuItemButton href="/contact">Contacto</MenuItemButton>
       </MenuItemsContainer>
       <Responsive xl xxl>
         <ContactTextContainer>

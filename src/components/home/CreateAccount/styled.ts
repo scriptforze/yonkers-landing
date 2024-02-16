@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, Typography } from "antd";
+import { Button, Pagination, Typography } from "antd";
 import Image from "next/image";
 
 export const CreateAccountContainer = styled.section`

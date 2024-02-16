@@ -26,20 +26,7 @@ const ProductResults = ({ filters }: ProductResultsProps) => {
     <ProductResultsContainer>
       <ProductResultsControls>
         <SortingButton />
-
-        {/* <Responsive xs sm md>
-          <FiltersProductButton />
-        </Responsive> */}
-
-        {/* <Responsive lg xl xxl>
-          <ActiveFilters />
-        </Responsive> */}
       </ProductResultsControls>
-
-      {/* <Responsive xs sm md>
-        <ActiveFilters />
-      </Responsive> */}
-
       <ProductsResultsCards>
         {products?.data?.map(({ name, id, price, images, category }) => (
           <ProductCard
@@ -50,6 +37,7 @@ const ProductResults = ({ filters }: ProductResultsProps) => {
             lastPrice={690000}
             brand={category?.name}
             imageURL={images?.[0]?.urls?.original || ""}
+            alt={name}
           />
         ))}
       </ProductsResultsCards>

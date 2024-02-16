@@ -66,3 +66,20 @@ export const NavbarControlsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+
+export const HeaderContainerNav = styled.header`
+  gap: 12px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background: ${({ theme }) => theme.custom?.colors?.footer};
+
+  ${({ theme }) =>
+    theme.custom?.breakpoints?.lg &&
+    `@media (min-width: ${theme.custom?.breakpoints?.lg?.min})`} {
+    gap: 50px;
+  }
+`;

@@ -11,6 +11,8 @@ export const CustomCard = styled(Card).attrs(() => ({
   height: 362px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  cursor: default;
 `;
 
 export const CustomCardImage = styled(Image).attrs(() => ({

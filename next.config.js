@@ -10,9 +10,11 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ["localhost"],
   },
   env: {
     BASE_URL_API: process.env.BASE_URL_API,
+    PHONE_NUMBER_WSP: process.env.PHONE_NUMBER_WSP,
   },
 };
 

@@ -4,40 +4,65 @@ import {
   NavbarContainer,
   MenuLogoContainer,
   CustomControlButton,
-  NavbarControlsContainer,
+  NavbarControlsContainer
 } from "./styled";
 import {
   UserOutlined,
   MenuOutlined,
+  CloseOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
-
 import Logo from "@/common/assets/images/logo.png";
 import { Responsive } from "@/common/components";
 import { SearchBar } from "../SearchBar";
+import { useState } from 'react';
+import ResponsiveNavbar from './ResponsiveNavbar';
+import Link from "next/link";
 
-const Navbar = () => {
+interface NavbarProps {
+  appear: boolean | string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ appear }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => setIsOpen(!isOpen);
+  
   return (
     <NavbarContainer>
-      <SuperiorNavbar>
+       <SuperiorNavbar>
         <MenuLogoContainer>
           <Responsive xs>
             <CustomControlButton
-              className="menu-button"
-              icon={<MenuOutlined />}
+              icon={ !isOpen ? <MenuOutlined /> : 
+              <CloseOutlined style={{ color: '#e00909' }}/>
+             }
+              onClick={toggleDropdown}
             />
           </Responsive>
-          <CustomImage alt="logo icon" src={Logo} priority />
+          <Link href={`/`}>
+            <CustomImage alt="logo icon" src={Logo} priority />
+          </Link>
         </MenuLogoContainer>
-
-        <Responsive sm md lg xl xxl>
-          <SearchBar />
+        { appear === "false" ? (
+          ""
+        ) : (
+          <>
+            <Responsive sm md lg xl xxl>
+              <SearchBar />
+            </Responsive>
+            <NavbarControlsContainer>
+              <Link href={`/login`}>
+                <CustomControlButton icon={<UserOutlined />} />
+              </Link>
+              <Link href={`/checkout`}>
+                <CustomControlButton icon={<ShoppingCartOutlined />} />
+              </Link>
+            </NavbarControlsContainer>
+          </>
+        )}
+        <Responsive xs>
+          { isOpen && (<ResponsiveNavbar />) }
         </Responsive>
-
-        <NavbarControlsContainer>
-          <CustomControlButton icon={<UserOutlined />} />
-          <CustomControlButton icon={<ShoppingCartOutlined />} />
-        </NavbarControlsContainer>
       </SuperiorNavbar>
     </NavbarContainer>
   );

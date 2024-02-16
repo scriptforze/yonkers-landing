@@ -7,6 +7,7 @@ import {
   PrimarySliderCTAContainer,
   PrimarySliderImageContainer,
 } from "./styled";
+import Link from "next/link";
 
 const PrimarySlider = () => {
   return (
@@ -20,7 +21,9 @@ const PrimarySlider = () => {
           ¿No encuentras el repuesto para tu carro? ¡Escríbenos! Lo importamos
           por ti
         </PrimarySliderCTAText>
-        <PrimarySliderCTAButton>¡Escríbenos!</PrimarySliderCTAButton>
+        <Link href={`/contact`}>
+          <PrimarySliderCTAButton>¡Escríbenos!</PrimarySliderCTAButton>
+        </Link>
       </PrimarySliderCTAContainer>
     </PrimarySliderContainer>
   );

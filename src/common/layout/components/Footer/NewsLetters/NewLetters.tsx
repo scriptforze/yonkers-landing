@@ -5,6 +5,7 @@ import {
   NewsLettersButton,
   NewsLettersContainer,
 } from "./styled";
+import Link from "next/link";
 
 const NewLetters = () => {
   return (
@@ -19,9 +20,11 @@ const NewLetters = () => {
       <NewsLettersInput
         type="text"
         placeholder="Ingresa tu correo electrónico"
+        required
       />
-
-      <NewsLettersButton>Subscribirme</NewsLettersButton>
+      <Link href={`/sign-up`}>
+        <NewsLettersButton>Subscribirme</NewsLettersButton>
+      </Link>
     </NewsLettersContainer>
   );
 };

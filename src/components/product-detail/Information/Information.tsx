@@ -16,7 +16,6 @@ const Information = ({ product }: Props) => {
   return (
     <InformationContainer>
       <InformationTitle>Información de producto</InformationTitle>
-
       <CustomTabs
         animated
         size={size}
@@ -29,10 +28,10 @@ const Information = ({ product }: Props) => {
             children: (
               <InformationTabContent>
                 <Typography.Paragraph>
-                  {product?.short_description}
+                  {product.description}
                 </Typography.Paragraph>
                 <Typography.Paragraph>
-                  {product?.description}
+                  {product?.short_description}
                 </Typography.Paragraph>
               </InformationTabContent>
             ),

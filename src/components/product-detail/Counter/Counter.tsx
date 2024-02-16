@@ -3,8 +3,18 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import { useState } from "react";
 import { CounterButton, CounterContainer, CounterNumber } from "./styled";
 
-const Counter = () => {
+interface CounterProps {
+  onDataFromChild: (data: number) => void;
+  stock: (data: number) => void;
+}
+const Counter: React.FC<CounterProps> = ({ onDataFromChild, stock }) => {
+
   const [count, setCount] = useState(1);
+  onDataFromChild(count);
+
+  const sendDataToParent = () => {
+    onDataFromChild(count);
+  }
 
   const decrementCount = () => {
     if (count > 0) {
@@ -13,7 +23,9 @@ const Counter = () => {
   };
 
   const incrementCount = () => {
-    setCount(count + 1);
+    if (stock > count) {
+      setCount(count + 1);
+    }
   };
 
   return (

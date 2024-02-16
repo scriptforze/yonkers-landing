@@ -32,6 +32,7 @@ jobs:
     environment: github-pages
     env:
       BASE_URL_API: ${{ vars.BASE_URL_API }}
+      PHONE_NUMBER_WSP: ${{ vars.PHONE_NUMBER_WSP }}
       NEXT_PUBLIC_BASE_PATH: /yonkers-landing/
     steps:
       - name: Checkout
@@ -84,6 +85,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
         env:
           BASE_URL_API: ${{ env.BASE_URL_API }}
+          PHONE_NUMBER_WSP: ${{ env.PHONE_NUMBER_WSP }}
           NEXT_PUBLIC_BASE_PATH: ${{ env.NEXT_PUBLIC_BASE_PATH }}
       - name: Upload artifact
         uses: actions/upload-artifact@v3

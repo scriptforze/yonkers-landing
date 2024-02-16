@@ -56,6 +56,7 @@ export const MostWantedProducts = () => {
             price={product.price}
             brand={product?.category?.name || ""}
             imageURL={product?.images?.[0]?.urls.original || ""}
+            alt={product.name}
           />
         ))}
       </ItemsCarousel>

@@ -1,50 +1,68 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   RecommendedContainer,
-  RecommendedProductsCardsContainer,
   RecommendedProductsContainer,
   RecommendedTitle,
 } from "./styled";
 import { ItemsCarousel, ProductCard } from "@/common/components";
-import ProductSearch from "@/common/assets/images/productSearch.png";
+import { Props } from "./types";
 
-const Recommended = () => {
+interface ProductData {
+  id: number;
+  price: number;
+  name: string;
+  description: string;
+  slug: string;
+  images: [
+    urls: {
+      original: string;
+    }
+  ];
+}
+
+const Recommended: React.FC<Props> = ({ product }: Props) => {
+  const [products, setProducts] = useState<ProductData[]>([]);
+  const tag = product?.tags?.[0]?.name;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://ecommerceapi.scriptforze.com/api/v1/products?include=images&search=tag_${tag}`);
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+
+    };
+    fetchData();
+  }, [tag]);
+
   return (
     <RecommendedContainer>
       <RecommendedTitle>
         Complementa tu compra con estas opciones
       </RecommendedTitle>
-
       <RecommendedProductsContainer>
         <ItemsCarousel
           keyBoardControl={true}
           removeArrowOnDeviceType={["xs", "sm", "md"]}
         >
-          <ProductCard
-            id={1}
-            price={570000}
-            lastPrice={690000}
-            title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
-            brand=" HYUNDAI"
-            imageURL={ProductSearch}
-          />
-
-          <ProductCard
-            id={2}
-            price={570000}
-            lastPrice={690000}
-            title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
-            brand=" HYUNDAI"
-            imageURL={ProductSearch}
-          />
-
-          <ProductCard
-            id={3}
-            price={570000}
-            lastPrice={690000}
-            title=" Engine Oil Pump for Hyundai Accent 1995 - 2001 1.5L SOHC"
-            brand=" HYUNDAI"
-            imageURL={ProductSearch}
-          />
+          {Array.isArray(products.data) &&
+            products.data.map((pro) => (
+              <ProductCard
+                key={pro.id}
+                id={pro.id}
+                price={(pro.price - pro.price * 0.2)}
+                lastPrice={pro.price}
+                title={pro.name}
+                brand={pro.slug}
+                imageURL={pro.images[0].urls.original}
+                alt={pro.name}
+              />
+            ))
+          }
         </ItemsCarousel>
       </RecommendedProductsContainer>
     </RecommendedContainer>
