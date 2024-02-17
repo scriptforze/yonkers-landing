@@ -1,4 +1,4 @@
-import UsefulTipsImg from "@/common/assets/images/usefulTipsImage.png";
+import UsefulTipsImg from "@/common/assets/images/usefulTipsImage.webp";
 import {
   UsefulTipCard,
   UsefulTipsTitle,

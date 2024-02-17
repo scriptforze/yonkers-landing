@@ -1,4 +1,4 @@
-import DiscountImage from "@/common/assets/images/discountImage.png";
+import DiscountImage from "@/common/assets/images/discountImage.webp";
 import {
   OffersDiscountsCard,
   OffersDiscountsCardImage,

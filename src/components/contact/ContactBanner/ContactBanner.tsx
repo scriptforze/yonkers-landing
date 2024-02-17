@@ -1,5 +1,5 @@
 import React from "react";
-import ProductsBannerImg from "@/common/assets/images/products-banner.jpg";
+import ProductsBannerImg from "@/common/assets/images/products-banner.webp";
 import { BannerContainer, BannerImage, BannerText } from "./styled";
 
 export const ContactBanner = () => {
