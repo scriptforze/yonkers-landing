@@ -1,4 +1,4 @@
-import Banner from "@/common/assets/images/banner.png";
+import Banner from "@/common/assets/images/banner.webp";
 import {
   PrimarySliderImage,
   PrimarySliderCTAText,
