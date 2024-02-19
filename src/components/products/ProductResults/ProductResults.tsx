@@ -36,7 +36,7 @@ const ProductResults = ({ filters }: ProductResultsProps) => {
             price={price}
             lastPrice={690000}
             brand={category?.name}
-            imageURL={images?.[0]?.urls?.original || ""}
+            imageURL={images?.[0]?.urls?.thumb || ""}
             alt={name}
           />
         ))}

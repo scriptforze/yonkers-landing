@@ -23,7 +23,8 @@ export const SlideProduct = ({ product }: SlideProductProps) => {
 
   useEffect(() => {
     if (product) {
-      const defaultImage = product?.images?.[0]?.urls.original;
+      const defaultImage = product?.images?.[0]?.urls.medium;
+
       setSelectedImage(defaultImage || "");
       setTotalStock(stock);
     }
@@ -76,12 +77,12 @@ export const SlideProduct = ({ product }: SlideProductProps) => {
                       flexDirection: "column",
                       filter: "none",
                     }}
-                    onClick={() => changeImage(image?.urls?.original)}
+                    onClick={() => changeImage(image?.urls?.medium || "")}
                   >
                     <Image
                       width={50}
                       height={50}
-                      src={image?.urls?.original || ""}
+                      src={image?.urls?.thumb || ""}
                       alt="Product Image"
                       style={{
                         filter: "brightness(1.1)",
