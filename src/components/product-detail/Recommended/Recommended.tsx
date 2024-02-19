@@ -6,20 +6,6 @@ import {
 import { ItemsCarousel, ProductCard } from "@/common/components";
 import { RecommendedProps } from "./types";
 import { useGetAllProductsQuery } from "@/services/products";
-import { original } from "@reduxjs/toolkit";
-
-interface ProductData {
-  id: number;
-  price: number;
-  name: string;
-  description: string;
-  slug: string;
-  images: [
-    urls: {
-      original: string;
-    }
-  ];
-}
 
 const Recommended: React.FC<RecommendedProps> = ({ product }: RecommendedProps) => {
   const tagsString = product?.tags?.map(tag => `tag_${tag.name}`).join(" ");
@@ -29,7 +15,9 @@ const Recommended: React.FC<RecommendedProps> = ({ product }: RecommendedProps) 
     search: tagsString,
   });
 
-  return products?.data?.length ? (
+  const recomendedProducts = products?.data?.filter((recommendedProduct) => recommendedProduct.id !== product?.id);
+
+  return recomendedProducts?.length ? (
     <RecommendedContainer>
       <RecommendedTitle>
         Complementa tu compra con estas opciones
@@ -40,11 +28,11 @@ const Recommended: React.FC<RecommendedProps> = ({ product }: RecommendedProps) 
           removeArrowOnDeviceType={["xs", "sm", "md"]}
         >
           {isSuccess &&
-            products.data.map((product) => (
+            recomendedProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 id={product.id}
-                price={(product.price - product.price * 0.2)}
+                price={(product.price)}
                 lastPrice={product.price}
                 title={product.name}
                 brand={product.slug}
