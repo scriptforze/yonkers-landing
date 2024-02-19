@@ -10,7 +10,7 @@ import {
   ButtonText,
   ButtonButton
 } from "./styled";
-import { PropsProduct } from "./types";
+import { CheckoutMainProps } from "./types";
 import { CheckoutPay } from "../CheckoutPay";
 import { CheckoutDeliveryForm } from "../CheckoutDeliveryForm";
 import { CheckoutDelivery } from "../CheckoutDelivery";
@@ -18,7 +18,7 @@ import { CheckoutCar } from "../CheckoutCar";
 import { CheckoutConfirmation } from "../CheckoutConfirmation";
 import { ContactInformationSent } from "@/components/contact/ContactInformationSent";
 
-const CheckoutMain = ({ product }: PropsProduct) => {
+const CheckoutMain = ({ product }: CheckoutMainProps) => {
 
   const nameButton = [
     "Dirección de envío",

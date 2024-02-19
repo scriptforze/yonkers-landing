@@ -1,1 +1,3 @@
-export { default as SlideProduct } from "./SlideProduct";
+export * from './SlideProduct';
+export * from './styled';
+export * from './types';

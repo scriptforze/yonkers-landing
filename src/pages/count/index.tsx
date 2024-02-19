@@ -1,10 +1,8 @@
 import { Layout } from "@/common/layout";
-import { CountContainer} from "@/components/count/CountContainer";
-import { ResultsBreadcrumbs } from "@/components/count/ResultsBreadcrumbs";
-import { getLatestItems } from "@/services/storeService";
-import { Props } from "./types";
+import { CountContainer, ResultsBreadcrumbs, CountProps } from "@/components/count";
+// import { getLatestItems } from "@/services/storeService";
 
-const Count = ({product}: Props) => {
+const Count = ({ product }: CountProps) => {
 
   return (
     <Layout title="Mi Cuenta">
@@ -17,11 +15,11 @@ const Count = ({product}: Props) => {
 
 export default Count;
 
-export async function getStaticProps() {
-  const res = await getLatestItems();
-  return {
-    props: {
-      product: res,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const res = await getLatestItems();
+//   return {
+//     props: {
+//       product: res,
+//     },
+//   };
+// }

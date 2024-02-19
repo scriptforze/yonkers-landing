@@ -1,1 +1,3 @@
-export { default as ProductsContainer } from "./ProductsContainer";
+export {default as ProductsContainer} from './ProductsContainer';
+export * from './styled';
+export * from './types';

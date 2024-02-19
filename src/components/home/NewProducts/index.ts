@@ -1,1 +1,2 @@
-export { default as NewProducts } from "./NewProducts";
+export * from './NewProducts';
+export * from './styled';

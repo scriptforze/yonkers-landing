@@ -1,1 +1,2 @@
-export { default as MostWantedProducts } from "./MostWantedProducts";
+export * from './MostWantedProducts';
+export * from './styled';

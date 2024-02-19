@@ -10,7 +10,7 @@ import {
   CreateAccountContainer,
   CreateAccountImage,
 } from "./styled";
-import CreateAccountImageSource from "@/common/assets/images/image_signup.png";
+import CreateAccountImageSource from "@/common/assets/images/image_signup.webp";
 
 const CreateAccount = () => {
   return (

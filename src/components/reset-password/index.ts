@@ -1,1 +1,2 @@
-export * from "./ResetPasswordForm";
+export * from './ResetPasswordForm';
+export * from './styled';

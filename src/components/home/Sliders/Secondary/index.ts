@@ -1,1 +1,2 @@
-export { default as SecondarySlider } from "./Secondary";
+export * from './Secondary';
+export * from './styled';

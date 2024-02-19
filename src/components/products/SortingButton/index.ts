@@ -1,1 +1,2 @@
-export { default as SortingButton } from "./SortingButton";
+export {default as SortingButton} from './SortingButton';
+export * from './styled';

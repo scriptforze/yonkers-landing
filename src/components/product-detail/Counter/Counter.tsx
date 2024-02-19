@@ -5,16 +5,12 @@ import { CounterButton, CounterContainer, CounterNumber } from "./styled";
 
 interface CounterProps {
   onDataFromChild: (data: number) => void;
-  stock: (data: number) => void;
+  stock: number;
 }
 const Counter: React.FC<CounterProps> = ({ onDataFromChild, stock }) => {
 
   const [count, setCount] = useState(1);
   onDataFromChild(count);
-
-  const sendDataToParent = () => {
-    onDataFromChild(count);
-  }
 
   const decrementCount = () => {
     if (count > 0) {

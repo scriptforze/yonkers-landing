@@ -15,7 +15,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
   if (router.isFallback) return <>Loading...</>;
 
   return (
-    <Layout>
+    <Layout title={product.name}>
       <SlideProduct product={product} />
       <Information product={product} />
       <Recommended product={product} />
