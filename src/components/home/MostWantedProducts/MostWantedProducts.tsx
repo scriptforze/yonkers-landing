@@ -55,7 +55,7 @@ export const MostWantedProducts = () => {
             title={product.name}
             price={product.price}
             brand={product?.category?.name || ""}
-            imageURL={product?.images?.[0]?.urls.original || ""}
+            imageURL={product?.images?.[0]?.urls.thumb || ""}
             alt={product.name}
           />
         ))}
